@@ -1,0 +1,4 @@
+[
+  {"issuer": "CBSE", "state": "open", "failures": 40},
+  {"issuer": "PARIVAHAN", "state": "closed", "failures": 0}
+]
