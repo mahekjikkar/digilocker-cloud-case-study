@@ -29,7 +29,11 @@ fi
 TG_ARN=$(aws elbv2 describe-target-groups --names "$TG_NAME" \
            --query 'TargetGroups[0].TargetGroupArn' --output text 2>/dev/null || true)
 if [ -n "$TG_ARN" ] && [ "$TG_ARN" != "None" ]; then
-  aws elbv2 delete-target-group --target-group-arn "$TG_ARN"
+  # The ALB's listener can linger briefly after the ALB reports deleted.
+  for _ in $(seq 1 12); do
+    aws elbv2 delete-target-group --target-group-arn "$TG_ARN" >/dev/null 2>&1 && break
+    sleep 5
+  done
 fi
 
 say "Mock issuer instances"
@@ -76,5 +80,6 @@ LEFT=$(aws ec2 describe-instances \
          --query 'length(Reservations[].Instances[])' --output text)
 echo "live $PROJECT instances: $LEFT"
 echo "load balancers: $(aws elbv2 describe-load-balancers --query "length(LoadBalancers[?LoadBalancerName=='$ALB_NAME'])" --output text 2>/dev/null || echo 0)"
+echo "target groups: $(aws elbv2 describe-target-groups --query "length(TargetGroups[?TargetGroupName=='$TG_NAME'])" --output text 2>/dev/null || echo 0)"
 echo "tables: $(aws dynamodb list-tables --query "length(TableNames[?@=='$TABLE'])" --output text)"
 echo "done"
