@@ -11,3 +11,4 @@ venv/
 # infra scratch files and secrets
 infra/.tmp/
 infra/.state.env
+loadtest/.smoke/
