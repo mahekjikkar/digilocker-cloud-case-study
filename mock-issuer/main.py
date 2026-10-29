@@ -2,8 +2,13 @@
 Mock issuer repository: stands in for a government department
 that holds documents. Exposes controls so we can inject the
 failure modes identified in the Week 2 report (F2 and F3).
+
+One codebase serves every issuer; the identity comes from the environment:
+  ISSUER_ID=CBSE       uvicorn main:app --port 9001
+  ISSUER_ID=PARIVAHAN  uvicorn main:app --port 9002
 """
 import asyncio
+import os
 import random
 import time
 
@@ -12,7 +17,7 @@ from pydantic import BaseModel
 
 app = FastAPI(title="Mock Issuer")
 
-ISSUER_ID = "CBSE"
+ISSUER_ID = os.getenv("ISSUER_ID", "CBSE")
 
 # Fault injection state, changed at runtime via POST /control
 state = {
@@ -33,6 +38,11 @@ async def health():
     return {"status": "ok", "issuer": ISSUER_ID}
 
 
+@app.get("/control")
+async def read_control():
+    return {"issuer": ISSUER_ID, **state}
+
+
 @app.post("/control")
 async def control(c: Control):
     """Change this issuer's behaviour mid-experiment."""
@@ -42,7 +52,7 @@ async def control(c: Control):
         state["error_rate"] = c.error_rate
     if c.down is not None:
         state["down"] = c.down
-    return state
+    return {"issuer": ISSUER_ID, **state}
 
 
 @app.get("/pull/{doc_id}")
