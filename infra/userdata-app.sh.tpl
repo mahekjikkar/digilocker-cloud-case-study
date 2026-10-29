@@ -33,13 +33,17 @@ cat > /etc/systemd/system/digilocker.service <<'UNIT'
 [Unit]
 Description=DigiLocker registry
 After=network-online.target
+StartLimitIntervalSec=0
 
 [Service]
 WorkingDirectory=/opt/digilocker/app
 ExecStartPre=/usr/local/bin/digilocker-refresh-env
-EnvironmentFile=/etc/digilocker.env
+# The leading "-" matters: the file does not exist until ExecStartPre has run
+# for the first time, and systemd would otherwise refuse to start the unit.
+EnvironmentFile=-/etc/digilocker.env
 ExecStart=/usr/bin/python3.11 -m uvicorn main:app --host 0.0.0.0 --port 8000
 Restart=always
+RestartSec=3
 
 [Install]
 WantedBy=multi-user.target

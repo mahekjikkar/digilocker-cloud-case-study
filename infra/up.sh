@@ -196,16 +196,19 @@ if [ "$(aws autoscaling describe-auto-scaling-groups --auto-scaling-group-names 
     --vpc-zone-identifier "$SUBNET_A,$SUBNET_B" --target-group-arns "$TG_ARN" \
     --health-check-type ELB --health-check-grace-period 180 \
     --tags "Key=Project,Value=$PROJECT,PropagateAtLaunch=true"
-  aws autoscaling enable-metrics-collection --auto-scaling-group-name "$ASG_NAME" --granularity 1Minute
-  LABEL="${LB_ARN#*:loadbalancer/}/${TG_ARN##*:}"
-  cat > .tmp/scaling.json <<EOF
+fi
+aws autoscaling enable-metrics-collection --auto-scaling-group-name "$ASG_NAME" --granularity 1Minute
+# Idempotent, and kept outside the create-only block so a re-run repairs it.
+# Needs an active ALB: it is rejected while the ALB is still provisioning.
+aws elbv2 wait load-balancer-available --load-balancer-arns "$LB_ARN"
+LABEL="${LB_ARN#*:loadbalancer/}/${TG_ARN##*:}"
+cat > .tmp/scaling.json <<EOF
 {"PredefinedMetricSpecification":{"PredefinedMetricType":"ALBRequestCountPerTarget","ResourceLabel":"$LABEL"},
  "TargetValue":$SCALE_TARGET_REQS}
 EOF
-  aws autoscaling put-scaling-policy --auto-scaling-group-name "$ASG_NAME" \
-    --policy-name "$PROJECT-requests-per-target" --policy-type TargetTrackingScaling \
-    --estimated-instance-warmup 120 --target-tracking-configuration file://.tmp/scaling.json >/dev/null
-fi
+aws autoscaling put-scaling-policy --auto-scaling-group-name "$ASG_NAME" \
+  --policy-name "$PROJECT-requests-per-target" --policy-type TargetTrackingScaling \
+  --estimated-instance-warmup 120 --target-tracking-configuration file://.tmp/scaling.json >/dev/null
 
 cat > "$STATE_FILE" <<EOF
 BASE_URL=http://$ALB_DNS
