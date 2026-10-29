@@ -54,7 +54,15 @@ stats = {name: {"requests": 0, "ok": 0, "failed": 0, "short_circuited": 0,
 
 # One bounded pool shared by all issuers. This is what a slow issuer
 # exhausts, and why the breaker has to protect it.
-limits = httpx.Limits(max_connections=POOL_MAX, max_keepalive_connections=2)
+#
+# The bound is enforced by our own semaphore, not by httpx. httpx's pool
+# wait timeout cancels requests that are queued with a half-open connection
+# assigned, and httpcore then leaks that connection in CONNECTING state
+# forever: a few overloads and every slot is gone and the service never
+# recovers. httpx is given headroom so it never queues or times out in its
+# pool; the semaphore (with a cancellation-safe timeout) is the real limit.
+pool_slots = asyncio.Semaphore(POOL_MAX)
+limits = httpx.Limits(max_connections=POOL_MAX + 5, max_keepalive_connections=POOL_MAX)
 client = httpx.AsyncClient(limits=limits, timeout=ISSUER_TIMEOUT)
 
 
@@ -128,6 +136,16 @@ async def pull_from_issuer(issuer_id, doc_id):
             s["short_circuited"] += 1
             return None, "circuit breaker open"
 
+        try:
+            async with asyncio.timeout(ISSUER_TIMEOUT):
+                await pool_slots.acquire()
+        except TimeoutError:
+            # Our own pool is exhausted. That says nothing about this issuer's
+            # health, so it must not count against its breaker, and retrying
+            # would only add load.
+            reason = "PoolTimeout"
+            break
+
         started = time.monotonic()
         retryable = True
         try:
@@ -144,6 +162,8 @@ async def pull_from_issuer(issuer_id, doc_id):
         except Exception as exc:
             reason = type(exc).__name__
             failed_call = True
+        finally:
+            pool_slots.release()
         s["latency_ms"].append((time.monotonic() - started) * 1000)
         if failed_call:
             breaker.record_failure()
