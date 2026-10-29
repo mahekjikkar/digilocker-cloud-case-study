@@ -7,3 +7,7 @@ venv/
 .DS_Store
 .idea/
 .vscode/
+
+# infra scratch files and secrets
+infra/.tmp/
+infra/.state.env
