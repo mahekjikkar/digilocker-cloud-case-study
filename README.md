@@ -106,7 +106,13 @@ The stack costs money while up; tear it down after every session.
   memory. `run.sh e4` restarts the registry through `infra/set-breaker.sh` so each
   E4 run starts clean.
 - Helpers: `infra/issuer-control.sh` (set an issuer's latency, errors or
-  outage from your laptop), `infra/terminate-one.sh`, `infra/set-breaker.sh on|off`.
+  outage from your laptop), `infra/terminate-one.sh`, `infra/set-breaker.sh on|off`,
+  `infra/allow-my-ip.sh` (issuer control is limited to the IP you had when `up.sh` ran;
+  run this if your network changes mid-session).
+- Keep the laptop awake for the whole run: a sleeping client produces a useless run
+  (`run.sh` now detects this and exits 97). `loadtest/collect-instance-cpu.sh` adds
+  per-instance CPU and CPU-credit data, which `collect-cloudwatch.sh` does not
+  collect; it still works after teardown.
 
 ### Cost safety
 
@@ -117,13 +123,20 @@ net: the real control is `infra/down.sh`, which prints a leftover check.
 
 ## Results
 
-AWS runs are pending. Nothing here reports a result that has not been measured.
+Nothing here reports a result that has not been measured.
 
 - `results/session1/`: **local pre-runs** by a teammate (breaker off and on, one
   laptop, no AWS). Kept as they were produced. They predate the connection-pool
   fix described below.
-- `results/aws/<time>-<scenario>/`: the real runs, added as produced
-  (k6 raw data, summaries, CloudWatch exports, `run-info.txt`).
+- `results/aws/<time>-<scenario>/`: the real runs of 2026-10-29 (UTC), as produced:
+  k6 raw data and summaries, CloudWatch exports, `run-info.txt`. E1, E2, E3 and E4
+  (breaker off, breaker on) are all there. E2 also has per-instance CPU and CPU
+  credit data in `cloudwatch/instances/`.
+- Read `docs/research-log.md` (part 4) before interpreting the runs. It records what
+  qualifies them: the E2 collapse beyond 100 VUs coincides with the scale-out
+  instances running out of CPU credits, E3's errors came from the replacement's cold
+  start and not from the termination, and a stalled run is detected, not trusted.
+- Run `./loadtest/run.sh` exit code 97 means the run is invalid; do not use it.
 
 ## Differences from the Week 2 plan
 

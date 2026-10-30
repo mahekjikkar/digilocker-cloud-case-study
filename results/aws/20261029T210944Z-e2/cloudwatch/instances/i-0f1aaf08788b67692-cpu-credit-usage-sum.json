@@ -1,0 +1,15 @@
+{
+    "Label": "CPUCreditUsage",
+    "Datapoints": [
+        {
+            "Timestamp": "2026-10-30T02:55:00+05:30",
+            "Sum": 0.9371513333333333,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:50:00+05:30",
+            "Sum": 1.2541807333333332,
+            "Unit": "Count"
+        }
+    ]
+}

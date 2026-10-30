@@ -1,0 +1,10 @@
+collected:  2026-10-30T23:30:32Z  (after the run; instances may already be terminated)
+window:     2026-10-29T21:05:00Z .. 2026-10-29T21:30:00Z (period 300s, basic monitoring)
+region:     ap-south-1
+instances:
+  i-046c47dcf62308721  registry-1a-original
+  i-0b1e2d0aee35e2523  registry-1b-original
+  i-06a1b02300663bf8f  registry-1a-scaled-out-21:15:43
+  i-0f1aaf08788b67692  registry-1b-scaled-out-21:15:43
+  i-0c623b9afc19649ae  issuer-CBSE
+  i-01b413ff70fff15ba  issuer-PARIVAHAN

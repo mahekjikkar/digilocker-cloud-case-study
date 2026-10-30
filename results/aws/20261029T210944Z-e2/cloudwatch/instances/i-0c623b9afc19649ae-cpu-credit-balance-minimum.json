@@ -1,0 +1,30 @@
+{
+    "Label": "CPUCreditBalance",
+    "Datapoints": [
+        {
+            "Timestamp": "2026-10-30T02:55:00+05:30",
+            "Minimum": 20.366892916666668,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:35:00+05:30",
+            "Minimum": 18.532923366666665,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:40:00+05:30",
+            "Minimum": 19.4773412,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:45:00+05:30",
+            "Minimum": 19.94942425,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:50:00+05:30",
+            "Minimum": 20.001671183333332,
+            "Unit": "Count"
+        }
+    ]
+}
