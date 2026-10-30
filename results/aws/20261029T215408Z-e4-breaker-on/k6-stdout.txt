@@ -1,0 +1,2236 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: loadtest/e4_degraded_issuer.js
+        output: json (results/aws/20261029T215408Z-e4-breaker-on/e4-raw.json.gz)
+
+     scenarios: (100.00%) 6 scenarios, 558 max VUs, 13m30s max duration (incl. graceful stop):
+              * breaker_observer: 0.50 iterations/s for 4m30s (maxVUs: 2-5, exec: observeBreakers, gracefulStop: 30s)
+              * cbse_load: 20.00 iterations/s for 4m30s (maxVUs: 150-400, exec: cbseLoad, gracefulStop: 30s)
+              * parivahan_probe: 5.00 iterations/s for 4m30s (maxVUs: 30-150, exec: parivahanProbe, gracefulStop: 30s)
+              * inject_slow: 1 iterations for each of 1 VUs (maxDuration: 10m0s, exec: injectSlow, startTime: 30s, gracefulStop: 30s)
+              * inject_down: 1 iterations for each of 1 VUs (maxDuration: 10m0s, exec: injectDown, startTime: 2m0s, gracefulStop: 30s)
+              * inject_restore: 1 iterations for each of 1 VUs (maxDuration: 10m0s, exec: injectRestore, startTime: 3m0s, gracefulStop: 30s)
+
+
+running (00m01.0s), 002/185 VUs, 9 complete and 0 interrupted iterations
+breaker_observer   [   0% ] 0/2 VUs      0m00.4s/4m30s  0.50 iters/s
+cbse_load          [   0% ] 002/150 VUs  0m00.4s/4m30s  20.00 iters/s
+parivahan_probe    [   0% ] 000/030 VUs  0m00.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      29.6s         
+inject_down      • [   0% ] waiting      1m59.6s       
+inject_restore   • [   0% ] waiting      2m59.6s       
+
+running (00m02.0s), 003/185 VUs, 33 complete and 0 interrupted iterations
+breaker_observer   [   1% ] 0/2 VUs      0m01.4s/4m30s  0.50 iters/s
+cbse_load          [   1% ] 003/150 VUs  0m01.4s/4m30s  20.00 iters/s
+parivahan_probe    [   1% ] 000/030 VUs  0m01.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      28.6s         
+inject_down      • [   0% ] waiting      1m58.6s       
+inject_restore   • [   0% ] waiting      2m58.6s       
+
+running (00m03.0s), 002/185 VUs, 60 complete and 0 interrupted iterations
+breaker_observer   [   1% ] 0/2 VUs      0m02.4s/4m30s  0.50 iters/s
+cbse_load          [   1% ] 002/150 VUs  0m02.4s/4m30s  20.00 iters/s
+parivahan_probe    [   1% ] 000/030 VUs  0m02.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      27.6s         
+inject_down      • [   0% ] waiting      1m57.6s       
+inject_restore   • [   0% ] waiting      2m57.6s       
+
+running (00m04.0s), 002/185 VUs, 85 complete and 0 interrupted iterations
+breaker_observer   [   1% ] 0/2 VUs      0m03.4s/4m30s  0.50 iters/s
+cbse_load          [   1% ] 002/150 VUs  0m03.4s/4m30s  20.00 iters/s
+parivahan_probe    [   1% ] 000/030 VUs  0m03.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      26.6s         
+inject_down      • [   0% ] waiting      1m56.6s       
+inject_restore   • [   0% ] waiting      2m56.6s       
+
+running (00m05.0s), 002/185 VUs, 111 complete and 0 interrupted iterations
+breaker_observer   [   2% ] 0/2 VUs      0m04.4s/4m30s  0.50 iters/s
+cbse_load          [   2% ] 002/150 VUs  0m04.4s/4m30s  20.00 iters/s
+parivahan_probe    [   2% ] 000/030 VUs  0m04.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      25.6s         
+inject_down      • [   0% ] waiting      1m55.6s       
+inject_restore   • [   0% ] waiting      2m55.6s       
+
+running (00m06.0s), 002/185 VUs, 136 complete and 0 interrupted iterations
+breaker_observer   [   2% ] 0/2 VUs      0m05.4s/4m30s  0.50 iters/s
+cbse_load          [   2% ] 002/150 VUs  0m05.4s/4m30s  20.00 iters/s
+parivahan_probe    [   2% ] 000/030 VUs  0m05.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      24.6s         
+inject_down      • [   0% ] waiting      1m54.6s       
+inject_restore   • [   0% ] waiting      2m54.6s       
+
+running (00m07.0s), 002/185 VUs, 162 complete and 0 interrupted iterations
+breaker_observer   [   2% ] 0/2 VUs      0m06.4s/4m30s  0.50 iters/s
+cbse_load          [   2% ] 002/150 VUs  0m06.4s/4m30s  20.00 iters/s
+parivahan_probe    [   2% ] 000/030 VUs  0m06.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      23.6s         
+inject_down      • [   0% ] waiting      1m53.6s       
+inject_restore   • [   0% ] waiting      2m53.6s       
+
+running (00m08.0s), 002/185 VUs, 187 complete and 0 interrupted iterations
+breaker_observer   [   3% ] 0/2 VUs      0m07.4s/4m30s  0.50 iters/s
+cbse_load          [   3% ] 002/150 VUs  0m07.4s/4m30s  20.00 iters/s
+parivahan_probe    [   3% ] 000/030 VUs  0m07.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      22.6s         
+inject_down      • [   0% ] waiting      1m52.6s       
+inject_restore   • [   0% ] waiting      2m52.6s       
+
+running (00m09.0s), 001/185 VUs, 214 complete and 0 interrupted iterations
+breaker_observer   [   3% ] 0/2 VUs      0m08.4s/4m30s  0.50 iters/s
+cbse_load          [   3% ] 001/150 VUs  0m08.4s/4m30s  20.00 iters/s
+parivahan_probe    [   3% ] 000/030 VUs  0m08.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      21.6s         
+inject_down      • [   0% ] waiting      1m51.6s       
+inject_restore   • [   0% ] waiting      2m51.6s       
+
+running (00m10.0s), 001/185 VUs, 239 complete and 0 interrupted iterations
+breaker_observer   [   3% ] 0/2 VUs      0m09.4s/4m30s  0.50 iters/s
+cbse_load          [   3% ] 001/150 VUs  0m09.4s/4m30s  20.00 iters/s
+parivahan_probe    [   3% ] 000/030 VUs  0m09.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      20.6s         
+inject_down      • [   0% ] waiting      1m50.6s       
+inject_restore   • [   0% ] waiting      2m50.6s       
+
+running (00m11.0s), 001/185 VUs, 265 complete and 0 interrupted iterations
+breaker_observer   [   4% ] 0/2 VUs      0m10.4s/4m30s  0.50 iters/s
+cbse_load          [   4% ] 001/150 VUs  0m10.4s/4m30s  20.00 iters/s
+parivahan_probe    [   4% ] 000/030 VUs  0m10.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      19.6s         
+inject_down      • [   0% ] waiting      1m49.6s       
+inject_restore   • [   0% ] waiting      2m49.6s       
+
+running (00m12.0s), 002/185 VUs, 289 complete and 0 interrupted iterations
+breaker_observer   [   4% ] 0/2 VUs      0m11.4s/4m30s  0.50 iters/s
+cbse_load          [   4% ] 002/150 VUs  0m11.4s/4m30s  20.00 iters/s
+parivahan_probe    [   4% ] 000/030 VUs  0m11.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      18.6s         
+inject_down      • [   0% ] waiting      1m48.6s       
+inject_restore   • [   0% ] waiting      2m48.6s       
+
+running (00m13.0s), 001/185 VUs, 316 complete and 0 interrupted iterations
+breaker_observer   [   5% ] 0/2 VUs      0m12.4s/4m30s  0.50 iters/s
+cbse_load          [   5% ] 001/150 VUs  0m12.4s/4m30s  20.00 iters/s
+parivahan_probe    [   5% ] 000/030 VUs  0m12.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      17.6s         
+inject_down      • [   0% ] waiting      1m47.6s       
+inject_restore   • [   0% ] waiting      2m47.6s       
+
+running (00m14.0s), 002/185 VUs, 340 complete and 0 interrupted iterations
+breaker_observer   [   5% ] 0/2 VUs      0m13.4s/4m30s  0.50 iters/s
+cbse_load          [   5% ] 002/150 VUs  0m13.4s/4m30s  20.00 iters/s
+parivahan_probe    [   5% ] 000/030 VUs  0m13.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      16.6s         
+inject_down      • [   0% ] waiting      1m46.6s       
+inject_restore   • [   0% ] waiting      2m46.6s       
+
+running (00m15.0s), 002/185 VUs, 366 complete and 0 interrupted iterations
+breaker_observer   [   5% ] 0/2 VUs      0m14.4s/4m30s  0.50 iters/s
+cbse_load          [   5% ] 002/150 VUs  0m14.4s/4m30s  20.00 iters/s
+parivahan_probe    [   5% ] 000/030 VUs  0m14.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      15.6s         
+inject_down      • [   0% ] waiting      1m45.6s       
+inject_restore   • [   0% ] waiting      2m45.6s       
+
+running (00m16.0s), 001/185 VUs, 392 complete and 0 interrupted iterations
+breaker_observer   [   6% ] 0/2 VUs      0m15.4s/4m30s  0.50 iters/s
+cbse_load          [   6% ] 001/150 VUs  0m15.4s/4m30s  20.00 iters/s
+parivahan_probe    [   6% ] 000/030 VUs  0m15.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      14.6s         
+inject_down      • [   0% ] waiting      1m44.6s       
+inject_restore   • [   0% ] waiting      2m44.6s       
+
+running (00m17.0s), 001/185 VUs, 418 complete and 0 interrupted iterations
+breaker_observer   [   6% ] 0/2 VUs      0m16.4s/4m30s  0.50 iters/s
+cbse_load          [   6% ] 001/150 VUs  0m16.4s/4m30s  20.00 iters/s
+parivahan_probe    [   6% ] 000/030 VUs  0m16.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      13.6s         
+inject_down      • [   0% ] waiting      1m43.6s       
+inject_restore   • [   0% ] waiting      2m43.6s       
+
+running (00m18.0s), 002/185 VUs, 442 complete and 0 interrupted iterations
+breaker_observer   [   6% ] 0/2 VUs      0m17.4s/4m30s  0.50 iters/s
+cbse_load          [   6% ] 002/150 VUs  0m17.4s/4m30s  20.00 iters/s
+parivahan_probe    [   6% ] 000/030 VUs  0m17.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      12.6s         
+inject_down      • [   0% ] waiting      1m42.6s       
+inject_restore   • [   0% ] waiting      2m42.6s       
+
+running (00m19.0s), 001/185 VUs, 469 complete and 0 interrupted iterations
+breaker_observer   [   7% ] 0/2 VUs      0m18.4s/4m30s  0.50 iters/s
+cbse_load          [   7% ] 001/150 VUs  0m18.4s/4m30s  20.00 iters/s
+parivahan_probe    [   7% ] 000/030 VUs  0m18.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      11.6s         
+inject_down      • [   0% ] waiting      1m41.6s       
+inject_restore   • [   0% ] waiting      2m41.6s       
+
+running (00m20.0s), 001/185 VUs, 494 complete and 0 interrupted iterations
+breaker_observer   [   7% ] 0/2 VUs      0m19.4s/4m30s  0.50 iters/s
+cbse_load          [   7% ] 001/150 VUs  0m19.4s/4m30s  20.00 iters/s
+parivahan_probe    [   7% ] 000/030 VUs  0m19.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      10.6s         
+inject_down      • [   0% ] waiting      1m40.6s       
+inject_restore   • [   0% ] waiting      2m40.6s       
+
+running (00m21.0s), 002/185 VUs, 519 complete and 0 interrupted iterations
+breaker_observer   [   8% ] 0/2 VUs      0m20.4s/4m30s  0.50 iters/s
+cbse_load          [   8% ] 002/150 VUs  0m20.4s/4m30s  20.00 iters/s
+parivahan_probe    [   8% ] 000/030 VUs  0m20.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      09.6s         
+inject_down      • [   0% ] waiting      1m39.6s       
+inject_restore   • [   0% ] waiting      2m39.6s       
+
+running (00m22.0s), 001/185 VUs, 545 complete and 0 interrupted iterations
+breaker_observer   [   8% ] 0/2 VUs      0m21.4s/4m30s  0.50 iters/s
+cbse_load          [   8% ] 001/150 VUs  0m21.4s/4m30s  20.00 iters/s
+parivahan_probe    [   8% ] 000/030 VUs  0m21.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      08.6s         
+inject_down      • [   0% ] waiting      1m38.6s       
+inject_restore   • [   0% ] waiting      2m38.6s       
+
+running (00m23.0s), 001/185 VUs, 571 complete and 0 interrupted iterations
+breaker_observer   [   8% ] 0/2 VUs      0m22.4s/4m30s  0.50 iters/s
+cbse_load          [   8% ] 001/150 VUs  0m22.4s/4m30s  20.00 iters/s
+parivahan_probe    [   8% ] 000/030 VUs  0m22.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      07.6s         
+inject_down      • [   0% ] waiting      1m37.6s       
+inject_restore   • [   0% ] waiting      2m37.6s       
+
+running (00m24.0s), 001/185 VUs, 596 complete and 0 interrupted iterations
+breaker_observer   [   9% ] 0/2 VUs      0m23.4s/4m30s  0.50 iters/s
+cbse_load          [   9% ] 001/150 VUs  0m23.4s/4m30s  20.00 iters/s
+parivahan_probe    [   9% ] 000/030 VUs  0m23.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      06.6s         
+inject_down      • [   0% ] waiting      1m36.6s       
+inject_restore   • [   0% ] waiting      2m36.6s       
+
+running (00m25.0s), 001/185 VUs, 622 complete and 0 interrupted iterations
+breaker_observer   [   9% ] 0/2 VUs      0m24.4s/4m30s  0.50 iters/s
+cbse_load          [   9% ] 001/150 VUs  0m24.4s/4m30s  20.00 iters/s
+parivahan_probe    [   9% ] 000/030 VUs  0m24.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      05.6s         
+inject_down      • [   0% ] waiting      1m35.6s       
+inject_restore   • [   0% ] waiting      2m35.6s       
+
+running (00m26.0s), 002/185 VUs, 646 complete and 0 interrupted iterations
+breaker_observer   [   9% ] 0/2 VUs      0m25.4s/4m30s  0.50 iters/s
+cbse_load          [   9% ] 002/150 VUs  0m25.4s/4m30s  20.00 iters/s
+parivahan_probe    [   9% ] 000/030 VUs  0m25.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      04.6s         
+inject_down      • [   0% ] waiting      1m34.6s       
+inject_restore   • [   0% ] waiting      2m34.6s       
+
+running (00m27.0s), 001/185 VUs, 673 complete and 0 interrupted iterations
+breaker_observer   [  10% ] 0/2 VUs      0m26.4s/4m30s  0.50 iters/s
+cbse_load          [  10% ] 001/150 VUs  0m26.4s/4m30s  20.00 iters/s
+parivahan_probe    [  10% ] 000/030 VUs  0m26.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      03.6s         
+inject_down      • [   0% ] waiting      1m33.6s       
+inject_restore   • [   0% ] waiting      2m33.6s       
+
+running (00m28.0s), 002/185 VUs, 697 complete and 0 interrupted iterations
+breaker_observer   [  10% ] 0/2 VUs      0m27.4s/4m30s  0.50 iters/s
+cbse_load          [  10% ] 002/150 VUs  0m27.4s/4m30s  20.00 iters/s
+parivahan_probe    [  10% ] 000/030 VUs  0m27.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      02.6s         
+inject_down      • [   0% ] waiting      1m32.6s       
+inject_restore   • [   0% ] waiting      2m32.6s       
+
+running (00m29.0s), 001/185 VUs, 724 complete and 0 interrupted iterations
+breaker_observer   [  11% ] 0/2 VUs      0m28.4s/4m30s  0.50 iters/s
+cbse_load          [  11% ] 001/150 VUs  0m28.4s/4m30s  20.00 iters/s
+parivahan_probe    [  11% ] 000/030 VUs  0m28.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      01.6s         
+inject_down      • [   0% ] waiting      1m31.6s       
+inject_restore   • [   0% ] waiting      2m31.6s       
+
+running (00m30.0s), 001/185 VUs, 749 complete and 0 interrupted iterations
+breaker_observer   [  11% ] 0/2 VUs      0m29.4s/4m30s  0.50 iters/s
+cbse_load          [  11% ] 001/150 VUs  0m29.4s/4m30s  20.00 iters/s
+parivahan_probe    [  11% ] 000/030 VUs  0m29.4s/4m30s  5.00 iters/s
+inject_slow      • [   0% ] waiting      00.6s         
+inject_down      • [   0% ] waiting      1m30.6s       
+inject_restore   • [   0% ] waiting      2m30.6s       
+
+running (00m31.0s), 007/185 VUs, 770 complete and 0 interrupted iterations
+breaker_observer   [  11% ] 0/2 VUs      0m30.4s/4m30s   0.50 iters/s
+cbse_load          [  11% ] 007/150 VUs  0m30.4s/4m30s   20.00 iters/s
+parivahan_probe    [  11% ] 000/030 VUs  0m30.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m29.6s        
+inject_restore   • [   0% ] waiting      2m29.6s        
+
+running (00m32.0s), 030/185 VUs, 772 complete and 0 interrupted iterations
+breaker_observer   [  12% ] 0/2 VUs      0m31.4s/4m30s   0.50 iters/s
+cbse_load          [  12% ] 027/150 VUs  0m31.4s/4m30s   20.00 iters/s
+parivahan_probe    [  12% ] 003/030 VUs  0m31.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m28.6s        
+inject_restore   • [   0% ] waiting      2m28.6s        
+
+running (00m33.0s), 025/185 VUs, 803 complete and 0 interrupted iterations
+breaker_observer   [  12% ] 0/2 VUs      0m32.4s/4m30s   0.50 iters/s
+cbse_load          [  12% ] 020/150 VUs  0m32.4s/4m30s   20.00 iters/s
+parivahan_probe    [  12% ] 005/030 VUs  0m32.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m27.6s        
+inject_restore   • [   0% ] waiting      2m27.6s        
+
+running (00m34.0s), 007/185 VUs, 846 complete and 0 interrupted iterations
+breaker_observer   [  12% ] 0/2 VUs      0m33.4s/4m30s   0.50 iters/s
+cbse_load          [  12% ] 007/150 VUs  0m33.4s/4m30s   20.00 iters/s
+parivahan_probe    [  12% ] 000/030 VUs  0m33.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m26.6s        
+inject_restore   • [   0% ] waiting      2m26.6s        
+
+running (00m35.0s), 001/185 VUs, 878 complete and 0 interrupted iterations
+breaker_observer   [  13% ] 0/2 VUs      0m34.4s/4m30s   0.50 iters/s
+cbse_load          [  13% ] 001/150 VUs  0m34.4s/4m30s   20.00 iters/s
+parivahan_probe    [  13% ] 000/030 VUs  0m34.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m25.6s        
+inject_restore   • [   0% ] waiting      2m25.6s        
+
+running (00m36.0s), 001/185 VUs, 903 complete and 0 interrupted iterations
+breaker_observer   [  13% ] 0/2 VUs      0m35.4s/4m30s   0.50 iters/s
+cbse_load          [  13% ] 001/150 VUs  0m35.4s/4m30s   20.00 iters/s
+parivahan_probe    [  13% ] 000/030 VUs  0m35.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m24.6s        
+inject_restore   • [   0% ] waiting      2m24.6s        
+
+running (00m37.0s), 002/185 VUs, 928 complete and 0 interrupted iterations
+breaker_observer   [  13% ] 0/2 VUs      0m36.4s/4m30s   0.50 iters/s
+cbse_load          [  13% ] 002/150 VUs  0m36.4s/4m30s   20.00 iters/s
+parivahan_probe    [  13% ] 000/030 VUs  0m36.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m23.6s        
+inject_restore   • [   0% ] waiting      2m23.6s        
+
+running (00m38.0s), 001/185 VUs, 954 complete and 0 interrupted iterations
+breaker_observer   [  14% ] 0/2 VUs      0m37.4s/4m30s   0.50 iters/s
+cbse_load          [  14% ] 001/150 VUs  0m37.4s/4m30s   20.00 iters/s
+parivahan_probe    [  14% ] 000/030 VUs  0m37.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m22.6s        
+inject_restore   • [   0% ] waiting      2m22.6s        
+
+running (00m39.0s), 001/185 VUs, 980 complete and 0 interrupted iterations
+breaker_observer   [  14% ] 0/2 VUs      0m38.4s/4m30s   0.50 iters/s
+cbse_load          [  14% ] 001/150 VUs  0m38.4s/4m30s   20.00 iters/s
+parivahan_probe    [  14% ] 000/030 VUs  0m38.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m21.6s        
+inject_restore   • [   0% ] waiting      2m21.6s        
+
+running (00m40.0s), 001/185 VUs, 1005 complete and 0 interrupted iterations
+breaker_observer   [  15% ] 0/2 VUs      0m39.4s/4m30s   0.50 iters/s
+cbse_load          [  15% ] 001/150 VUs  0m39.4s/4m30s   20.00 iters/s
+parivahan_probe    [  15% ] 000/030 VUs  0m39.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m20.6s        
+inject_restore   • [   0% ] waiting      2m20.6s        
+
+running (00m41.0s), 001/185 VUs, 1031 complete and 0 interrupted iterations
+breaker_observer   [  15% ] 0/2 VUs      0m40.4s/4m30s   0.50 iters/s
+cbse_load          [  15% ] 001/150 VUs  0m40.4s/4m30s   20.00 iters/s
+parivahan_probe    [  15% ] 000/030 VUs  0m40.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m19.6s        
+inject_restore   • [   0% ] waiting      2m19.6s        
+
+running (00m42.0s), 001/185 VUs, 1056 complete and 0 interrupted iterations
+breaker_observer   [  15% ] 0/2 VUs      0m41.4s/4m30s   0.50 iters/s
+cbse_load          [  15% ] 001/150 VUs  0m41.4s/4m30s   20.00 iters/s
+parivahan_probe    [  15% ] 000/030 VUs  0m41.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m18.6s        
+inject_restore   • [   0% ] waiting      2m18.6s        
+
+running (00m43.0s), 002/185 VUs, 1081 complete and 0 interrupted iterations
+breaker_observer   [  16% ] 0/2 VUs      0m42.4s/4m30s   0.50 iters/s
+cbse_load          [  16% ] 002/150 VUs  0m42.4s/4m30s   20.00 iters/s
+parivahan_probe    [  16% ] 000/030 VUs  0m42.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m17.6s        
+inject_restore   • [   0% ] waiting      2m17.6s        
+
+running (00m44.0s), 001/185 VUs, 1107 complete and 0 interrupted iterations
+breaker_observer   [  16% ] 0/2 VUs      0m43.4s/4m30s   0.50 iters/s
+cbse_load          [  16% ] 001/150 VUs  0m43.4s/4m30s   20.00 iters/s
+parivahan_probe    [  16% ] 000/030 VUs  0m43.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m16.6s        
+inject_restore   • [   0% ] waiting      2m16.6s        
+
+running (00m45.0s), 004/185 VUs, 1130 complete and 0 interrupted iterations
+breaker_observer   [  16% ] 0/2 VUs      0m44.4s/4m30s   0.50 iters/s
+cbse_load          [  16% ] 004/150 VUs  0m44.4s/4m30s   20.00 iters/s
+parivahan_probe    [  16% ] 000/030 VUs  0m44.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m15.6s        
+inject_restore   • [   0% ] waiting      2m15.6s        
+
+running (00m46.0s), 001/185 VUs, 1158 complete and 0 interrupted iterations
+breaker_observer   [  17% ] 0/2 VUs      0m45.4s/4m30s   0.50 iters/s
+cbse_load          [  17% ] 001/150 VUs  0m45.4s/4m30s   20.00 iters/s
+parivahan_probe    [  17% ] 000/030 VUs  0m45.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m14.6s        
+inject_restore   • [   0% ] waiting      2m14.6s        
+
+running (00m47.0s), 001/185 VUs, 1184 complete and 0 interrupted iterations
+breaker_observer   [  17% ] 0/2 VUs      0m46.4s/4m30s   0.50 iters/s
+cbse_load          [  17% ] 001/150 VUs  0m46.4s/4m30s   20.00 iters/s
+parivahan_probe    [  17% ] 000/030 VUs  0m46.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m13.6s        
+inject_restore   • [   0% ] waiting      2m13.6s        
+
+running (00m48.0s), 001/185 VUs, 1209 complete and 0 interrupted iterations
+breaker_observer   [  18% ] 0/2 VUs      0m47.4s/4m30s   0.50 iters/s
+cbse_load          [  18% ] 001/150 VUs  0m47.4s/4m30s   20.00 iters/s
+parivahan_probe    [  18% ] 000/030 VUs  0m47.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m12.6s        
+inject_restore   • [   0% ] waiting      2m12.6s        
+
+running (00m49.0s), 001/185 VUs, 1235 complete and 0 interrupted iterations
+breaker_observer   [  18% ] 0/2 VUs      0m48.4s/4m30s   0.50 iters/s
+cbse_load          [  18% ] 001/150 VUs  0m48.4s/4m30s   20.00 iters/s
+parivahan_probe    [  18% ] 000/030 VUs  0m48.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m11.6s        
+inject_restore   • [   0% ] waiting      2m11.6s        
+
+running (00m50.0s), 001/185 VUs, 1260 complete and 0 interrupted iterations
+breaker_observer   [  18% ] 0/2 VUs      0m49.4s/4m30s   0.50 iters/s
+cbse_load          [  18% ] 001/150 VUs  0m49.4s/4m30s   20.00 iters/s
+parivahan_probe    [  18% ] 000/030 VUs  0m49.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m10.6s        
+inject_restore   • [   0% ] waiting      2m10.6s        
+
+running (00m51.0s), 001/185 VUs, 1286 complete and 0 interrupted iterations
+breaker_observer   [  19% ] 0/2 VUs      0m50.4s/4m30s   0.50 iters/s
+cbse_load          [  19% ] 001/150 VUs  0m50.4s/4m30s   20.00 iters/s
+parivahan_probe    [  19% ] 000/030 VUs  0m50.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m09.6s        
+inject_restore   • [   0% ] waiting      2m09.6s        
+
+running (00m52.0s), 001/185 VUs, 1311 complete and 0 interrupted iterations
+breaker_observer   [  19% ] 0/2 VUs      0m51.4s/4m30s   0.50 iters/s
+cbse_load          [  19% ] 001/150 VUs  0m51.4s/4m30s   20.00 iters/s
+parivahan_probe    [  19% ] 000/030 VUs  0m51.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m08.6s        
+inject_restore   • [   0% ] waiting      2m08.6s        
+
+running (00m53.0s), 001/185 VUs, 1337 complete and 0 interrupted iterations
+breaker_observer   [  19% ] 0/2 VUs      0m52.4s/4m30s   0.50 iters/s
+cbse_load          [  19% ] 001/150 VUs  0m52.4s/4m30s   20.00 iters/s
+parivahan_probe    [  19% ] 000/030 VUs  0m52.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m07.6s        
+inject_restore   • [   0% ] waiting      2m07.6s        
+
+running (00m54.0s), 001/185 VUs, 1362 complete and 0 interrupted iterations
+breaker_observer   [  20% ] 0/2 VUs      0m53.4s/4m30s   0.50 iters/s
+cbse_load          [  20% ] 001/150 VUs  0m53.4s/4m30s   20.00 iters/s
+parivahan_probe    [  20% ] 000/030 VUs  0m53.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m06.6s        
+inject_restore   • [   0% ] waiting      2m06.6s        
+
+running (00m55.0s), 002/185 VUs, 1387 complete and 0 interrupted iterations
+breaker_observer   [  20% ] 0/2 VUs      0m54.4s/4m30s   0.50 iters/s
+cbse_load          [  20% ] 002/150 VUs  0m54.4s/4m30s   20.00 iters/s
+parivahan_probe    [  20% ] 000/030 VUs  0m54.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m05.6s        
+inject_restore   • [   0% ] waiting      2m05.6s        
+
+running (00m56.0s), 003/185 VUs, 1411 complete and 0 interrupted iterations
+breaker_observer   [  21% ] 0/2 VUs      0m55.4s/4m30s   0.50 iters/s
+cbse_load          [  21% ] 003/150 VUs  0m55.4s/4m30s   20.00 iters/s
+parivahan_probe    [  21% ] 000/030 VUs  0m55.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m04.6s        
+inject_restore   • [   0% ] waiting      2m04.6s        
+
+running (00m57.0s), 001/185 VUs, 1439 complete and 0 interrupted iterations
+breaker_observer   [  21% ] 0/2 VUs      0m56.4s/4m30s   0.50 iters/s
+cbse_load          [  21% ] 001/150 VUs  0m56.4s/4m30s   20.00 iters/s
+parivahan_probe    [  21% ] 000/030 VUs  0m56.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m03.6s        
+inject_restore   • [   0% ] waiting      2m03.6s        
+
+running (00m58.0s), 003/185 VUs, 1462 complete and 0 interrupted iterations
+breaker_observer   [  21% ] 0/2 VUs      0m57.4s/4m30s   0.50 iters/s
+cbse_load          [  21% ] 003/150 VUs  0m57.4s/4m30s   20.00 iters/s
+parivahan_probe    [  21% ] 000/030 VUs  0m57.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m02.6s        
+inject_restore   • [   0% ] waiting      2m02.6s        
+
+running (00m59.0s), 003/185 VUs, 1488 complete and 0 interrupted iterations
+breaker_observer   [  22% ] 0/2 VUs      0m58.4s/4m30s   0.50 iters/s
+cbse_load          [  22% ] 003/150 VUs  0m58.4s/4m30s   20.00 iters/s
+parivahan_probe    [  22% ] 000/030 VUs  0m58.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m01.6s        
+inject_restore   • [   0% ] waiting      2m01.6s        
+
+running (01m00.0s), 003/185 VUs, 1513 complete and 0 interrupted iterations
+breaker_observer   [  22% ] 0/2 VUs      0m59.4s/4m30s   0.50 iters/s
+cbse_load          [  22% ] 003/150 VUs  0m59.4s/4m30s   20.00 iters/s
+parivahan_probe    [  22% ] 000/030 VUs  0m59.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      1m00.6s        
+inject_restore   • [   0% ] waiting      2m00.6s        
+
+running (01m01.0s), 002/185 VUs, 1540 complete and 0 interrupted iterations
+breaker_observer   [  22% ] 0/2 VUs      1m00.4s/4m30s   0.50 iters/s
+cbse_load          [  22% ] 002/150 VUs  1m00.4s/4m30s   20.00 iters/s
+parivahan_probe    [  22% ] 000/030 VUs  1m00.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m59.6s        
+inject_restore   • [   0% ] waiting      1m59.6s        
+
+running (01m02.0s), 001/185 VUs, 1566 complete and 0 interrupted iterations
+breaker_observer   [  23% ] 0/2 VUs      1m01.4s/4m30s   0.50 iters/s
+cbse_load          [  23% ] 001/150 VUs  1m01.4s/4m30s   20.00 iters/s
+parivahan_probe    [  23% ] 000/030 VUs  1m01.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m58.6s        
+inject_restore   • [   0% ] waiting      1m58.6s        
+
+running (01m03.0s), 002/185 VUs, 1591 complete and 0 interrupted iterations
+breaker_observer   [  23% ] 0/2 VUs      1m02.4s/4m30s   0.50 iters/s
+cbse_load          [  23% ] 002/150 VUs  1m02.4s/4m30s   20.00 iters/s
+parivahan_probe    [  23% ] 000/030 VUs  1m02.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m57.6s        
+inject_restore   • [   0% ] waiting      1m57.6s        
+
+running (01m04.0s), 001/185 VUs, 1617 complete and 0 interrupted iterations
+breaker_observer   [  23% ] 0/2 VUs      1m03.4s/4m30s   0.50 iters/s
+cbse_load          [  23% ] 001/150 VUs  1m03.4s/4m30s   20.00 iters/s
+parivahan_probe    [  23% ] 000/030 VUs  1m03.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m56.6s        
+inject_restore   • [   0% ] waiting      1m56.6s        
+
+running (01m05.0s), 001/185 VUs, 1643 complete and 0 interrupted iterations
+breaker_observer   [  24% ] 0/2 VUs      1m04.4s/4m30s   0.50 iters/s
+cbse_load          [  24% ] 001/150 VUs  1m04.4s/4m30s   20.00 iters/s
+parivahan_probe    [  24% ] 000/030 VUs  1m04.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m55.6s        
+inject_restore   • [   0% ] waiting      1m55.6s        
+
+running (01m06.0s), 001/185 VUs, 1668 complete and 0 interrupted iterations
+breaker_observer   [  24% ] 0/2 VUs      1m05.4s/4m30s   0.50 iters/s
+cbse_load          [  24% ] 001/150 VUs  1m05.4s/4m30s   20.00 iters/s
+parivahan_probe    [  24% ] 000/030 VUs  1m05.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m54.6s        
+inject_restore   • [   0% ] waiting      1m54.6s        
+
+running (01m07.0s), 004/185 VUs, 1691 complete and 0 interrupted iterations
+breaker_observer   [  25% ] 0/2 VUs      1m06.4s/4m30s   0.50 iters/s
+cbse_load          [  25% ] 004/150 VUs  1m06.4s/4m30s   20.00 iters/s
+parivahan_probe    [  25% ] 000/030 VUs  1m06.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m53.6s        
+inject_restore   • [   0% ] waiting      1m53.6s        
+
+running (01m08.0s), 001/185 VUs, 1719 complete and 0 interrupted iterations
+breaker_observer   [  25% ] 0/2 VUs      1m07.4s/4m30s   0.50 iters/s
+cbse_load          [  25% ] 001/150 VUs  1m07.4s/4m30s   20.00 iters/s
+parivahan_probe    [  25% ] 000/030 VUs  1m07.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m52.6s        
+inject_restore   • [   0% ] waiting      1m52.6s        
+
+running (01m09.0s), 001/185 VUs, 1745 complete and 0 interrupted iterations
+breaker_observer   [  25% ] 0/2 VUs      1m08.4s/4m30s   0.50 iters/s
+cbse_load          [  25% ] 001/150 VUs  1m08.4s/4m30s   20.00 iters/s
+parivahan_probe    [  25% ] 000/030 VUs  1m08.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m51.6s        
+inject_restore   • [   0% ] waiting      1m51.6s        
+
+running (01m10.0s), 001/185 VUs, 1770 complete and 0 interrupted iterations
+breaker_observer   [  26% ] 0/2 VUs      1m09.4s/4m30s   0.50 iters/s
+cbse_load          [  26% ] 001/150 VUs  1m09.4s/4m30s   20.00 iters/s
+parivahan_probe    [  26% ] 000/030 VUs  1m09.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m50.6s        
+inject_restore   • [   0% ] waiting      1m50.6s        
+
+running (01m11.0s), 001/185 VUs, 1796 complete and 0 interrupted iterations
+breaker_observer   [  26% ] 0/2 VUs      1m10.4s/4m30s   0.50 iters/s
+cbse_load          [  26% ] 001/150 VUs  1m10.4s/4m30s   20.00 iters/s
+parivahan_probe    [  26% ] 000/030 VUs  1m10.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m49.6s        
+inject_restore   • [   0% ] waiting      1m49.6s        
+
+running (01m12.0s), 001/185 VUs, 1821 complete and 0 interrupted iterations
+breaker_observer   [  26% ] 0/2 VUs      1m11.4s/4m30s   0.50 iters/s
+cbse_load          [  26% ] 001/150 VUs  1m11.4s/4m30s   20.00 iters/s
+parivahan_probe    [  26% ] 000/030 VUs  1m11.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m48.6s        
+inject_restore   • [   0% ] waiting      1m48.6s        
+
+running (01m13.0s), 002/185 VUs, 1846 complete and 0 interrupted iterations
+breaker_observer   [  27% ] 0/2 VUs      1m12.4s/4m30s   0.50 iters/s
+cbse_load          [  27% ] 002/150 VUs  1m12.4s/4m30s   20.00 iters/s
+parivahan_probe    [  27% ] 000/030 VUs  1m12.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m47.6s        
+inject_restore   • [   0% ] waiting      1m47.6s        
+
+running (01m14.0s), 001/185 VUs, 1872 complete and 0 interrupted iterations
+breaker_observer   [  27% ] 0/2 VUs      1m13.4s/4m30s   0.50 iters/s
+cbse_load          [  27% ] 001/150 VUs  1m13.4s/4m30s   20.00 iters/s
+parivahan_probe    [  27% ] 000/030 VUs  1m13.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m46.6s        
+inject_restore   • [   0% ] waiting      1m46.6s        
+
+running (01m15.0s), 001/185 VUs, 1898 complete and 0 interrupted iterations
+breaker_observer   [  28% ] 0/2 VUs      1m14.4s/4m30s   0.50 iters/s
+cbse_load          [  28% ] 001/150 VUs  1m14.4s/4m30s   20.00 iters/s
+parivahan_probe    [  28% ] 000/030 VUs  1m14.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m45.6s        
+inject_restore   • [   0% ] waiting      1m45.6s        
+
+running (01m16.0s), 001/185 VUs, 1923 complete and 0 interrupted iterations
+breaker_observer   [  28% ] 0/2 VUs      1m15.4s/4m30s   0.50 iters/s
+cbse_load          [  28% ] 001/150 VUs  1m15.4s/4m30s   20.00 iters/s
+parivahan_probe    [  28% ] 000/030 VUs  1m15.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m44.6s        
+inject_restore   • [   0% ] waiting      1m44.6s        
+
+running (01m17.0s), 001/185 VUs, 1949 complete and 0 interrupted iterations
+breaker_observer   [  28% ] 0/2 VUs      1m16.4s/4m30s   0.50 iters/s
+cbse_load          [  28% ] 001/150 VUs  1m16.4s/4m30s   20.00 iters/s
+parivahan_probe    [  28% ] 000/030 VUs  1m16.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m43.6s        
+inject_restore   • [   0% ] waiting      1m43.6s        
+
+running (01m18.0s), 003/185 VUs, 1972 complete and 0 interrupted iterations
+breaker_observer   [  29% ] 0/2 VUs      1m17.4s/4m30s   0.50 iters/s
+cbse_load          [  29% ] 003/150 VUs  1m17.4s/4m30s   20.00 iters/s
+parivahan_probe    [  29% ] 000/030 VUs  1m17.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m42.6s        
+inject_restore   • [   0% ] waiting      1m42.6s        
+
+running (01m19.0s), 001/185 VUs, 2000 complete and 0 interrupted iterations
+breaker_observer   [  29% ] 0/2 VUs      1m18.4s/4m30s   0.50 iters/s
+cbse_load          [  29% ] 001/150 VUs  1m18.4s/4m30s   20.00 iters/s
+parivahan_probe    [  29% ] 000/030 VUs  1m18.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m41.6s        
+inject_restore   • [   0% ] waiting      1m41.6s        
+
+running (01m20.0s), 001/185 VUs, 2025 complete and 0 interrupted iterations
+breaker_observer   [  29% ] 0/2 VUs      1m19.4s/4m30s   0.50 iters/s
+cbse_load          [  29% ] 001/150 VUs  1m19.4s/4m30s   20.00 iters/s
+parivahan_probe    [  29% ] 000/030 VUs  1m19.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m40.6s        
+inject_restore   • [   0% ] waiting      1m40.6s        
+
+running (01m21.0s), 001/185 VUs, 2051 complete and 0 interrupted iterations
+breaker_observer   [  30% ] 0/2 VUs      1m20.4s/4m30s   0.50 iters/s
+cbse_load          [  30% ] 001/150 VUs  1m20.4s/4m30s   20.00 iters/s
+parivahan_probe    [  30% ] 000/030 VUs  1m20.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m39.6s        
+inject_restore   • [   0% ] waiting      1m39.6s        
+
+running (01m22.0s), 001/185 VUs, 2076 complete and 0 interrupted iterations
+breaker_observer   [  30% ] 0/2 VUs      1m21.4s/4m30s   0.50 iters/s
+cbse_load          [  30% ] 001/150 VUs  1m21.4s/4m30s   20.00 iters/s
+parivahan_probe    [  30% ] 000/030 VUs  1m21.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m38.6s        
+inject_restore   • [   0% ] waiting      1m38.6s        
+
+running (01m23.0s), 001/185 VUs, 2102 complete and 0 interrupted iterations
+breaker_observer   [  31% ] 0/2 VUs      1m22.4s/4m30s   0.50 iters/s
+cbse_load          [  31% ] 001/150 VUs  1m22.4s/4m30s   20.00 iters/s
+parivahan_probe    [  31% ] 000/030 VUs  1m22.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m37.6s        
+inject_restore   • [   0% ] waiting      1m37.6s        
+
+running (01m24.0s), 001/185 VUs, 2127 complete and 0 interrupted iterations
+breaker_observer   [  31% ] 0/2 VUs      1m23.4s/4m30s   0.50 iters/s
+cbse_load          [  31% ] 001/150 VUs  1m23.4s/4m30s   20.00 iters/s
+parivahan_probe    [  31% ] 000/030 VUs  1m23.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m36.6s        
+inject_restore   • [   0% ] waiting      1m36.6s        
+
+running (01m25.0s), 001/185 VUs, 2153 complete and 0 interrupted iterations
+breaker_observer   [  31% ] 0/2 VUs      1m24.4s/4m30s   0.50 iters/s
+cbse_load          [  31% ] 001/150 VUs  1m24.4s/4m30s   20.00 iters/s
+parivahan_probe    [  31% ] 000/030 VUs  1m24.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m35.6s        
+inject_restore   • [   0% ] waiting      1m35.6s        
+
+running (01m26.0s), 001/185 VUs, 2178 complete and 0 interrupted iterations
+breaker_observer   [  32% ] 0/2 VUs      1m25.4s/4m30s   0.50 iters/s
+cbse_load          [  32% ] 001/150 VUs  1m25.4s/4m30s   20.00 iters/s
+parivahan_probe    [  32% ] 000/030 VUs  1m25.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m34.6s        
+inject_restore   • [   0% ] waiting      1m34.6s        
+
+running (01m27.0s), 001/185 VUs, 2204 complete and 0 interrupted iterations
+breaker_observer   [  32% ] 0/2 VUs      1m26.4s/4m30s   0.50 iters/s
+cbse_load          [  32% ] 001/150 VUs  1m26.4s/4m30s   20.00 iters/s
+parivahan_probe    [  32% ] 000/030 VUs  1m26.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m33.6s        
+inject_restore   • [   0% ] waiting      1m33.6s        
+
+running (01m28.0s), 001/185 VUs, 2229 complete and 0 interrupted iterations
+breaker_observer   [  32% ] 0/2 VUs      1m27.4s/4m30s   0.50 iters/s
+cbse_load          [  32% ] 001/150 VUs  1m27.4s/4m30s   20.00 iters/s
+parivahan_probe    [  32% ] 000/030 VUs  1m27.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m32.6s        
+inject_restore   • [   0% ] waiting      1m32.6s        
+
+running (01m29.0s), 003/185 VUs, 2253 complete and 0 interrupted iterations
+breaker_observer   [  33% ] 0/2 VUs      1m28.4s/4m30s   0.50 iters/s
+cbse_load          [  33% ] 003/150 VUs  1m28.4s/4m30s   20.00 iters/s
+parivahan_probe    [  33% ] 000/030 VUs  1m28.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m31.6s        
+inject_restore   • [   0% ] waiting      1m31.6s        
+
+running (01m30.0s), 001/185 VUs, 2280 complete and 0 interrupted iterations
+breaker_observer   [  33% ] 0/2 VUs      1m29.4s/4m30s   0.50 iters/s
+cbse_load          [  33% ] 001/150 VUs  1m29.4s/4m30s   20.00 iters/s
+parivahan_probe    [  33% ] 000/030 VUs  1m29.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m30.6s        
+inject_restore   • [   0% ] waiting      1m30.6s        
+
+running (01m31.0s), 001/185 VUs, 2306 complete and 0 interrupted iterations
+breaker_observer   [  33% ] 0/2 VUs      1m30.4s/4m30s   0.50 iters/s
+cbse_load          [  33% ] 001/150 VUs  1m30.4s/4m30s   20.00 iters/s
+parivahan_probe    [  33% ] 000/030 VUs  1m30.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m29.6s        
+inject_restore   • [   0% ] waiting      1m29.6s        
+
+running (01m32.0s), 001/185 VUs, 2331 complete and 0 interrupted iterations
+breaker_observer   [  34% ] 0/2 VUs      1m31.4s/4m30s   0.50 iters/s
+cbse_load          [  34% ] 001/150 VUs  1m31.4s/4m30s   20.00 iters/s
+parivahan_probe    [  34% ] 000/030 VUs  1m31.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m28.6s        
+inject_restore   • [   0% ] waiting      1m28.6s        
+
+running (01m33.0s), 001/185 VUs, 2357 complete and 0 interrupted iterations
+breaker_observer   [  34% ] 0/2 VUs      1m32.4s/4m30s   0.50 iters/s
+cbse_load          [  34% ] 001/150 VUs  1m32.4s/4m30s   20.00 iters/s
+parivahan_probe    [  34% ] 000/030 VUs  1m32.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m27.6s        
+inject_restore   • [   0% ] waiting      1m27.6s        
+
+running (01m34.0s), 001/185 VUs, 2382 complete and 0 interrupted iterations
+breaker_observer   [  35% ] 0/2 VUs      1m33.4s/4m30s   0.50 iters/s
+cbse_load          [  35% ] 001/150 VUs  1m33.4s/4m30s   20.00 iters/s
+parivahan_probe    [  35% ] 000/030 VUs  1m33.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m26.6s        
+inject_restore   • [   0% ] waiting      1m26.6s        
+
+running (01m35.0s), 001/185 VUs, 2408 complete and 0 interrupted iterations
+breaker_observer   [  35% ] 0/2 VUs      1m34.4s/4m30s   0.50 iters/s
+cbse_load          [  35% ] 001/150 VUs  1m34.4s/4m30s   20.00 iters/s
+parivahan_probe    [  35% ] 000/030 VUs  1m34.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m25.6s        
+inject_restore   • [   0% ] waiting      1m25.6s        
+
+running (01m36.0s), 001/185 VUs, 2433 complete and 0 interrupted iterations
+breaker_observer   [  35% ] 0/2 VUs      1m35.4s/4m30s   0.50 iters/s
+cbse_load          [  35% ] 001/150 VUs  1m35.4s/4m30s   20.00 iters/s
+parivahan_probe    [  35% ] 000/030 VUs  1m35.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m24.6s        
+inject_restore   • [   0% ] waiting      1m24.6s        
+
+running (01m37.0s), 001/185 VUs, 2459 complete and 0 interrupted iterations
+breaker_observer   [  36% ] 0/2 VUs      1m36.4s/4m30s   0.50 iters/s
+cbse_load          [  36% ] 001/150 VUs  1m36.4s/4m30s   20.00 iters/s
+parivahan_probe    [  36% ] 000/030 VUs  1m36.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m23.6s        
+inject_restore   • [   0% ] waiting      1m23.6s        
+
+running (01m38.0s), 008/185 VUs, 2477 complete and 0 interrupted iterations
+breaker_observer   [  36% ] 0/2 VUs      1m37.4s/4m30s   0.50 iters/s
+cbse_load          [  36% ] 007/150 VUs  1m37.4s/4m30s   20.00 iters/s
+parivahan_probe    [  36% ] 001/030 VUs  1m37.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m22.6s        
+inject_restore   • [   0% ] waiting      1m22.6s        
+
+running (01m39.0s), 012/185 VUs, 2499 complete and 0 interrupted iterations
+breaker_observer   [  36% ] 1/2 VUs      1m38.4s/4m30s   0.50 iters/s
+cbse_load          [  36% ] 009/150 VUs  1m38.4s/4m30s   20.00 iters/s
+parivahan_probe    [  36% ] 002/030 VUs  1m38.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m21.6s        
+inject_restore   • [   0% ] waiting      1m21.6s        
+
+running (01m40.0s), 005/185 VUs, 2531 complete and 0 interrupted iterations
+breaker_observer   [  37% ] 0/2 VUs      1m39.4s/4m30s   0.50 iters/s
+cbse_load          [  37% ] 004/150 VUs  1m39.4s/4m30s   20.00 iters/s
+parivahan_probe    [  37% ] 001/030 VUs  1m39.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m20.6s        
+inject_restore   • [   0% ] waiting      1m20.6s        
+
+running (01m41.0s), 013/185 VUs, 2549 complete and 0 interrupted iterations
+breaker_observer   [  37% ] 1/2 VUs      1m40.4s/4m30s   0.50 iters/s
+cbse_load          [  37% ] 010/150 VUs  1m40.4s/4m30s   20.00 iters/s
+parivahan_probe    [  37% ] 002/030 VUs  1m40.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m19.6s        
+inject_restore   • [   0% ] waiting      1m19.6s        
+
+running (01m42.0s), 001/185 VUs, 2586 complete and 0 interrupted iterations
+breaker_observer   [  38% ] 0/2 VUs      1m41.4s/4m30s   0.50 iters/s
+cbse_load          [  38% ] 001/150 VUs  1m41.4s/4m30s   20.00 iters/s
+parivahan_probe    [  38% ] 000/030 VUs  1m41.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m18.6s        
+inject_restore   • [   0% ] waiting      1m18.6s        
+
+running (01m43.0s), 001/185 VUs, 2612 complete and 0 interrupted iterations
+breaker_observer   [  38% ] 0/2 VUs      1m42.4s/4m30s   0.50 iters/s
+cbse_load          [  38% ] 001/150 VUs  1m42.4s/4m30s   20.00 iters/s
+parivahan_probe    [  38% ] 000/030 VUs  1m42.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m17.6s        
+inject_restore   • [   0% ] waiting      1m17.6s        
+
+running (01m44.0s), 001/185 VUs, 2637 complete and 0 interrupted iterations
+breaker_observer   [  38% ] 0/2 VUs      1m43.4s/4m30s   0.50 iters/s
+cbse_load          [  38% ] 001/150 VUs  1m43.4s/4m30s   20.00 iters/s
+parivahan_probe    [  38% ] 000/030 VUs  1m43.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m16.6s        
+inject_restore   • [   0% ] waiting      1m16.6s        
+
+running (01m45.0s), 001/185 VUs, 2663 complete and 0 interrupted iterations
+breaker_observer   [  39% ] 0/2 VUs      1m44.4s/4m30s   0.50 iters/s
+cbse_load          [  39% ] 001/150 VUs  1m44.4s/4m30s   20.00 iters/s
+parivahan_probe    [  39% ] 000/030 VUs  1m44.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m15.6s        
+inject_restore   • [   0% ] waiting      1m15.6s        
+
+running (01m46.0s), 002/185 VUs, 2687 complete and 0 interrupted iterations
+breaker_observer   [  39% ] 0/2 VUs      1m45.4s/4m30s   0.50 iters/s
+cbse_load          [  39% ] 002/150 VUs  1m45.4s/4m30s   20.00 iters/s
+parivahan_probe    [  39% ] 000/030 VUs  1m45.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m14.6s        
+inject_restore   • [   0% ] waiting      1m14.6s        
+
+running (01m47.0s), 001/185 VUs, 2714 complete and 0 interrupted iterations
+breaker_observer   [  39% ] 0/2 VUs      1m46.4s/4m30s   0.50 iters/s
+cbse_load          [  39% ] 001/150 VUs  1m46.4s/4m30s   20.00 iters/s
+parivahan_probe    [  39% ] 000/030 VUs  1m46.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m13.6s        
+inject_restore   • [   0% ] waiting      1m13.6s        
+
+running (01m48.0s), 001/185 VUs, 2739 complete and 0 interrupted iterations
+breaker_observer   [  40% ] 0/2 VUs      1m47.4s/4m30s   0.50 iters/s
+cbse_load          [  40% ] 001/150 VUs  1m47.4s/4m30s   20.00 iters/s
+parivahan_probe    [  40% ] 000/030 VUs  1m47.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m12.6s        
+inject_restore   • [   0% ] waiting      1m12.6s        
+
+running (01m49.0s), 001/185 VUs, 2765 complete and 0 interrupted iterations
+breaker_observer   [  40% ] 0/2 VUs      1m48.4s/4m30s   0.50 iters/s
+cbse_load          [  40% ] 001/150 VUs  1m48.4s/4m30s   20.00 iters/s
+parivahan_probe    [  40% ] 000/030 VUs  1m48.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m11.6s        
+inject_restore   • [   0% ] waiting      1m11.6s        
+
+running (01m50.0s), 001/185 VUs, 2790 complete and 0 interrupted iterations
+breaker_observer   [  41% ] 0/2 VUs      1m49.4s/4m30s   0.50 iters/s
+cbse_load          [  41% ] 001/150 VUs  1m49.4s/4m30s   20.00 iters/s
+parivahan_probe    [  41% ] 000/030 VUs  1m49.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m10.6s        
+inject_restore   • [   0% ] waiting      1m10.6s        
+
+running (01m51.0s), 003/185 VUs, 2814 complete and 0 interrupted iterations
+breaker_observer   [  41% ] 0/2 VUs      1m50.4s/4m30s   0.50 iters/s
+cbse_load          [  41% ] 003/150 VUs  1m50.4s/4m30s   20.00 iters/s
+parivahan_probe    [  41% ] 000/030 VUs  1m50.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m09.6s        
+inject_restore   • [   0% ] waiting      1m09.6s        
+
+running (01m52.0s), 001/185 VUs, 2841 complete and 0 interrupted iterations
+breaker_observer   [  41% ] 0/2 VUs      1m51.4s/4m30s   0.50 iters/s
+cbse_load          [  41% ] 001/150 VUs  1m51.4s/4m30s   20.00 iters/s
+parivahan_probe    [  41% ] 000/030 VUs  1m51.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m08.6s        
+inject_restore   • [   0% ] waiting      1m08.6s        
+
+running (01m53.0s), 001/185 VUs, 2867 complete and 0 interrupted iterations
+breaker_observer   [  42% ] 0/2 VUs      1m52.4s/4m30s   0.50 iters/s
+cbse_load          [  42% ] 001/150 VUs  1m52.4s/4m30s   20.00 iters/s
+parivahan_probe    [  42% ] 000/030 VUs  1m52.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m07.6s        
+inject_restore   • [   0% ] waiting      1m07.6s        
+
+running (01m54.0s), 002/185 VUs, 2891 complete and 0 interrupted iterations
+breaker_observer   [  42% ] 0/2 VUs      1m53.4s/4m30s   0.50 iters/s
+cbse_load          [  42% ] 002/150 VUs  1m53.4s/4m30s   20.00 iters/s
+parivahan_probe    [  42% ] 000/030 VUs  1m53.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m06.6s        
+inject_restore   • [   0% ] waiting      1m06.6s        
+
+running (01m55.0s), 001/185 VUs, 2918 complete and 0 interrupted iterations
+breaker_observer   [  42% ] 0/2 VUs      1m54.4s/4m30s   0.50 iters/s
+cbse_load          [  42% ] 001/150 VUs  1m54.4s/4m30s   20.00 iters/s
+parivahan_probe    [  42% ] 000/030 VUs  1m54.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m05.6s        
+inject_restore   • [   0% ] waiting      1m05.6s        
+
+running (01m56.0s), 001/185 VUs, 2943 complete and 0 interrupted iterations
+breaker_observer   [  43% ] 0/2 VUs      1m55.4s/4m30s   0.50 iters/s
+cbse_load          [  43% ] 001/150 VUs  1m55.4s/4m30s   20.00 iters/s
+parivahan_probe    [  43% ] 000/030 VUs  1m55.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m04.6s        
+inject_restore   • [   0% ] waiting      1m04.6s        
+
+running (01m57.0s), 001/185 VUs, 2969 complete and 0 interrupted iterations
+breaker_observer   [  43% ] 0/2 VUs      1m56.4s/4m30s   0.50 iters/s
+cbse_load          [  43% ] 001/150 VUs  1m56.4s/4m30s   20.00 iters/s
+parivahan_probe    [  43% ] 000/030 VUs  1m56.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m03.6s        
+inject_restore   • [   0% ] waiting      1m03.6s        
+
+running (01m58.0s), 001/185 VUs, 2994 complete and 0 interrupted iterations
+breaker_observer   [  43% ] 0/2 VUs      1m57.4s/4m30s   0.50 iters/s
+cbse_load          [  43% ] 001/150 VUs  1m57.4s/4m30s   20.00 iters/s
+parivahan_probe    [  43% ] 000/030 VUs  1m57.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m02.6s        
+inject_restore   • [   0% ] waiting      1m02.6s        
+
+running (01m59.0s), 001/185 VUs, 3020 complete and 0 interrupted iterations
+breaker_observer   [  44% ] 0/2 VUs      1m58.4s/4m30s   0.50 iters/s
+cbse_load          [  44% ] 001/150 VUs  1m58.4s/4m30s   20.00 iters/s
+parivahan_probe    [  44% ] 000/030 VUs  1m58.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m01.6s        
+inject_restore   • [   0% ] waiting      1m01.6s        
+
+running (02m00.0s), 001/185 VUs, 3045 complete and 0 interrupted iterations
+breaker_observer   [  44% ] 0/2 VUs      1m59.4s/4m30s   0.50 iters/s
+cbse_load          [  44% ] 001/150 VUs  1m59.4s/4m30s   20.00 iters/s
+parivahan_probe    [  44% ] 000/030 VUs  1m59.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      • [   0% ] waiting      0m00.6s        
+inject_restore   • [   0% ] waiting      1m00.6s        
+
+running (02m01.0s), 001/185 VUs, 3072 complete and 0 interrupted iterations
+breaker_observer   [  45% ] 0/2 VUs      2m00.4s/4m30s   0.50 iters/s
+cbse_load          [  45% ] 001/150 VUs  2m00.4s/4m30s   20.00 iters/s
+parivahan_probe    [  45% ] 000/030 VUs  2m00.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m59.6s        
+
+running (02m02.0s), 001/185 VUs, 3097 complete and 0 interrupted iterations
+breaker_observer   [  45% ] 0/2 VUs      2m01.4s/4m30s   0.50 iters/s
+cbse_load          [  45% ] 001/150 VUs  2m01.4s/4m30s   20.00 iters/s
+parivahan_probe    [  45% ] 000/030 VUs  2m01.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m58.6s        
+
+running (02m03.0s), 001/185 VUs, 3123 complete and 0 interrupted iterations
+breaker_observer   [  45% ] 0/2 VUs      2m02.4s/4m30s   0.50 iters/s
+cbse_load          [  45% ] 001/150 VUs  2m02.4s/4m30s   20.00 iters/s
+parivahan_probe    [  45% ] 000/030 VUs  2m02.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m57.6s        
+
+running (02m04.0s), 001/185 VUs, 3148 complete and 0 interrupted iterations
+breaker_observer   [  46% ] 0/2 VUs      2m03.4s/4m30s   0.50 iters/s
+cbse_load          [  46% ] 001/150 VUs  2m03.4s/4m30s   20.00 iters/s
+parivahan_probe    [  46% ] 000/030 VUs  2m03.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m56.6s        
+
+running (02m05.0s), 001/185 VUs, 3174 complete and 0 interrupted iterations
+breaker_observer   [  46% ] 0/2 VUs      2m04.4s/4m30s   0.50 iters/s
+cbse_load          [  46% ] 001/150 VUs  2m04.4s/4m30s   20.00 iters/s
+parivahan_probe    [  46% ] 000/030 VUs  2m04.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m55.6s        
+
+running (02m06.0s), 002/185 VUs, 3198 complete and 0 interrupted iterations
+breaker_observer   [  46% ] 0/2 VUs      2m05.4s/4m30s   0.50 iters/s
+cbse_load          [  46% ] 002/150 VUs  2m05.4s/4m30s   20.00 iters/s
+parivahan_probe    [  46% ] 000/030 VUs  2m05.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m54.6s        
+
+running (02m07.0s), 002/185 VUs, 3224 complete and 0 interrupted iterations
+breaker_observer   [  47% ] 0/2 VUs      2m06.4s/4m30s   0.50 iters/s
+cbse_load          [  47% ] 002/150 VUs  2m06.4s/4m30s   20.00 iters/s
+parivahan_probe    [  47% ] 000/030 VUs  2m06.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m53.6s        
+
+running (02m08.0s), 001/185 VUs, 3250 complete and 0 interrupted iterations
+breaker_observer   [  47% ] 0/2 VUs      2m07.4s/4m30s   0.50 iters/s
+cbse_load          [  47% ] 001/150 VUs  2m07.4s/4m30s   20.00 iters/s
+parivahan_probe    [  47% ] 000/030 VUs  2m07.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m52.6s        
+
+running (02m09.0s), 001/185 VUs, 3276 complete and 0 interrupted iterations
+breaker_observer   [  48% ] 0/2 VUs      2m08.4s/4m30s   0.50 iters/s
+cbse_load          [  48% ] 001/150 VUs  2m08.4s/4m30s   20.00 iters/s
+parivahan_probe    [  48% ] 000/030 VUs  2m08.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m51.6s        
+
+running (02m10.0s), 001/185 VUs, 3301 complete and 0 interrupted iterations
+breaker_observer   [  48% ] 0/2 VUs      2m09.4s/4m30s   0.50 iters/s
+cbse_load          [  48% ] 001/150 VUs  2m09.4s/4m30s   20.00 iters/s
+parivahan_probe    [  48% ] 000/030 VUs  2m09.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m50.6s        
+
+running (02m11.0s), 001/185 VUs, 3327 complete and 0 interrupted iterations
+breaker_observer   [  48% ] 0/2 VUs      2m10.4s/4m30s   0.50 iters/s
+cbse_load          [  48% ] 001/150 VUs  2m10.4s/4m30s   20.00 iters/s
+parivahan_probe    [  48% ] 000/030 VUs  2m10.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m49.6s        
+
+running (02m12.0s), 007/185 VUs, 3346 complete and 0 interrupted iterations
+breaker_observer   [  49% ] 0/2 VUs      2m11.4s/4m30s   0.50 iters/s
+cbse_load          [  49% ] 006/150 VUs  2m11.4s/4m30s   20.00 iters/s
+parivahan_probe    [  49% ] 001/030 VUs  2m11.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m48.6s        
+
+running (02m13.0s), 018/185 VUs, 3361 complete and 0 interrupted iterations
+breaker_observer   [  49% ] 1/2 VUs      2m12.4s/4m30s   0.50 iters/s
+cbse_load          [  49% ] 014/150 VUs  2m12.4s/4m30s   20.00 iters/s
+parivahan_probe    [  49% ] 003/030 VUs  2m12.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m47.6s        
+
+running (02m14.0s), 018/185 VUs, 3386 complete and 0 interrupted iterations
+breaker_observer   [  49% ] 0/2 VUs      2m13.4s/4m30s   0.50 iters/s
+cbse_load          [  49% ] 015/150 VUs  2m13.4s/4m30s   20.00 iters/s
+parivahan_probe    [  49% ] 003/030 VUs  2m13.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m46.6s        
+
+running (02m15.0s), 005/185 VUs, 3425 complete and 0 interrupted iterations
+breaker_observer   [  50% ] 0/2 VUs      2m14.4s/4m30s   0.50 iters/s
+cbse_load          [  50% ] 004/150 VUs  2m14.4s/4m30s   20.00 iters/s
+parivahan_probe    [  50% ] 001/030 VUs  2m14.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m45.6s        
+
+running (02m16.0s), 002/185 VUs, 3453 complete and 0 interrupted iterations
+breaker_observer   [  50% ] 0/2 VUs      2m15.4s/4m30s   0.50 iters/s
+cbse_load          [  50% ] 002/150 VUs  2m15.4s/4m30s   20.00 iters/s
+parivahan_probe    [  50% ] 000/030 VUs  2m15.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m44.6s        
+
+running (02m17.0s), 001/185 VUs, 3480 complete and 0 interrupted iterations
+breaker_observer   [  51% ] 0/2 VUs      2m16.4s/4m30s   0.50 iters/s
+cbse_load          [  51% ] 001/150 VUs  2m16.4s/4m30s   20.00 iters/s
+parivahan_probe    [  51% ] 000/030 VUs  2m16.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m43.6s        
+
+running (02m18.0s), 001/185 VUs, 3505 complete and 0 interrupted iterations
+breaker_observer   [  51% ] 0/2 VUs      2m17.4s/4m30s   0.50 iters/s
+cbse_load          [  51% ] 001/150 VUs  2m17.4s/4m30s   20.00 iters/s
+parivahan_probe    [  51% ] 000/030 VUs  2m17.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m42.6s        
+
+running (02m19.0s), 001/185 VUs, 3531 complete and 0 interrupted iterations
+breaker_observer   [  51% ] 0/2 VUs      2m18.4s/4m30s   0.50 iters/s
+cbse_load          [  51% ] 001/150 VUs  2m18.4s/4m30s   20.00 iters/s
+parivahan_probe    [  51% ] 000/030 VUs  2m18.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m41.6s        
+
+running (02m20.0s), 001/185 VUs, 3556 complete and 0 interrupted iterations
+breaker_observer   [  52% ] 0/2 VUs      2m19.4s/4m30s   0.50 iters/s
+cbse_load          [  52% ] 001/150 VUs  2m19.4s/4m30s   20.00 iters/s
+parivahan_probe    [  52% ] 000/030 VUs  2m19.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m40.6s        
+
+running (02m21.0s), 001/185 VUs, 3582 complete and 0 interrupted iterations
+breaker_observer   [  52% ] 0/2 VUs      2m20.4s/4m30s   0.50 iters/s
+cbse_load          [  52% ] 001/150 VUs  2m20.4s/4m30s   20.00 iters/s
+parivahan_probe    [  52% ] 000/030 VUs  2m20.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m39.6s        
+
+running (02m22.0s), 001/185 VUs, 3607 complete and 0 interrupted iterations
+breaker_observer   [  52% ] 0/2 VUs      2m21.4s/4m30s   0.50 iters/s
+cbse_load          [  52% ] 001/150 VUs  2m21.4s/4m30s   20.00 iters/s
+parivahan_probe    [  52% ] 000/030 VUs  2m21.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m38.6s        
+
+running (02m23.0s), 001/185 VUs, 3633 complete and 0 interrupted iterations
+breaker_observer   [  53% ] 0/2 VUs      2m22.4s/4m30s   0.50 iters/s
+cbse_load          [  53% ] 001/150 VUs  2m22.4s/4m30s   20.00 iters/s
+parivahan_probe    [  53% ] 000/030 VUs  2m22.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m37.6s        
+
+running (02m24.0s), 001/185 VUs, 3658 complete and 0 interrupted iterations
+breaker_observer   [  53% ] 0/2 VUs      2m23.4s/4m30s   0.50 iters/s
+cbse_load          [  53% ] 001/150 VUs  2m23.4s/4m30s   20.00 iters/s
+parivahan_probe    [  53% ] 000/030 VUs  2m23.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m36.6s        
+
+running (02m25.0s), 002/185 VUs, 3683 complete and 0 interrupted iterations
+breaker_observer   [  53% ] 0/2 VUs      2m24.4s/4m30s   0.50 iters/s
+cbse_load          [  53% ] 002/150 VUs  2m24.4s/4m30s   20.00 iters/s
+parivahan_probe    [  53% ] 000/030 VUs  2m24.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m35.6s        
+
+running (02m26.0s), 001/185 VUs, 3709 complete and 0 interrupted iterations
+breaker_observer   [  54% ] 0/2 VUs      2m25.4s/4m30s   0.50 iters/s
+cbse_load          [  54% ] 001/150 VUs  2m25.4s/4m30s   20.00 iters/s
+parivahan_probe    [  54% ] 000/030 VUs  2m25.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m34.6s        
+
+running (02m27.0s), 001/185 VUs, 3735 complete and 0 interrupted iterations
+breaker_observer   [  54% ] 0/2 VUs      2m26.4s/4m30s   0.50 iters/s
+cbse_load          [  54% ] 001/150 VUs  2m26.4s/4m30s   20.00 iters/s
+parivahan_probe    [  54% ] 000/030 VUs  2m26.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m33.6s        
+
+running (02m28.0s), 001/185 VUs, 3760 complete and 0 interrupted iterations
+breaker_observer   [  55% ] 0/2 VUs      2m27.4s/4m30s   0.50 iters/s
+cbse_load          [  55% ] 001/150 VUs  2m27.4s/4m30s   20.00 iters/s
+parivahan_probe    [  55% ] 000/030 VUs  2m27.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m32.6s        
+
+running (02m29.0s), 001/185 VUs, 3786 complete and 0 interrupted iterations
+breaker_observer   [  55% ] 0/2 VUs      2m28.4s/4m30s   0.50 iters/s
+cbse_load          [  55% ] 001/150 VUs  2m28.4s/4m30s   20.00 iters/s
+parivahan_probe    [  55% ] 000/030 VUs  2m28.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m31.6s        
+
+running (02m30.0s), 001/185 VUs, 3811 complete and 0 interrupted iterations
+breaker_observer   [  55% ] 0/2 VUs      2m29.4s/4m30s   0.50 iters/s
+cbse_load          [  55% ] 001/150 VUs  2m29.4s/4m30s   20.00 iters/s
+parivahan_probe    [  55% ] 000/030 VUs  2m29.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m30.6s        
+
+running (02m31.0s), 001/185 VUs, 3837 complete and 0 interrupted iterations
+breaker_observer   [  56% ] 0/2 VUs      2m30.4s/4m30s   0.50 iters/s
+cbse_load          [  56% ] 001/150 VUs  2m30.4s/4m30s   20.00 iters/s
+parivahan_probe    [  56% ] 000/030 VUs  2m30.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m29.6s        
+
+running (02m32.0s), 001/185 VUs, 3862 complete and 0 interrupted iterations
+breaker_observer   [  56% ] 0/2 VUs      2m31.4s/4m30s   0.50 iters/s
+cbse_load          [  56% ] 001/150 VUs  2m31.4s/4m30s   20.00 iters/s
+parivahan_probe    [  56% ] 000/030 VUs  2m31.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m28.6s        
+
+running (02m33.0s), 002/185 VUs, 3887 complete and 0 interrupted iterations
+breaker_observer   [  56% ] 0/2 VUs      2m32.4s/4m30s   0.50 iters/s
+cbse_load          [  56% ] 002/150 VUs  2m32.4s/4m30s   20.00 iters/s
+parivahan_probe    [  56% ] 000/030 VUs  2m32.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m27.6s        
+
+running (02m34.0s), 001/185 VUs, 3913 complete and 0 interrupted iterations
+breaker_observer   [  57% ] 0/2 VUs      2m33.4s/4m30s   0.50 iters/s
+cbse_load          [  57% ] 001/150 VUs  2m33.4s/4m30s   20.00 iters/s
+parivahan_probe    [  57% ] 000/030 VUs  2m33.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m26.6s        
+
+running (02m35.0s), 002/185 VUs, 3938 complete and 0 interrupted iterations
+breaker_observer   [  57% ] 0/2 VUs      2m34.4s/4m30s   0.50 iters/s
+cbse_load          [  57% ] 002/150 VUs  2m34.4s/4m30s   20.00 iters/s
+parivahan_probe    [  57% ] 000/030 VUs  2m34.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m25.6s        
+
+running (02m36.0s), 001/185 VUs, 3964 complete and 0 interrupted iterations
+breaker_observer   [  58% ] 0/2 VUs      2m35.4s/4m30s   0.50 iters/s
+cbse_load          [  58% ] 001/150 VUs  2m35.4s/4m30s   20.00 iters/s
+parivahan_probe    [  58% ] 000/030 VUs  2m35.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m24.6s        
+
+running (02m37.0s), 002/185 VUs, 3989 complete and 0 interrupted iterations
+breaker_observer   [  58% ] 0/2 VUs      2m36.4s/4m30s   0.50 iters/s
+cbse_load          [  58% ] 002/150 VUs  2m36.4s/4m30s   20.00 iters/s
+parivahan_probe    [  58% ] 000/030 VUs  2m36.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m23.6s        
+
+running (02m38.0s), 001/185 VUs, 4015 complete and 0 interrupted iterations
+breaker_observer   [  58% ] 0/2 VUs      2m37.4s/4m30s   0.50 iters/s
+cbse_load          [  58% ] 001/150 VUs  2m37.4s/4m30s   20.00 iters/s
+parivahan_probe    [  58% ] 000/030 VUs  2m37.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m22.6s        
+
+running (02m39.0s), 001/185 VUs, 4041 complete and 0 interrupted iterations
+breaker_observer   [  59% ] 0/2 VUs      2m38.4s/4m30s   0.50 iters/s
+cbse_load          [  59% ] 001/150 VUs  2m38.4s/4m30s   20.00 iters/s
+parivahan_probe    [  59% ] 000/030 VUs  2m38.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m21.6s        
+
+running (02m40.0s), 001/185 VUs, 4066 complete and 0 interrupted iterations
+breaker_observer   [  59% ] 0/2 VUs      2m39.4s/4m30s   0.50 iters/s
+cbse_load          [  59% ] 001/150 VUs  2m39.4s/4m30s   20.00 iters/s
+parivahan_probe    [  59% ] 000/030 VUs  2m39.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m20.6s        
+
+running (02m41.0s), 001/185 VUs, 4092 complete and 0 interrupted iterations
+breaker_observer   [  59% ] 0/2 VUs      2m40.4s/4m30s   0.50 iters/s
+cbse_load          [  59% ] 001/150 VUs  2m40.4s/4m30s   20.00 iters/s
+parivahan_probe    [  59% ] 000/030 VUs  2m40.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m19.6s        
+
+running (02m42.0s), 002/185 VUs, 4116 complete and 0 interrupted iterations
+breaker_observer   [  60% ] 0/2 VUs      2m41.4s/4m30s   0.50 iters/s
+cbse_load          [  60% ] 002/150 VUs  2m41.4s/4m30s   20.00 iters/s
+parivahan_probe    [  60% ] 000/030 VUs  2m41.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m18.6s        
+
+running (02m43.0s), 001/185 VUs, 4143 complete and 0 interrupted iterations
+breaker_observer   [  60% ] 0/2 VUs      2m42.4s/4m30s   0.50 iters/s
+cbse_load          [  60% ] 001/150 VUs  2m42.4s/4m30s   20.00 iters/s
+parivahan_probe    [  60% ] 000/030 VUs  2m42.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m17.6s        
+
+running (02m44.0s), 001/185 VUs, 4168 complete and 0 interrupted iterations
+breaker_observer   [  61% ] 0/2 VUs      2m43.4s/4m30s   0.50 iters/s
+cbse_load          [  61% ] 001/150 VUs  2m43.4s/4m30s   20.00 iters/s
+parivahan_probe    [  61% ] 000/030 VUs  2m43.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m16.6s        
+
+running (02m45.0s), 001/185 VUs, 4194 complete and 0 interrupted iterations
+breaker_observer   [  61% ] 0/2 VUs      2m44.4s/4m30s   0.50 iters/s
+cbse_load          [  61% ] 001/150 VUs  2m44.4s/4m30s   20.00 iters/s
+parivahan_probe    [  61% ] 000/030 VUs  2m44.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m15.6s        
+
+running (02m46.0s), 001/185 VUs, 4219 complete and 0 interrupted iterations
+breaker_observer   [  61% ] 0/2 VUs      2m45.4s/4m30s   0.50 iters/s
+cbse_load          [  61% ] 001/150 VUs  2m45.4s/4m30s   20.00 iters/s
+parivahan_probe    [  61% ] 000/030 VUs  2m45.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m14.6s        
+
+running (02m47.0s), 001/185 VUs, 4245 complete and 0 interrupted iterations
+breaker_observer   [  62% ] 0/2 VUs      2m46.4s/4m30s   0.50 iters/s
+cbse_load          [  62% ] 001/150 VUs  2m46.4s/4m30s   20.00 iters/s
+parivahan_probe    [  62% ] 000/030 VUs  2m46.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m13.6s        
+
+running (02m48.0s), 005/185 VUs, 4266 complete and 0 interrupted iterations
+breaker_observer   [  62% ] 0/2 VUs      2m47.4s/4m30s   0.50 iters/s
+cbse_load          [  62% ] 004/150 VUs  2m47.4s/4m30s   20.00 iters/s
+parivahan_probe    [  62% ] 001/030 VUs  2m47.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m12.6s        
+
+running (02m49.0s), 017/185 VUs, 4280 complete and 0 interrupted iterations
+breaker_observer   [  62% ] 1/2 VUs      2m48.4s/4m30s   0.50 iters/s
+cbse_load          [  62% ] 013/150 VUs  2m48.4s/4m30s   20.00 iters/s
+parivahan_probe    [  62% ] 003/030 VUs  2m48.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m11.6s        
+
+running (02m50.0s), 012/185 VUs, 4310 complete and 0 interrupted iterations
+breaker_observer   [  63% ] 0/2 VUs      2m49.4s/4m30s   0.50 iters/s
+cbse_load          [  63% ] 010/150 VUs  2m49.4s/4m30s   20.00 iters/s
+parivahan_probe    [  63% ] 002/030 VUs  2m49.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m10.6s        
+
+running (02m51.0s), 005/185 VUs, 4343 complete and 0 interrupted iterations
+breaker_observer   [  63% ] 0/2 VUs      2m50.4s/4m30s   0.50 iters/s
+cbse_load          [  63% ] 004/150 VUs  2m50.4s/4m30s   20.00 iters/s
+parivahan_probe    [  63% ] 001/030 VUs  2m50.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m09.6s        
+
+running (02m52.0s), 001/185 VUs, 4372 complete and 0 interrupted iterations
+breaker_observer   [  63% ] 0/2 VUs      2m51.4s/4m30s   0.50 iters/s
+cbse_load          [  63% ] 001/150 VUs  2m51.4s/4m30s   20.00 iters/s
+parivahan_probe    [  63% ] 000/030 VUs  2m51.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m08.6s        
+
+running (02m53.0s), 001/185 VUs, 4398 complete and 0 interrupted iterations
+breaker_observer   [  64% ] 0/2 VUs      2m52.4s/4m30s   0.50 iters/s
+cbse_load          [  64% ] 001/150 VUs  2m52.4s/4m30s   20.00 iters/s
+parivahan_probe    [  64% ] 000/030 VUs  2m52.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m07.6s        
+
+running (02m54.0s), 001/185 VUs, 4423 complete and 0 interrupted iterations
+breaker_observer   [  64% ] 0/2 VUs      2m53.4s/4m30s   0.50 iters/s
+cbse_load          [  64% ] 001/150 VUs  2m53.4s/4m30s   20.00 iters/s
+parivahan_probe    [  64% ] 000/030 VUs  2m53.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m06.6s        
+
+running (02m55.0s), 001/185 VUs, 4449 complete and 0 interrupted iterations
+breaker_observer   [  65% ] 0/2 VUs      2m54.4s/4m30s   0.50 iters/s
+cbse_load          [  65% ] 001/150 VUs  2m54.4s/4m30s   20.00 iters/s
+parivahan_probe    [  65% ] 000/030 VUs  2m54.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m05.6s        
+
+running (02m56.0s), 001/185 VUs, 4474 complete and 0 interrupted iterations
+breaker_observer   [  65% ] 0/2 VUs      2m55.4s/4m30s   0.50 iters/s
+cbse_load          [  65% ] 001/150 VUs  2m55.4s/4m30s   20.00 iters/s
+parivahan_probe    [  65% ] 000/030 VUs  2m55.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m04.6s        
+
+running (02m57.0s), 001/185 VUs, 4500 complete and 0 interrupted iterations
+breaker_observer   [  65% ] 0/2 VUs      2m56.4s/4m30s   0.50 iters/s
+cbse_load          [  65% ] 001/150 VUs  2m56.4s/4m30s   20.00 iters/s
+parivahan_probe    [  65% ] 000/030 VUs  2m56.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m03.6s        
+
+running (02m58.0s), 001/185 VUs, 4525 complete and 0 interrupted iterations
+breaker_observer   [  66% ] 0/2 VUs      2m57.4s/4m30s   0.50 iters/s
+cbse_load          [  66% ] 001/150 VUs  2m57.4s/4m30s   20.00 iters/s
+parivahan_probe    [  66% ] 000/030 VUs  2m57.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m02.6s        
+
+running (02m59.0s), 001/185 VUs, 4551 complete and 0 interrupted iterations
+breaker_observer   [  66% ] 0/2 VUs      2m58.4s/4m30s   0.50 iters/s
+cbse_load          [  66% ] 001/150 VUs  2m58.4s/4m30s   20.00 iters/s
+parivahan_probe    [  66% ] 000/030 VUs  2m58.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m01.6s        
+
+running (03m00.0s), 001/185 VUs, 4576 complete and 0 interrupted iterations
+breaker_observer   [  66% ] 0/2 VUs      2m59.4s/4m30s   0.50 iters/s
+cbse_load          [  66% ] 001/150 VUs  2m59.4s/4m30s   20.00 iters/s
+parivahan_probe    [  66% ] 000/030 VUs  2m59.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   • [   0% ] waiting      0m00.6s        
+
+running (03m01.0s), 002/185 VUs, 4602 complete and 0 interrupted iterations
+breaker_observer   [  67% ] 0/2 VUs      3m00.4s/4m30s   0.50 iters/s
+cbse_load          [  67% ] 002/150 VUs  3m00.4s/4m30s   20.00 iters/s
+parivahan_probe    [  67% ] 000/030 VUs  3m00.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m02.0s), 001/185 VUs, 4628 complete and 0 interrupted iterations
+breaker_observer   [  67% ] 0/2 VUs      3m01.4s/4m30s   0.50 iters/s
+cbse_load          [  67% ] 001/150 VUs  3m01.4s/4m30s   20.00 iters/s
+parivahan_probe    [  67% ] 000/030 VUs  3m01.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m03.0s), 002/185 VUs, 4653 complete and 0 interrupted iterations
+breaker_observer   [  68% ] 0/2 VUs      3m02.4s/4m30s   0.50 iters/s
+cbse_load          [  68% ] 002/150 VUs  3m02.4s/4m30s   20.00 iters/s
+parivahan_probe    [  68% ] 000/030 VUs  3m02.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m04.0s), 001/185 VUs, 4679 complete and 0 interrupted iterations
+breaker_observer   [  68% ] 0/2 VUs      3m03.4s/4m30s   0.50 iters/s
+cbse_load          [  68% ] 001/150 VUs  3m03.4s/4m30s   20.00 iters/s
+parivahan_probe    [  68% ] 000/030 VUs  3m03.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m05.0s), 001/185 VUs, 4705 complete and 0 interrupted iterations
+breaker_observer   [  68% ] 0/2 VUs      3m04.4s/4m30s   0.50 iters/s
+cbse_load          [  68% ] 001/150 VUs  3m04.4s/4m30s   20.00 iters/s
+parivahan_probe    [  68% ] 000/030 VUs  3m04.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m06.0s), 002/185 VUs, 4729 complete and 0 interrupted iterations
+breaker_observer   [  69% ] 0/2 VUs      3m05.4s/4m30s   0.50 iters/s
+cbse_load          [  69% ] 002/150 VUs  3m05.4s/4m30s   20.00 iters/s
+parivahan_probe    [  69% ] 000/030 VUs  3m05.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m07.0s), 002/185 VUs, 4755 complete and 0 interrupted iterations
+breaker_observer   [  69% ] 0/2 VUs      3m06.4s/4m30s   0.50 iters/s
+cbse_load          [  69% ] 002/150 VUs  3m06.4s/4m30s   20.00 iters/s
+parivahan_probe    [  69% ] 000/030 VUs  3m06.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m08.0s), 002/185 VUs, 4780 complete and 0 interrupted iterations
+breaker_observer   [  69% ] 0/2 VUs      3m07.4s/4m30s   0.50 iters/s
+cbse_load          [  69% ] 002/150 VUs  3m07.4s/4m30s   20.00 iters/s
+parivahan_probe    [  69% ] 000/030 VUs  3m07.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m09.0s), 002/185 VUs, 4806 complete and 0 interrupted iterations
+breaker_observer   [  70% ] 0/2 VUs      3m08.4s/4m30s   0.50 iters/s
+cbse_load          [  70% ] 002/150 VUs  3m08.4s/4m30s   20.00 iters/s
+parivahan_probe    [  70% ] 000/030 VUs  3m08.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m10.0s), 002/185 VUs, 4831 complete and 0 interrupted iterations
+breaker_observer   [  70% ] 0/2 VUs      3m09.4s/4m30s   0.50 iters/s
+cbse_load          [  70% ] 002/150 VUs  3m09.4s/4m30s   20.00 iters/s
+parivahan_probe    [  70% ] 000/030 VUs  3m09.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m11.0s), 002/185 VUs, 4857 complete and 0 interrupted iterations
+breaker_observer   [  71% ] 0/2 VUs      3m10.4s/4m30s   0.50 iters/s
+cbse_load          [  71% ] 002/150 VUs  3m10.4s/4m30s   20.00 iters/s
+parivahan_probe    [  71% ] 000/030 VUs  3m10.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m12.0s), 002/185 VUs, 4882 complete and 0 interrupted iterations
+breaker_observer   [  71% ] 0/2 VUs      3m11.4s/4m30s   0.50 iters/s
+cbse_load          [  71% ] 002/150 VUs  3m11.4s/4m30s   20.00 iters/s
+parivahan_probe    [  71% ] 000/030 VUs  3m11.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m13.0s), 001/185 VUs, 4909 complete and 0 interrupted iterations
+breaker_observer   [  71% ] 0/2 VUs      3m12.4s/4m30s   0.50 iters/s
+cbse_load          [  71% ] 001/150 VUs  3m12.4s/4m30s   20.00 iters/s
+parivahan_probe    [  71% ] 000/030 VUs  3m12.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m14.0s), 001/185 VUs, 4934 complete and 0 interrupted iterations
+breaker_observer   [  72% ] 0/2 VUs      3m13.4s/4m30s   0.50 iters/s
+cbse_load          [  72% ] 001/150 VUs  3m13.4s/4m30s   20.00 iters/s
+parivahan_probe    [  72% ] 000/030 VUs  3m13.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m15.0s), 001/185 VUs, 4960 complete and 0 interrupted iterations
+breaker_observer   [  72% ] 0/2 VUs      3m14.4s/4m30s   0.50 iters/s
+cbse_load          [  72% ] 001/150 VUs  3m14.4s/4m30s   20.00 iters/s
+parivahan_probe    [  72% ] 000/030 VUs  3m14.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m16.0s), 001/185 VUs, 4985 complete and 0 interrupted iterations
+breaker_observer   [  72% ] 0/2 VUs      3m15.4s/4m30s   0.50 iters/s
+cbse_load          [  72% ] 001/150 VUs  3m15.4s/4m30s   20.00 iters/s
+parivahan_probe    [  72% ] 000/030 VUs  3m15.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m17.0s), 001/185 VUs, 5011 complete and 0 interrupted iterations
+breaker_observer   [  73% ] 0/2 VUs      3m16.4s/4m30s   0.50 iters/s
+cbse_load          [  73% ] 001/150 VUs  3m16.4s/4m30s   20.00 iters/s
+parivahan_probe    [  73% ] 000/030 VUs  3m16.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m18.0s), 001/185 VUs, 5036 complete and 0 interrupted iterations
+breaker_observer   [  73% ] 0/2 VUs      3m17.4s/4m30s   0.50 iters/s
+cbse_load          [  73% ] 001/150 VUs  3m17.4s/4m30s   20.00 iters/s
+parivahan_probe    [  73% ] 000/030 VUs  3m17.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m19.0s), 002/185 VUs, 5061 complete and 0 interrupted iterations
+breaker_observer   [  73% ] 0/2 VUs      3m18.4s/4m30s   0.50 iters/s
+cbse_load          [  73% ] 002/150 VUs  3m18.4s/4m30s   20.00 iters/s
+parivahan_probe    [  73% ] 000/030 VUs  3m18.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m20.0s), 002/185 VUs, 5086 complete and 0 interrupted iterations
+breaker_observer   [  74% ] 0/2 VUs      3m19.4s/4m30s   0.50 iters/s
+cbse_load          [  74% ] 002/150 VUs  3m19.4s/4m30s   20.00 iters/s
+parivahan_probe    [  74% ] 000/030 VUs  3m19.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m21.0s), 002/185 VUs, 5112 complete and 0 interrupted iterations
+breaker_observer   [  74% ] 0/2 VUs      3m20.4s/4m30s   0.50 iters/s
+cbse_load          [  74% ] 002/150 VUs  3m20.4s/4m30s   20.00 iters/s
+parivahan_probe    [  74% ] 000/030 VUs  3m20.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m22.0s), 001/185 VUs, 5138 complete and 0 interrupted iterations
+breaker_observer   [  75% ] 0/2 VUs      3m21.4s/4m30s   0.50 iters/s
+cbse_load          [  75% ] 001/150 VUs  3m21.4s/4m30s   20.00 iters/s
+parivahan_probe    [  75% ] 000/030 VUs  3m21.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m23.0s), 002/185 VUs, 5163 complete and 0 interrupted iterations
+breaker_observer   [  75% ] 0/2 VUs      3m22.4s/4m30s   0.50 iters/s
+cbse_load          [  75% ] 002/150 VUs  3m22.4s/4m30s   20.00 iters/s
+parivahan_probe    [  75% ] 000/030 VUs  3m22.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m24.0s), 008/185 VUs, 5182 complete and 0 interrupted iterations
+breaker_observer   [  75% ] 0/2 VUs      3m23.4s/4m30s   0.50 iters/s
+cbse_load          [  75% ] 007/150 VUs  3m23.4s/4m30s   20.00 iters/s
+parivahan_probe    [  75% ] 001/030 VUs  3m23.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m25.0s), 006/185 VUs, 5210 complete and 0 interrupted iterations
+breaker_observer   [  76% ] 0/2 VUs      3m24.4s/4m30s   0.50 iters/s
+cbse_load          [  76% ] 005/150 VUs  3m24.4s/4m30s   20.00 iters/s
+parivahan_probe    [  76% ] 001/030 VUs  3m24.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m26.0s), 020/185 VUs, 5221 complete and 0 interrupted iterations
+breaker_observer   [  76% ] 0/2 VUs      3m25.4s/4m30s   0.50 iters/s
+cbse_load          [  76% ] 016/150 VUs  3m25.4s/4m30s   20.00 iters/s
+parivahan_probe    [  76% ] 004/030 VUs  3m25.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m27.0s), 007/185 VUs, 5260 complete and 0 interrupted iterations
+breaker_observer   [  76% ] 0/2 VUs      3m26.4s/4m30s   0.50 iters/s
+cbse_load          [  76% ] 006/150 VUs  3m26.4s/4m30s   20.00 iters/s
+parivahan_probe    [  76% ] 001/030 VUs  3m26.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m28.0s), 003/185 VUs, 5289 complete and 0 interrupted iterations
+breaker_observer   [  77% ] 0/2 VUs      3m27.4s/4m30s   0.50 iters/s
+cbse_load          [  77% ] 003/150 VUs  3m27.4s/4m30s   20.00 iters/s
+parivahan_probe    [  77% ] 000/030 VUs  3m27.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m29.0s), 002/185 VUs, 5316 complete and 0 interrupted iterations
+breaker_observer   [  77% ] 0/2 VUs      3m28.4s/4m30s   0.50 iters/s
+cbse_load          [  77% ] 002/150 VUs  3m28.4s/4m30s   20.00 iters/s
+parivahan_probe    [  77% ] 000/030 VUs  3m28.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m30.0s), 002/185 VUs, 5341 complete and 0 interrupted iterations
+breaker_observer   [  78% ] 0/2 VUs      3m29.4s/4m30s   0.50 iters/s
+cbse_load          [  78% ] 002/150 VUs  3m29.4s/4m30s   20.00 iters/s
+parivahan_probe    [  78% ] 000/030 VUs  3m29.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m31.0s), 002/185 VUs, 5367 complete and 0 interrupted iterations
+breaker_observer   [  78% ] 0/2 VUs      3m30.4s/4m30s   0.50 iters/s
+cbse_load          [  78% ] 002/150 VUs  3m30.4s/4m30s   20.00 iters/s
+parivahan_probe    [  78% ] 000/030 VUs  3m30.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m32.0s), 002/185 VUs, 5392 complete and 0 interrupted iterations
+breaker_observer   [  78% ] 0/2 VUs      3m31.4s/4m30s   0.50 iters/s
+cbse_load          [  78% ] 002/150 VUs  3m31.4s/4m30s   20.00 iters/s
+parivahan_probe    [  78% ] 000/030 VUs  3m31.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m33.0s), 002/185 VUs, 5418 complete and 0 interrupted iterations
+breaker_observer   [  79% ] 0/2 VUs      3m32.4s/4m30s   0.50 iters/s
+cbse_load          [  79% ] 002/150 VUs  3m32.4s/4m30s   20.00 iters/s
+parivahan_probe    [  79% ] 000/030 VUs  3m32.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m34.0s), 002/185 VUs, 5443 complete and 0 interrupted iterations
+breaker_observer   [  79% ] 0/2 VUs      3m33.4s/4m30s   0.50 iters/s
+cbse_load          [  79% ] 002/150 VUs  3m33.4s/4m30s   20.00 iters/s
+parivahan_probe    [  79% ] 000/030 VUs  3m33.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m35.0s), 002/185 VUs, 5469 complete and 0 interrupted iterations
+breaker_observer   [  79% ] 0/2 VUs      3m34.4s/4m30s   0.50 iters/s
+cbse_load          [  79% ] 002/150 VUs  3m34.4s/4m30s   20.00 iters/s
+parivahan_probe    [  79% ] 000/030 VUs  3m34.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m36.0s), 001/185 VUs, 5495 complete and 0 interrupted iterations
+breaker_observer   [  80% ] 0/2 VUs      3m35.4s/4m30s   0.50 iters/s
+cbse_load          [  80% ] 001/150 VUs  3m35.4s/4m30s   20.00 iters/s
+parivahan_probe    [  80% ] 000/030 VUs  3m35.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m37.0s), 001/185 VUs, 5521 complete and 0 interrupted iterations
+breaker_observer   [  80% ] 0/2 VUs      3m36.4s/4m30s   0.50 iters/s
+cbse_load          [  80% ] 001/150 VUs  3m36.4s/4m30s   20.00 iters/s
+parivahan_probe    [  80% ] 000/030 VUs  3m36.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m38.0s), 002/185 VUs, 5545 complete and 0 interrupted iterations
+breaker_observer   [  81% ] 0/2 VUs      3m37.4s/4m30s   0.50 iters/s
+cbse_load          [  81% ] 002/150 VUs  3m37.4s/4m30s   20.00 iters/s
+parivahan_probe    [  81% ] 000/030 VUs  3m37.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m39.0s), 002/185 VUs, 5571 complete and 0 interrupted iterations
+breaker_observer   [  81% ] 0/2 VUs      3m38.4s/4m30s   0.50 iters/s
+cbse_load          [  81% ] 002/150 VUs  3m38.4s/4m30s   20.00 iters/s
+parivahan_probe    [  81% ] 000/030 VUs  3m38.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m40.0s), 002/185 VUs, 5596 complete and 0 interrupted iterations
+breaker_observer   [  81% ] 0/2 VUs      3m39.4s/4m30s   0.50 iters/s
+cbse_load          [  81% ] 002/150 VUs  3m39.4s/4m30s   20.00 iters/s
+parivahan_probe    [  81% ] 000/030 VUs  3m39.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m41.0s), 002/185 VUs, 5622 complete and 0 interrupted iterations
+breaker_observer   [  82% ] 0/2 VUs      3m40.4s/4m30s   0.50 iters/s
+cbse_load          [  82% ] 002/150 VUs  3m40.4s/4m30s   20.00 iters/s
+parivahan_probe    [  82% ] 000/030 VUs  3m40.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m42.0s), 001/185 VUs, 5648 complete and 0 interrupted iterations
+breaker_observer   [  82% ] 0/2 VUs      3m41.4s/4m30s   0.50 iters/s
+cbse_load          [  82% ] 001/150 VUs  3m41.4s/4m30s   20.00 iters/s
+parivahan_probe    [  82% ] 000/030 VUs  3m41.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m43.0s), 002/185 VUs, 5673 complete and 0 interrupted iterations
+breaker_observer   [  82% ] 0/2 VUs      3m42.4s/4m30s   0.50 iters/s
+cbse_load          [  82% ] 002/150 VUs  3m42.4s/4m30s   20.00 iters/s
+parivahan_probe    [  82% ] 000/030 VUs  3m42.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m44.0s), 001/185 VUs, 5699 complete and 0 interrupted iterations
+breaker_observer   [  83% ] 0/2 VUs      3m43.4s/4m30s   0.50 iters/s
+cbse_load          [  83% ] 001/150 VUs  3m43.4s/4m30s   20.00 iters/s
+parivahan_probe    [  83% ] 000/030 VUs  3m43.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m45.0s), 002/185 VUs, 5724 complete and 0 interrupted iterations
+breaker_observer   [  83% ] 0/2 VUs      3m44.4s/4m30s   0.50 iters/s
+cbse_load          [  83% ] 002/150 VUs  3m44.4s/4m30s   20.00 iters/s
+parivahan_probe    [  83% ] 000/030 VUs  3m44.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m46.0s), 002/185 VUs, 5749 complete and 0 interrupted iterations
+breaker_observer   [  83% ] 0/2 VUs      3m45.4s/4m30s   0.50 iters/s
+cbse_load          [  83% ] 002/150 VUs  3m45.4s/4m30s   20.00 iters/s
+parivahan_probe    [  83% ] 000/030 VUs  3m45.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m47.0s), 002/185 VUs, 5775 complete and 0 interrupted iterations
+breaker_observer   [  84% ] 0/2 VUs      3m46.4s/4m30s   0.50 iters/s
+cbse_load          [  84% ] 002/150 VUs  3m46.4s/4m30s   20.00 iters/s
+parivahan_probe    [  84% ] 000/030 VUs  3m46.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m48.0s), 002/185 VUs, 5800 complete and 0 interrupted iterations
+breaker_observer   [  84% ] 0/2 VUs      3m47.4s/4m30s   0.50 iters/s
+cbse_load          [  84% ] 002/150 VUs  3m47.4s/4m30s   20.00 iters/s
+parivahan_probe    [  84% ] 000/030 VUs  3m47.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m49.0s), 001/185 VUs, 5827 complete and 0 interrupted iterations
+breaker_observer   [  85% ] 0/2 VUs      3m48.4s/4m30s   0.50 iters/s
+cbse_load          [  85% ] 001/150 VUs  3m48.4s/4m30s   20.00 iters/s
+parivahan_probe    [  85% ] 000/030 VUs  3m48.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m50.0s), 001/185 VUs, 5852 complete and 0 interrupted iterations
+breaker_observer   [  85% ] 0/2 VUs      3m49.4s/4m30s   0.50 iters/s
+cbse_load          [  85% ] 001/150 VUs  3m49.4s/4m30s   20.00 iters/s
+parivahan_probe    [  85% ] 000/030 VUs  3m49.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m51.0s), 002/185 VUs, 5877 complete and 0 interrupted iterations
+breaker_observer   [  85% ] 0/2 VUs      3m50.4s/4m30s   0.50 iters/s
+cbse_load          [  85% ] 002/150 VUs  3m50.4s/4m30s   20.00 iters/s
+parivahan_probe    [  85% ] 000/030 VUs  3m50.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m52.0s), 002/185 VUs, 5902 complete and 0 interrupted iterations
+breaker_observer   [  86% ] 0/2 VUs      3m51.4s/4m30s   0.50 iters/s
+cbse_load          [  86% ] 002/150 VUs  3m51.4s/4m30s   20.00 iters/s
+parivahan_probe    [  86% ] 000/030 VUs  3m51.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m53.0s), 001/185 VUs, 5929 complete and 0 interrupted iterations
+breaker_observer   [  86% ] 0/2 VUs      3m52.4s/4m30s   0.50 iters/s
+cbse_load          [  86% ] 001/150 VUs  3m52.4s/4m30s   20.00 iters/s
+parivahan_probe    [  86% ] 000/030 VUs  3m52.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m54.0s), 002/185 VUs, 5953 complete and 0 interrupted iterations
+breaker_observer   [  86% ] 0/2 VUs      3m53.4s/4m30s   0.50 iters/s
+cbse_load          [  86% ] 002/150 VUs  3m53.4s/4m30s   20.00 iters/s
+parivahan_probe    [  86% ] 000/030 VUs  3m53.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m55.0s), 002/185 VUs, 5979 complete and 0 interrupted iterations
+breaker_observer   [  87% ] 0/2 VUs      3m54.4s/4m30s   0.50 iters/s
+cbse_load          [  87% ] 002/150 VUs  3m54.4s/4m30s   20.00 iters/s
+parivahan_probe    [  87% ] 000/030 VUs  3m54.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m56.0s), 002/185 VUs, 6004 complete and 0 interrupted iterations
+breaker_observer   [  87% ] 0/2 VUs      3m55.4s/4m30s   0.50 iters/s
+cbse_load          [  87% ] 002/150 VUs  3m55.4s/4m30s   20.00 iters/s
+parivahan_probe    [  87% ] 000/030 VUs  3m55.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m57.0s), 002/185 VUs, 6030 complete and 0 interrupted iterations
+breaker_observer   [  88% ] 0/2 VUs      3m56.4s/4m30s   0.50 iters/s
+cbse_load          [  88% ] 002/150 VUs  3m56.4s/4m30s   20.00 iters/s
+parivahan_probe    [  88% ] 000/030 VUs  3m56.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m58.0s), 006/185 VUs, 6051 complete and 0 interrupted iterations
+breaker_observer   [  88% ] 0/2 VUs      3m57.4s/4m30s   0.50 iters/s
+cbse_load          [  88% ] 005/150 VUs  3m57.4s/4m30s   20.00 iters/s
+parivahan_probe    [  88% ] 001/030 VUs  3m57.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (03m59.0s), 014/185 VUs, 6069 complete and 0 interrupted iterations
+breaker_observer   [  88% ] 1/2 VUs      3m58.4s/4m30s   0.50 iters/s
+cbse_load          [  88% ] 011/150 VUs  3m58.4s/4m30s   20.00 iters/s
+parivahan_probe    [  88% ] 002/030 VUs  3m58.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m00.0s), 039/185 VUs, 6069 complete and 0 interrupted iterations
+breaker_observer   [  89% ] 1/2 VUs      3m59.4s/4m30s   0.50 iters/s
+cbse_load          [  89% ] 031/150 VUs  3m59.4s/4m30s   20.00 iters/s
+parivahan_probe    [  89% ] 007/030 VUs  3m59.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m01.0s), 007/185 VUs, 6127 complete and 0 interrupted iterations
+breaker_observer   [  89% ] 0/2 VUs      4m00.4s/4m30s   0.50 iters/s
+cbse_load          [  89% ] 006/150 VUs  4m00.4s/4m30s   20.00 iters/s
+parivahan_probe    [  89% ] 001/030 VUs  4m00.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m02.0s), 002/185 VUs, 6157 complete and 0 interrupted iterations
+breaker_observer   [  89% ] 0/2 VUs      4m01.4s/4m30s   0.50 iters/s
+cbse_load          [  89% ] 002/150 VUs  4m01.4s/4m30s   20.00 iters/s
+parivahan_probe    [  89% ] 000/030 VUs  4m01.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m03.0s), 001/185 VUs, 6184 complete and 0 interrupted iterations
+breaker_observer   [  90% ] 0/2 VUs      4m02.4s/4m30s   0.50 iters/s
+cbse_load          [  90% ] 001/150 VUs  4m02.4s/4m30s   20.00 iters/s
+parivahan_probe    [  90% ] 000/030 VUs  4m02.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m04.0s), 002/185 VUs, 6208 complete and 0 interrupted iterations
+breaker_observer   [  90% ] 0/2 VUs      4m03.4s/4m30s   0.50 iters/s
+cbse_load          [  90% ] 002/150 VUs  4m03.4s/4m30s   20.00 iters/s
+parivahan_probe    [  90% ] 000/030 VUs  4m03.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m05.0s), 002/185 VUs, 6234 complete and 0 interrupted iterations
+breaker_observer   [  91% ] 0/2 VUs      4m04.4s/4m30s   0.50 iters/s
+cbse_load          [  91% ] 002/150 VUs  4m04.4s/4m30s   20.00 iters/s
+parivahan_probe    [  91% ] 000/030 VUs  4m04.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m06.0s), 002/185 VUs, 6259 complete and 0 interrupted iterations
+breaker_observer   [  91% ] 0/2 VUs      4m05.4s/4m30s   0.50 iters/s
+cbse_load          [  91% ] 002/150 VUs  4m05.4s/4m30s   20.00 iters/s
+parivahan_probe    [  91% ] 000/030 VUs  4m05.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m07.0s), 002/185 VUs, 6285 complete and 0 interrupted iterations
+breaker_observer   [  91% ] 0/2 VUs      4m06.4s/4m30s   0.50 iters/s
+cbse_load          [  91% ] 002/150 VUs  4m06.4s/4m30s   20.00 iters/s
+parivahan_probe    [  91% ] 000/030 VUs  4m06.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m08.0s), 001/185 VUs, 6311 complete and 0 interrupted iterations
+breaker_observer   [  92% ] 0/2 VUs      4m07.4s/4m30s   0.50 iters/s
+cbse_load          [  92% ] 001/150 VUs  4m07.4s/4m30s   20.00 iters/s
+parivahan_probe    [  92% ] 000/030 VUs  4m07.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m09.0s), 001/185 VUs, 6337 complete and 0 interrupted iterations
+breaker_observer   [  92% ] 0/2 VUs      4m08.4s/4m30s   0.50 iters/s
+cbse_load          [  92% ] 001/150 VUs  4m08.4s/4m30s   20.00 iters/s
+parivahan_probe    [  92% ] 000/030 VUs  4m08.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m10.0s), 002/185 VUs, 6361 complete and 0 interrupted iterations
+breaker_observer   [  92% ] 0/2 VUs      4m09.4s/4m30s   0.50 iters/s
+cbse_load          [  92% ] 002/150 VUs  4m09.4s/4m30s   20.00 iters/s
+parivahan_probe    [  92% ] 000/030 VUs  4m09.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m11.0s), 002/185 VUs, 6387 complete and 0 interrupted iterations
+breaker_observer   [  93% ] 0/2 VUs      4m10.4s/4m30s   0.50 iters/s
+cbse_load          [  93% ] 002/150 VUs  4m10.4s/4m30s   20.00 iters/s
+parivahan_probe    [  93% ] 000/030 VUs  4m10.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m12.0s), 002/185 VUs, 6412 complete and 0 interrupted iterations
+breaker_observer   [  93% ] 0/2 VUs      4m11.4s/4m30s   0.50 iters/s
+cbse_load          [  93% ] 002/150 VUs  4m11.4s/4m30s   20.00 iters/s
+parivahan_probe    [  93% ] 000/030 VUs  4m11.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m13.0s), 001/185 VUs, 6439 complete and 0 interrupted iterations
+breaker_observer   [  93% ] 0/2 VUs      4m12.4s/4m30s   0.50 iters/s
+cbse_load          [  93% ] 001/150 VUs  4m12.4s/4m30s   20.00 iters/s
+parivahan_probe    [  93% ] 000/030 VUs  4m12.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m14.0s), 002/185 VUs, 6463 complete and 0 interrupted iterations
+breaker_observer   [  94% ] 0/2 VUs      4m13.4s/4m30s   0.50 iters/s
+cbse_load          [  94% ] 002/150 VUs  4m13.4s/4m30s   20.00 iters/s
+parivahan_probe    [  94% ] 000/030 VUs  4m13.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m15.0s), 002/185 VUs, 6489 complete and 0 interrupted iterations
+breaker_observer   [  94% ] 0/2 VUs      4m14.4s/4m30s   0.50 iters/s
+cbse_load          [  94% ] 002/150 VUs  4m14.4s/4m30s   20.00 iters/s
+parivahan_probe    [  94% ] 000/030 VUs  4m14.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m16.0s), 002/185 VUs, 6514 complete and 0 interrupted iterations
+breaker_observer   [  95% ] 0/2 VUs      4m15.4s/4m30s   0.50 iters/s
+cbse_load          [  95% ] 002/150 VUs  4m15.4s/4m30s   20.00 iters/s
+parivahan_probe    [  95% ] 000/030 VUs  4m15.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m17.0s), 002/185 VUs, 6540 complete and 0 interrupted iterations
+breaker_observer   [  95% ] 0/2 VUs      4m16.4s/4m30s   0.50 iters/s
+cbse_load          [  95% ] 002/150 VUs  4m16.4s/4m30s   20.00 iters/s
+parivahan_probe    [  95% ] 000/030 VUs  4m16.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m18.0s), 003/185 VUs, 6564 complete and 0 interrupted iterations
+breaker_observer   [  95% ] 0/2 VUs      4m17.4s/4m30s   0.50 iters/s
+cbse_load          [  95% ] 003/150 VUs  4m17.4s/4m30s   20.00 iters/s
+parivahan_probe    [  95% ] 000/030 VUs  4m17.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m19.0s), 005/185 VUs, 6588 complete and 0 interrupted iterations
+breaker_observer   [  96% ] 0/2 VUs      4m18.4s/4m30s   0.50 iters/s
+cbse_load          [  96% ] 004/150 VUs  4m18.4s/4m30s   20.00 iters/s
+parivahan_probe    [  96% ] 001/030 VUs  4m18.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m20.0s), 006/185 VUs, 6612 complete and 0 interrupted iterations
+breaker_observer   [  96% ] 0/2 VUs      4m19.4s/4m30s   0.50 iters/s
+cbse_load          [  96% ] 005/150 VUs  4m19.4s/4m30s   20.00 iters/s
+parivahan_probe    [  96% ] 001/030 VUs  4m19.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m21.0s), 006/185 VUs, 6638 complete and 0 interrupted iterations
+breaker_observer   [  96% ] 0/2 VUs      4m20.4s/4m30s   0.50 iters/s
+cbse_load          [  96% ] 005/150 VUs  4m20.4s/4m30s   20.00 iters/s
+parivahan_probe    [  96% ] 001/030 VUs  4m20.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m22.0s), 005/185 VUs, 6664 complete and 0 interrupted iterations
+breaker_observer   [  97% ] 0/2 VUs      4m21.4s/4m30s   0.50 iters/s
+cbse_load          [  97% ] 004/150 VUs  4m21.4s/4m30s   20.00 iters/s
+parivahan_probe    [  97% ] 001/030 VUs  4m21.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m23.0s), 006/185 VUs, 6689 complete and 0 interrupted iterations
+breaker_observer   [  97% ] 0/2 VUs      4m22.4s/4m30s   0.50 iters/s
+cbse_load          [  97% ] 005/150 VUs  4m22.4s/4m30s   20.00 iters/s
+parivahan_probe    [  97% ] 001/030 VUs  4m22.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m24.0s), 002/185 VUs, 6718 complete and 0 interrupted iterations
+breaker_observer   [  98% ] 0/2 VUs      4m23.4s/4m30s   0.50 iters/s
+cbse_load          [  98% ] 002/150 VUs  4m23.4s/4m30s   20.00 iters/s
+parivahan_probe    [  98% ] 000/030 VUs  4m23.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m25.0s), 002/185 VUs, 6744 complete and 0 interrupted iterations
+breaker_observer   [  98% ] 0/2 VUs      4m24.4s/4m30s   0.50 iters/s
+cbse_load          [  98% ] 002/150 VUs  4m24.4s/4m30s   20.00 iters/s
+parivahan_probe    [  98% ] 000/030 VUs  4m24.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m26.0s), 001/185 VUs, 6770 complete and 0 interrupted iterations
+breaker_observer   [  98% ] 0/2 VUs      4m25.4s/4m30s   0.50 iters/s
+cbse_load          [  98% ] 001/150 VUs  4m25.4s/4m30s   20.00 iters/s
+parivahan_probe    [  98% ] 000/030 VUs  4m25.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m27.0s), 002/185 VUs, 6795 complete and 0 interrupted iterations
+breaker_observer   [  99% ] 0/2 VUs      4m26.4s/4m30s   0.50 iters/s
+cbse_load          [  99% ] 002/150 VUs  4m26.4s/4m30s   20.00 iters/s
+parivahan_probe    [  99% ] 000/030 VUs  4m26.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m28.0s), 002/185 VUs, 6820 complete and 0 interrupted iterations
+breaker_observer   [  99% ] 0/2 VUs      4m27.4s/4m30s   0.50 iters/s
+cbse_load          [  99% ] 002/150 VUs  4m27.4s/4m30s   20.00 iters/s
+parivahan_probe    [  99% ] 000/030 VUs  4m27.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m29.0s), 002/185 VUs, 6846 complete and 0 interrupted iterations
+breaker_observer   [  99% ] 0/2 VUs      4m28.4s/4m30s   0.50 iters/s
+cbse_load          [  99% ] 002/150 VUs  4m28.4s/4m30s   20.00 iters/s
+parivahan_probe    [  99% ] 000/030 VUs  4m28.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m30.0s), 002/185 VUs, 6871 complete and 0 interrupted iterations
+breaker_observer   [ 100% ] 0/2 VUs      4m29.4s/4m30s   0.50 iters/s
+cbse_load          [ 100% ] 002/150 VUs  4m29.4s/4m30s   20.00 iters/s
+parivahan_probe    [ 100% ] 000/030 VUs  4m29.4s/4m30s   5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+
+running (04m31.0s), 000/185 VUs, 6889 complete and 0 interrupted iterations
+breaker_observer ✓ [ 100% ] 0/2 VUs      4m30s           0.50 iters/s
+cbse_load        ✓ [ 100% ] 000/150 VUs  4m30s           20.00 iters/s
+parivahan_probe  ✓ [ 100% ] 000/030 VUs  4m30s           5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+     data_received...........................: 2.9 MB  11 kB/s
+     data_sent...............................: 1.3 MB  4.7 kB/s
+     http_req_blocked........................: avg=1.08ms   min=0s      med=0s      p(90)=0s       p(95)=0s       p(99)=36.92ms  max=171.01ms
+     http_req_connecting.....................: avg=1.06ms   min=0s      med=0s      p(90)=0s       p(95)=0s       p(99)=36.44ms  max=136.71ms
+     http_req_duration.......................: avg=101.5ms  min=21.02ms med=65.2ms  p(90)=146.72ms p(95)=302.81ms p(99)=929.46ms max=3.16s   
+       { expected_response:true }............: avg=101.5ms  min=21.02ms med=65.2ms  p(90)=146.72ms p(95)=302.81ms p(99)=929.46ms max=3.16s   
+     ✓ { issuer:CBSE,phase:baseline }........: avg=64.39ms  min=49.48ms med=63.04ms p(90)=73.04ms  p(95)=78.78ms  p(99)=91.43ms  max=152.05ms
+     ✓ { issuer:CBSE,phase:down }............: avg=97.22ms  min=21.02ms med=48.45ms p(90)=267.24ms p(95)=422.22ms p(99)=725.7ms  max=1.07s   
+     ✓ { issuer:CBSE,phase:recovery }........: avg=112.09ms min=29.95ms med=72.57ms p(90)=200.65ms p(95)=302.46ms p(99)=746.01ms max=1.52s   
+     ✓ { issuer:CBSE,phase:slow }............: avg=104.32ms min=23.81ms med=50.99ms p(90)=112.01ms p(95)=263.23ms p(99)=1.54s    max=3.16s   
+     ✓ { issuer:PARIVAHAN,phase:baseline }...: avg=65.05ms  min=50.91ms med=63.61ms p(90)=74.32ms  p(95)=79.84ms  p(99)=104.08ms max=123.27ms
+     ✓ { issuer:PARIVAHAN,phase:down }.......: avg=118.82ms min=50.52ms med=72.02ms p(90)=255.6ms  p(95)=382.32ms p(99)=669.79ms max=1.08s   
+     ✓ { issuer:PARIVAHAN,phase:recovery }...: avg=111.79ms min=51.12ms med=73.56ms p(90)=194.65ms p(95)=272.25ms p(99)=719.58ms max=1.36s   
+     ✓ { issuer:PARIVAHAN,phase:slow }.......: avg=104.2ms  min=51.12ms med=72.74ms p(90)=142.67ms p(95)=263.12ms p(99)=703.74ms max=1.06s   
+     http_req_failed.........................: 0.00%   ✓ 0         ✗ 6894 
+     ✓ { issuer:CBSE,phase:baseline }........: 0.00%   ✓ 0         ✗ 589  
+     ✓ { issuer:CBSE,phase:down }............: 0.00%   ✓ 0         ✗ 1199 
+     ✓ { issuer:CBSE,phase:recovery }........: 0.00%   ✓ 0         ✗ 1812 
+     ✓ { issuer:CBSE,phase:slow }............: 0.00%   ✓ 0         ✗ 1800 
+     ✓ { issuer:PARIVAHAN,phase:baseline }...: 0.00%   ✓ 0         ✗ 148  
+     ✓ { issuer:PARIVAHAN,phase:down }.......: 0.00%   ✓ 0         ✗ 299  
+     ✓ { issuer:PARIVAHAN,phase:recovery }...: 0.00%   ✓ 0         ✗ 454  
+     ✓ { issuer:PARIVAHAN,phase:slow }.......: 0.00%   ✓ 0         ✗ 450  
+     http_req_receiving......................: avg=1.33ms   min=0s      med=0s      p(90)=4.62ms   p(95)=7.97ms   p(99)=12.66ms  max=406.55ms
+     http_req_sending........................: avg=21.57µs  min=0s      med=0s      p(90)=0s       p(95)=0s       p(99)=551.68µs max=14.3ms  
+     http_req_tls_handshaking................: avg=0s       min=0s      med=0s      p(90)=0s       p(95)=0s       p(99)=0s       max=0s      
+     http_req_waiting........................: avg=100.14ms min=21.02ms med=64.31ms p(90)=144.13ms p(95)=302.1ms  p(99)=929.42ms max=3.16s   
+     http_reqs...............................: 6894    25.429746/s
+     iteration_duration......................: avg=103.07ms min=21.72ms med=66.14ms p(90)=149.49ms p(95)=305ms    p(99)=931.62ms max=3.16s   
+     iterations..............................: 6889    25.411302/s
+     served..................................: 55.07%  ✓ 3718      ✗ 3033 
+     ✓ { issuer:CBSE,phase:baseline }........: 100.00% ✓ 589       ✗ 0    
+     ✓ { issuer:CBSE,phase:down }............: 0.00%   ✓ 0         ✗ 1199 
+     ✓ { issuer:CBSE,phase:recovery }........: 97.62%  ✓ 1769      ✗ 43   
+     ✓ { issuer:CBSE,phase:slow }............: 0.66%   ✓ 12        ✗ 1788 
+     ✓ { issuer:PARIVAHAN,phase:baseline }...: 100.00% ✓ 148       ✗ 0    
+     ✓ { issuer:PARIVAHAN,phase:down }.......: 100.00% ✓ 299       ✗ 0    
+     ✓ { issuer:PARIVAHAN,phase:recovery }...: 100.00% ✓ 454       ✗ 0    
+     ✓ { issuer:PARIVAHAN,phase:slow }.......: 99.33%  ✓ 447       ✗ 3    
+     vus.....................................: 0       min=0       max=39 
+     vus_max.................................: 185     min=185     max=185
+running (04m31.1s), 000/185 VUs, 6889 complete and 0 interrupted iterations
+breaker_observer ✓ [ 100% ] 0/2 VUs      4m30s           0.50 iters/s
+cbse_load        ✓ [ 100% ] 000/150 VUs  4m30s           20.00 iters/s
+parivahan_probe  ✓ [ 100% ] 000/030 VUs  4m30s           5.00 iters/s
+inject_slow      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_down      ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU
+inject_restore   ✓ [ 100% ] 1 VUs        00m00.1s/10m0s  1/1 iters, 1 per VU

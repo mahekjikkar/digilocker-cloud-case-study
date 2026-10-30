@@ -1,0 +1,54 @@
+{
+    "Label": "TargetResponseTime",
+    "Datapoints": [
+        {
+            "Timestamp": "2026-10-30T03:27:00+05:30",
+            "Unit": "Seconds",
+            "ExtendedStatistics": {
+                "p95": 0.028738126851344824
+            }
+        },
+        {
+            "Timestamp": "2026-10-30T03:23:00+05:30",
+            "Unit": "Seconds",
+            "ExtendedStatistics": {
+                "p95": 0.0016978584084277812
+            }
+        },
+        {
+            "Timestamp": "2026-10-30T03:28:00+05:30",
+            "Unit": "Seconds",
+            "ExtendedStatistics": {
+                "p95": 0.032280151715514155
+            }
+        },
+        {
+            "Timestamp": "2026-10-30T03:24:00+05:30",
+            "Unit": "Seconds",
+            "ExtendedStatistics": {
+                "p95": 0.9905142582145197
+            }
+        },
+        {
+            "Timestamp": "2026-10-30T03:25:00+05:30",
+            "Unit": "Seconds",
+            "ExtendedStatistics": {
+                "p95": 0.02638458052254538
+            }
+        },
+        {
+            "Timestamp": "2026-10-30T03:26:00+05:30",
+            "Unit": "Seconds",
+            "ExtendedStatistics": {
+                "p95": 0.026447567837018914
+            }
+        },
+        {
+            "Timestamp": "2026-10-30T03:22:00+05:30",
+            "Unit": "Seconds",
+            "ExtendedStatistics": {
+                "p95": 0.001446
+            }
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "Label": "UnHealthyHostCount",
+    "Datapoints": [
+        {
+            "Timestamp": "2026-10-30T01:18:00+05:30",
+            "Maximum": 0.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T01:14:00+05:30",
+            "Maximum": 0.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T01:19:00+05:30",
+            "Maximum": 0.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T01:15:00+05:30",
+            "Maximum": 0.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T01:20:00+05:30",
+            "Maximum": 0.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T01:16:00+05:30",
+            "Maximum": 0.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T01:21:00+05:30",
+            "Maximum": 0.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T01:17:00+05:30",
+            "Maximum": 0.0,
+            "Unit": "Count"
+        }
+    ]
+}

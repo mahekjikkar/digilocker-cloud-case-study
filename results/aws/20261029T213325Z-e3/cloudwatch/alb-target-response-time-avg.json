@@ -1,0 +1,40 @@
+{
+    "Label": "TargetResponseTime",
+    "Datapoints": [
+        {
+            "Timestamp": "2026-10-30T03:05:00+05:30",
+            "Average": 0.025764220000000004,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T03:06:00+05:30",
+            "Average": 0.4330706010498687,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T03:02:00+05:30",
+            "Average": 0.001123,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T03:07:00+05:30",
+            "Average": 0.0255123225,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T03:03:00+05:30",
+            "Average": 0.02579426769230769,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T03:08:00+05:30",
+            "Average": 0.025745927272727273,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T03:04:00+05:30",
+            "Average": 0.025724685,
+            "Unit": "Seconds"
+        }
+    ]
+}

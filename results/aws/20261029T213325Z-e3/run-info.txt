@@ -1,0 +1,11 @@
+scenario:   e3
+started:    2026-10-29T21:33:25Z
+commit:     70e77e7 (uncommitted changes)
+target:     http://digilocker-alb-1092861771.ap-south-1.elb.amazonaws.com
+k6:         k6.exe v2.3.0 (commit/e088784614, go1.26.8, windows/amd64)
+time scale: 1
+region:     ap-south-1 (multi-zone, single region)
+finished:   2026-10-29T21:38:27Z
+k6 exit:    0 (0 = all thresholds met, 99 = a threshold failed, other = error)
+run check:  requests 5959, span 300s (planned 300s), longest gap 0s
+valid:      yes (requests 5959, span 300s (planned 300s), longest gap 0s)

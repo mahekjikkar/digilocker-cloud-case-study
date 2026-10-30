@@ -1,0 +1,60 @@
+{
+    "Label": "GroupInServiceInstances",
+    "Datapoints": [
+        {
+            "Timestamp": "2026-10-30T03:06:00+05:30",
+            "Average": 2.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T03:10:00+05:30",
+            "Average": 2.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T03:01:00+05:30",
+            "Average": 4.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T03:05:00+05:30",
+            "Average": 1.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T03:09:00+05:30",
+            "Average": 2.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T03:04:00+05:30",
+            "Average": 2.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T03:08:00+05:30",
+            "Average": 2.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T03:03:00+05:30",
+            "Average": 2.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T03:07:00+05:30",
+            "Average": 2.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T03:11:00+05:30",
+            "Average": 2.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T03:02:00+05:30",
+            "Average": 4.0,
+            "Unit": "None"
+        }
+    ]
+}

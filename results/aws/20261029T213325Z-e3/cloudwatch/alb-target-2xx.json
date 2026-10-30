@@ -1,0 +1,35 @@
+{
+    "Label": "HTTPCode_Target_2XX_Count",
+    "Datapoints": [
+        {
+            "Timestamp": "2026-10-30T03:04:00+05:30",
+            "Sum": 1200.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T03:05:00+05:30",
+            "Sum": 1200.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T03:06:00+05:30",
+            "Sum": 1143.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T03:07:00+05:30",
+            "Sum": 1200.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T03:03:00+05:30",
+            "Sum": 650.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T03:08:00+05:30",
+            "Sum": 550.0,
+            "Unit": "Count"
+        }
+    ]
+}

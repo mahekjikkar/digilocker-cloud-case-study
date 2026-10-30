@@ -1,0 +1,582 @@
+{
+  "root_group": {
+    "name": "",
+    "path": "",
+    "id": "d41d8cd98f00b204e9800998ecf8427e",
+    "groups": [],
+    "checks": []
+  },
+  "options": {
+    "summaryTrendStats": [
+      "avg",
+      "min",
+      "med",
+      "p(90)",
+      "p(95)",
+      "p(99)",
+      "max"
+    ],
+    "summaryTimeUnit": "",
+    "noColor": false
+  },
+  "state": {
+    "isStdOutTTY": false,
+    "isStdErrTTY": false,
+    "testRunDurationMs": 270477.7033
+  },
+  "metrics": {
+    "http_req_sending": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 0,
+        "p(90)": 0,
+        "p(95)": 0,
+        "p(99)": 0.5584239999999998,
+        "max": 9.3958,
+        "avg": 0.02026323422770124,
+        "min": 0
+      }
+    },
+    "data_received": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "rate": 10602.574500639072,
+        "count": 2867760
+      }
+    },
+    "served{issuer:CBSE,phase:baseline}": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 1,
+        "passes": 596,
+        "fails": 0
+      },
+      "thresholds": {
+        "rate>=0": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_failed{issuer:PARIVAHAN,phase:recovery}": {
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 452
+      },
+      "thresholds": {
+        "rate>=0": {
+          "ok": true
+        }
+      },
+      "type": "rate"
+    },
+    "http_req_duration{issuer:PARIVAHAN,phase:baseline}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 65.32496711409394,
+        "min": 50.3415,
+        "med": 64.5673,
+        "p(90)": 71.2294,
+        "p(95)": 75.28401999999998,
+        "p(99)": 104.6725560000004,
+        "max": 125.1694
+      },
+      "thresholds": {
+        "max>=0": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_failed": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 6895
+      }
+    },
+    "served{issuer:PARIVAHAN,phase:baseline}": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 1,
+        "passes": 149,
+        "fails": 0
+      },
+      "thresholds": {
+        "rate>=0": {
+          "ok": true
+        }
+      }
+    },
+    "http_reqs": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 6895,
+        "rate": 25.491934883639633
+      }
+    },
+    "http_req_receiving": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(95)": 6.838659999999997,
+        "p(99)": 11.915779999999947,
+        "max": 30.5045,
+        "avg": 1.0316196954314727,
+        "min": 0,
+        "med": 0,
+        "p(90)": 3.408360000000006
+      }
+    },
+    "iteration_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(95)": 3009.2307849999997,
+        "p(99)": 4042.441845,
+        "max": 4206.0852,
+        "avg": 562.8275106821469,
+        "min": 24.6762,
+        "med": 68.50715,
+        "p(90)": 1119.653580000001
+      }
+    },
+    "served{issuer:CBSE,phase:slow}": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0.002777777777777778,
+        "passes": 5,
+        "fails": 1795
+      },
+      "thresholds": {
+        "rate>=0": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_failed{issuer:CBSE,phase:slow}": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 1800
+      },
+      "thresholds": {
+        "rate>=0": {
+          "ok": true
+        }
+      }
+    },
+    "served{issuer:CBSE,phase:down}": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 1200
+      },
+      "thresholds": {
+        "rate>=0": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_waiting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(99)": 4040.652406,
+        "max": 4205.8648,
+        "avg": 559.9583014358234,
+        "min": 20.3702,
+        "med": 66.3625,
+        "p(90)": 1116.8391000000008,
+        "p(95)": 3009.2346
+      }
+    },
+    "http_req_failed{issuer:CBSE,phase:recovery}": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 1805
+      },
+      "thresholds": {
+        "rate>=0": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_duration{issuer:CBSE,phase:baseline}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "max": 108.7577,
+        "avg": 64.77901510067113,
+        "min": 50.3415,
+        "med": 64.6839,
+        "p(90)": 70.24435,
+        "p(95)": 74.117825,
+        "p(99)": 82.12885499999989
+      },
+      "thresholds": {
+        "max>=0": {
+          "ok": true
+        }
+      }
+    },
+    "vus": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "value": 1,
+        "min": 1,
+        "max": 46
+      }
+    },
+    "data_sent": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "rate": 4669.486558746597,
+        "count": 1262992
+      }
+    },
+    "http_req_duration{issuer:PARIVAHAN,phase:slow}": {
+      "values": {
+        "max": 1211.4076,
+        "avg": 1034.1789033333328,
+        "min": 63.4985,
+        "med": 1042.70615,
+        "p(90)": 1100.15106,
+        "p(95)": 1113.65806,
+        "p(99)": 1166.5855969999998
+      },
+      "thresholds": {
+        "max>=0": {
+          "ok": true
+        }
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "served{issuer:PARIVAHAN,phase:recovery}": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "fails": 0,
+        "rate": 1,
+        "passes": 452
+      },
+      "thresholds": {
+        "rate>=0": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_failed{issuer:PARIVAHAN,phase:down}": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 300
+      },
+      "thresholds": {
+        "rate>=0": {
+          "ok": true
+        }
+      }
+    },
+    "served{issuer:CBSE,phase:recovery}": {
+      "values": {
+        "rate": 0.997229916897507,
+        "passes": 1800,
+        "fails": 5
+      },
+      "thresholds": {
+        "rate>=0": {
+          "ok": true
+        }
+      },
+      "type": "rate",
+      "contains": "default"
+    },
+    "served": {
+      "values": {
+        "passes": 3414,
+        "fails": 3338,
+        "rate": 0.505627962085308
+      },
+      "type": "rate",
+      "contains": "default"
+    },
+    "http_req_tls_handshaking": {
+      "contains": "time",
+      "values": {
+        "min": 0,
+        "med": 0,
+        "p(90)": 0,
+        "p(95)": 0,
+        "p(99)": 0,
+        "max": 0,
+        "avg": 0
+      },
+      "type": "trend"
+    },
+    "http_req_duration{issuer:PARIVAHAN,phase:recovery}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "min": 49.4675,
+        "med": 63.57645,
+        "p(90)": 80.58629,
+        "p(95)": 87.94133499999994,
+        "p(99)": 124.91325000000005,
+        "max": 143.7321,
+        "avg": 66.58044269911501
+      },
+      "thresholds": {
+        "max>=0": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_duration{issuer:CBSE,phase:recovery}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(99)": 123.76617600000002,
+        "max": 151.3225,
+        "avg": 66.64515828254852,
+        "min": 37.1908,
+        "med": 63.4088,
+        "p(90)": 80.16496000000001,
+        "p(95)": 91.84213999999999
+      },
+      "thresholds": {
+        "max>=0": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_blocked": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(90)": 0,
+        "p(95)": 0,
+        "p(99)": 35.72625399999998,
+        "max": 75.3686,
+        "avg": 0.969587875271937,
+        "min": 0,
+        "med": 0
+      }
+    },
+    "served{issuer:PARIVAHAN,phase:slow}": {
+      "contains": "default",
+      "values": {
+        "rate": 0.24888888888888888,
+        "passes": 112,
+        "fails": 338
+      },
+      "thresholds": {
+        "rate>=0": {
+          "ok": true
+        }
+      },
+      "type": "rate"
+    },
+    "http_req_duration": {
+      "contains": "time",
+      "values": {
+        "min": 20.3702,
+        "med": 67.1584,
+        "p(90)": 1116.8391000000008,
+        "p(95)": 3009.3368299999997,
+        "p(99)": 4041.7411999999995,
+        "max": 4206.2831,
+        "avg": 561.0101843654815
+      },
+      "type": "trend"
+    },
+    "vus_max": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "value": 185,
+        "min": 185,
+        "max": 185
+      }
+    },
+    "http_req_duration{issuer:CBSE,phase:down}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "max": 555.9174,
+        "avg": 53.69531599999996,
+        "min": 25.4844,
+        "med": 45.94915,
+        "p(90)": 78.19034,
+        "p(95)": 90.74442499999998,
+        "p(99)": 119.820601
+      },
+      "thresholds": {
+        "max>=0": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_duration{issuer:PARIVAHAN,phase:down}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 68.05478200000003,
+        "min": 48.7426,
+        "med": 64.1637,
+        "p(90)": 74.47403,
+        "p(95)": 83.95081000000002,
+        "p(99)": 125.57535599999994,
+        "max": 373.9299
+      },
+      "thresholds": {
+        "max>=0": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_duration{issuer:CBSE,phase:slow}": {
+      "thresholds": {
+        "max>=0": {
+          "ok": true
+        }
+      },
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(90)": 3982.52531,
+        "p(95)": 4032.87498,
+        "p(99)": 4072.469901,
+        "max": 4206.2831,
+        "avg": 1729.3928522222247,
+        "min": 63.4985,
+        "med": 1052.6787
+      }
+    },
+    "http_req_failed{issuer:PARIVAHAN,phase:slow}": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 450
+      },
+      "thresholds": {
+        "rate>=0": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_failed{issuer:PARIVAHAN,phase:baseline}": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "passes": 0,
+        "fails": 149,
+        "rate": 0
+      },
+      "thresholds": {
+        "rate>=0": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_failed{issuer:CBSE,phase:down}": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 1200
+      },
+      "thresholds": {
+        "rate>=0": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_failed{issuer:CBSE,phase:baseline}": {
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 596
+      },
+      "thresholds": {
+        "rate>=0": {
+          "ok": true
+        }
+      },
+      "type": "rate",
+      "contains": "default"
+    },
+    "http_req_connecting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 0.9395294561276287,
+        "min": 0,
+        "med": 0,
+        "p(90)": 0,
+        "p(95)": 0,
+        "p(99)": 35.339945999999955,
+        "max": 75.3686
+      }
+    },
+    "iterations": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 6890,
+        "rate": 25.47344907154127
+      }
+    },
+    "served{issuer:PARIVAHAN,phase:down}": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 1,
+        "passes": 300,
+        "fails": 0
+      },
+      "thresholds": {
+        "rate>=0": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_duration{expected_response:true}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 561.0101843654815,
+        "min": 20.3702,
+        "med": 67.1584,
+        "p(90)": 1116.8391000000008,
+        "p(95)": 3009.3368299999997,
+        "p(99)": 4041.7411999999995,
+        "max": 4206.2831
+      }
+    }
+  }
+}

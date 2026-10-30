@@ -1,0 +1,25 @@
+{
+    "Label": "CPUUtilization",
+    "Datapoints": [
+        {
+            "Timestamp": "2026-10-30T02:45:00+05:30",
+            "Maximum": 31.693606231963834,
+            "Unit": "Percent"
+        },
+        {
+            "Timestamp": "2026-10-30T02:40:00+05:30",
+            "Maximum": 19.099999999999998,
+            "Unit": "Percent"
+        },
+        {
+            "Timestamp": "2026-10-30T02:55:00+05:30",
+            "Maximum": 8.347927612375948,
+            "Unit": "Percent"
+        },
+        {
+            "Timestamp": "2026-10-30T02:50:00+05:30",
+            "Maximum": 13.971690258118235,
+            "Unit": "Percent"
+        }
+    ]
+}

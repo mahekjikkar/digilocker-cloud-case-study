@@ -13,6 +13,9 @@
 #   <e>-summary.json, k6-stdout.txt, k6-stderr.log   (stderr has INJECT/BREAKERS lines)
 #   terminate.log   (E3 only) when the instance was killed
 #
+# Exit code 97 means the run is INVALID (stalled or far off its planned duration,
+# see check_run.py), whatever k6 itself returned. Do not use or commit such a run.
+#
 # Nothing here edits results. A failed k6 threshold is recorded, not hidden:
 # an unmet expectation is a finding.
 #
@@ -49,6 +52,21 @@ if [ "$SCENARIO" = "e4" ] && [ -z "${SKIP_BREAKER_SWITCH:-}" ]; then
   infra/set-breaker.sh "$BREAKER" || { echo "could not switch breaker"; exit 1; }
 fi
 
+WARMUP=""
+if [ "$SCENARIO" = "e4" ]; then
+  # A freshly restarted registry stalls about 10 s on its first requests (lazy
+  # DynamoDB client set-up), seen in E3 when a replacement instance joined. The
+  # breaker switch restarts the service, so warm every instance, identically for
+  # the off and on runs, so start-up cost is not mistaken for the effect under test.
+  for i in $(seq 1 60); do
+    curl -s -m 20 -o /dev/null -H "X-API-Key: $API_KEY" "$BASE_URL/documents/CBSE-MARKSHEET-0001" &
+    curl -s -m 20 -o /dev/null -H "X-API-Key: $API_KEY" "$BASE_URL/documents/PARIVAHAN-DL-0001" &
+  done
+  wait
+  sleep 5
+  WARMUP="120 requests before the run (registry restarted by the breaker switch)"
+fi
+
 STAMP=$(date -u +%Y%m%dT%H%M%SZ)
 DIR="${RESULTS_ROOT:-results/aws}/$STAMP-$LABEL"
 mkdir -p "$DIR"
@@ -61,6 +79,7 @@ export RESULTS_DIR="$DIR" RUN_LABEL="$LABEL"
   echo "target:     $BASE_URL"
   echo "k6:         $(k6 version | head -1)"
   echo "time scale: ${TIME_SCALE:-1}"
+  [ -n "$WARMUP" ] && echo "warm-up:    $WARMUP"
   echo "region:     ap-south-1 (multi-zone, single region)"
 } > "$DIR/run-info.txt"
 
@@ -77,6 +96,22 @@ wait
 
 echo "finished:   $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$DIR/run-info.txt"
 echo "k6 exit:    $CODE (0 = all thresholds met, 99 = a threshold failed, other = error)" >> "$DIR/run-info.txt"
+
+# k6 exits 0 even if the client slept for an hour mid-run. Check the data itself.
+case "$SCENARIO" in e1) PLANNED=180 ;; e2) PLANNED=900 ;; e3) PLANNED=300 ;; e4) PLANNED=270 ;; esac
+PLANNED=$(python -I -c "print($PLANNED * float('${TIME_SCALE:-1}'))")
+CHECK=$(python -I loadtest/check_run.py "$DIR/$SCENARIO-raw.json.gz" "$PLANNED" 2>&1)
+CHECK_CODE=$?
+echo "run check:  $CHECK" >> "$DIR/run-info.txt"
+if [ "$CHECK_CODE" -ne 0 ]; then
+  echo "valid:      NO, do not use this run" >> "$DIR/run-info.txt"
+  echo
+  echo "!!! RUN INVALID: $CHECK"
+  echo "!!! k6 itself exited $CODE. Do not use or commit this run; fix the cause and re-run."
+  CODE=97
+else
+  echo "valid:      yes ($CHECK)" >> "$DIR/run-info.txt"
+fi
 
 echo
 echo "results saved in $DIR"

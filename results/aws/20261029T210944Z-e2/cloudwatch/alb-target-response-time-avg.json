@@ -1,0 +1,85 @@
+{
+    "Label": "TargetResponseTime",
+    "Datapoints": [
+        {
+            "Timestamp": "2026-10-30T02:47:00+05:30",
+            "Average": 0.1580096890919697,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T02:39:00+05:30",
+            "Average": 0.02705069550173011,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T02:48:00+05:30",
+            "Average": 0.29443382477204505,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T02:40:00+05:30",
+            "Average": 0.02859971236086702,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T02:49:00+05:30",
+            "Average": 0.40574194965005,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T02:41:00+05:30",
+            "Average": 0.02881552960865088,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T02:50:00+05:30",
+            "Average": 0.5416520085044344,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T02:42:00+05:30",
+            "Average": 0.031489968650559814,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T02:51:00+05:30",
+            "Average": 0.5697962342141697,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T02:43:00+05:30",
+            "Average": 0.03216602288578902,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T02:52:00+05:30",
+            "Average": 0.5708439873055605,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T02:44:00+05:30",
+            "Average": 0.038879393500683486,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T02:53:00+05:30",
+            "Average": 0.5727513315227124,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T02:45:00+05:30",
+            "Average": 0.0483395930984903,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T02:54:00+05:30",
+            "Average": 0.5733227212484624,
+            "Unit": "Seconds"
+        },
+        {
+            "Timestamp": "2026-10-30T02:46:00+05:30",
+            "Average": 0.1441047073194377,
+            "Unit": "Seconds"
+        }
+    ]
+}

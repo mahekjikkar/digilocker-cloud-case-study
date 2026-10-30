@@ -1,0 +1,25 @@
+{
+    "Label": "HTTPCode_Target_2XX_Count",
+    "Datapoints": [
+        {
+            "Timestamp": "2026-10-30T01:18:00+05:30",
+            "Sum": 300.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T01:19:00+05:30",
+            "Sum": 273.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T01:16:00+05:30",
+            "Sum": 23.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T01:17:00+05:30",
+            "Sum": 305.0,
+            "Unit": "Count"
+        }
+    ]
+}

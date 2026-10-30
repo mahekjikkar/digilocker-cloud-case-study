@@ -1,0 +1,12 @@
+scenario:   e4-breaker-on
+started:    2026-10-29T21:54:08Z
+commit:     70e77e7 (uncommitted changes)
+target:     http://digilocker-alb-1092861771.ap-south-1.elb.amazonaws.com
+k6:         k6.exe v2.3.0 (commit/e088784614, go1.26.8, windows/amd64)
+time scale: 1
+warm-up:    120 requests before the run (registry restarted by the breaker switch)
+region:     ap-south-1 (multi-zone, single region)
+finished:   2026-10-29T21:58:41Z
+k6 exit:    0 (0 = all thresholds met, 99 = a threshold failed, other = error)
+run check:  requests 6894, span 271s (planned 270s), longest gap 1s
+valid:      yes (requests 6894, span 271s (planned 270s), longest gap 1s)

@@ -194,7 +194,7 @@ if [ "$(aws autoscaling describe-auto-scaling-groups --auto-scaling-group-names 
     --launch-template "LaunchTemplateName=$LT_NAME,Version=\$Latest" \
     --min-size "$ASG_MIN" --max-size "$ASG_MAX" --desired-capacity "$ASG_MIN" \
     --vpc-zone-identifier "$SUBNET_A,$SUBNET_B" --target-group-arns "$TG_ARN" \
-    --health-check-type ELB --health-check-grace-period 180 \
+    --health-check-type ELB --health-check-grace-period 300 \
     --tags "Key=Project,Value=$PROJECT,PropagateAtLaunch=true"
 fi
 aws autoscaling enable-metrics-collection --auto-scaling-group-name "$ASG_NAME" --granularity 1Minute
@@ -218,6 +218,7 @@ PARIVAHAN_CONTROL_URL=http://$PARIVAHAN_PUBLIC_IP:9000
 EOF
 
 say "Waiting for registry targets to pass health checks (first boot takes ~3-5 min)"
+HEALTHY=0
 for _ in $(seq 1 60); do
   HEALTHY=$(aws elbv2 describe-target-health --target-group-arn "$TG_ARN" \
               --query "length(TargetHealthDescriptions[?TargetHealth.State=='healthy'])" --output text)
@@ -225,6 +226,11 @@ for _ in $(seq 1 60); do
   [ "$HEALTHY" -ge "$ASG_MIN" ] && break
   sleep 10
 done
+if [ "$HEALTHY" -lt "$ASG_MIN" ]; then
+  echo "NOT READY: only $HEALTHY of $ASG_MIN registry targets healthy after 10 minutes."
+  echo "Check the ASG scaling activities and instance console output before loading."
+  exit 1
+fi
 
 say "Ready"
 echo "base url:  http://$ALB_DNS"

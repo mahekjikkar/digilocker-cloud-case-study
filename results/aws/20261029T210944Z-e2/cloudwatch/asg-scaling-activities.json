@@ -1,0 +1,124 @@
+{
+    "Activities": [
+        {
+            "ActivityId": "ddc68626-1323-c5c4-4a0f-c656803fd3b3",
+            "AutoScalingGroupName": "digilocker-app-asg",
+            "Description": "Launching a new EC2 instance: i-0f1aaf08788b67692",
+            "Cause": "At 2026-10-29T21:15:27Z a monitor alarm TargetTracking-digilocker-app-asg-AlarmHigh-8302c000-046e-4721-b353-4cf8b36c2b77 in state ALARM triggered policy digilocker-requests-per-target changing the desired capacity from 2 to 4.  At 2026-10-29T21:15:41Z an instance was started in response to a difference between desired and actual capacity, increasing the capacity from 2 to 4.",
+            "StartTime": "2026-10-29T21:15:43.217000+00:00",
+            "EndTime": "2026-10-29T21:17:47+00:00",
+            "StatusCode": "Successful",
+            "Progress": 100,
+            "Details": "{\"Availability Zone ID\":\"aps1-az3\",\"Subnet ID\":\"subnet-0d89651bf71a372e3\",\"Availability Zone\":\"ap-south-1b\",\"InvokingAlarms\":[{\"AlarmArn\":\"arn:aws:cloudwatch:ap-south-1:166493338765:alarm:TargetTracking-digilocker-app-asg-AlarmHigh-8302c000-046e-4721-b353-4cf8b36c2b77\",\"Trigger\":{\"MetricName\":\"RequestCountPerTarget\",\"EvaluateLowSampleCountPercentile\":\"\",\"ComparisonOperator\":\"GreaterThanThreshold\",\"TreatMissingData\":\"\",\"Statistic\":\"SUM\",\"StatisticType\":\"Statistic\",\"Period\":60,\"EvaluationPeriods\":3,\"Unit\":\"None\",\"Namespace\":\"AWS/ApplicationELB\",\"Threshold\":1000},\"AlarmName\":\"TargetTracking-digilocker-app-asg-AlarmHigh-8302c000-046e-4721-b353-4cf8b36c2b77\",\"AlarmDescription\":\"DO NOT EDIT OR DELETE. For TargetTrackingScaling policy arn:aws:autoscaling:ap-south-1:166493338765:scalingPolicy:a2910c9f-cd63-4f58-bbb5-e54afce8a1d6:autoScalingGroupName/digilocker-app-asg:policyName/digilocker-requests-per-target.\",\"AWSAccountId\":\"166493338765\",\"OldStateValue\":\"OK\",\"Region\":\"Asia Pacific (Mumbai)\",\"NewStateValue\":\"ALARM\",\"AlarmConfigurationUpdatedTimestamp\":1793302139349,\"StateChangeTime\":1793308527345}]}",
+            "AutoScalingGroupARN": "arn:aws:autoscaling:ap-south-1:166493338765:autoScalingGroup:2cb3b45f-eeed-4c18-9d47-df934c85b8b1:autoScalingGroupName/digilocker-app-asg"
+        },
+        {
+            "ActivityId": "9ea68626-1323-5ccb-c125-12ad027e26a2",
+            "AutoScalingGroupName": "digilocker-app-asg",
+            "Description": "Launching a new EC2 instance: i-06a1b02300663bf8f",
+            "Cause": "At 2026-10-29T21:15:27Z a monitor alarm TargetTracking-digilocker-app-asg-AlarmHigh-8302c000-046e-4721-b353-4cf8b36c2b77 in state ALARM triggered policy digilocker-requests-per-target changing the desired capacity from 2 to 4.  At 2026-10-29T21:15:41Z an instance was started in response to a difference between desired and actual capacity, increasing the capacity from 2 to 4.",
+            "StartTime": "2026-10-29T21:15:43.191000+00:00",
+            "EndTime": "2026-10-29T21:17:47+00:00",
+            "StatusCode": "Successful",
+            "Progress": 100,
+            "Details": "{\"Availability Zone ID\":\"aps1-az1\",\"Subnet ID\":\"subnet-0c3146a5aa2d1699b\",\"Availability Zone\":\"ap-south-1a\",\"InvokingAlarms\":[{\"AlarmArn\":\"arn:aws:cloudwatch:ap-south-1:166493338765:alarm:TargetTracking-digilocker-app-asg-AlarmHigh-8302c000-046e-4721-b353-4cf8b36c2b77\",\"Trigger\":{\"MetricName\":\"RequestCountPerTarget\",\"EvaluateLowSampleCountPercentile\":\"\",\"ComparisonOperator\":\"GreaterThanThreshold\",\"TreatMissingData\":\"\",\"Statistic\":\"SUM\",\"StatisticType\":\"Statistic\",\"Period\":60,\"EvaluationPeriods\":3,\"Unit\":\"None\",\"Namespace\":\"AWS/ApplicationELB\",\"Threshold\":1000},\"AlarmName\":\"TargetTracking-digilocker-app-asg-AlarmHigh-8302c000-046e-4721-b353-4cf8b36c2b77\",\"AlarmDescription\":\"DO NOT EDIT OR DELETE. For TargetTrackingScaling policy arn:aws:autoscaling:ap-south-1:166493338765:scalingPolicy:a2910c9f-cd63-4f58-bbb5-e54afce8a1d6:autoScalingGroupName/digilocker-app-asg:policyName/digilocker-requests-per-target.\",\"AWSAccountId\":\"166493338765\",\"OldStateValue\":\"OK\",\"Region\":\"Asia Pacific (Mumbai)\",\"NewStateValue\":\"ALARM\",\"AlarmConfigurationUpdatedTimestamp\":1793302139349,\"StateChangeTime\":1793308527345}]}",
+            "AutoScalingGroupARN": "arn:aws:autoscaling:ap-south-1:166493338765:autoScalingGroup:2cb3b45f-eeed-4c18-9d47-df934c85b8b1:autoScalingGroupName/digilocker-app-asg"
+        },
+        {
+            "ActivityId": "a5468624-b13b-fbba-25be-3960edd36536",
+            "AutoScalingGroupName": "digilocker-app-asg",
+            "Description": "Launching a new EC2 instance: i-046c47dcf62308721",
+            "Cause": "At 2026-10-29T19:39:03Z an instance was launched in response to an unhealthy instance needing to be replaced.",
+            "StartTime": "2026-10-29T19:39:04.830000+00:00",
+            "EndTime": "2026-10-29T19:39:12+00:00",
+            "StatusCode": "Successful",
+            "Progress": 100,
+            "Details": "{\"Availability Zone ID\":\"aps1-az1\",\"Subnet ID\":\"subnet-0c3146a5aa2d1699b\",\"Availability Zone\":\"ap-south-1a\"}",
+            "AutoScalingGroupARN": "arn:aws:autoscaling:ap-south-1:166493338765:autoScalingGroup:2cb3b45f-eeed-4c18-9d47-df934c85b8b1:autoScalingGroupName/digilocker-app-asg"
+        },
+        {
+            "ActivityId": "97768624-b11f-bf8f-9124-513157a5fd01",
+            "AutoScalingGroupName": "digilocker-app-asg",
+            "Description": "Terminating EC2 instance: i-039ff554bec61a2ff",
+            "Cause": "At 2026-10-29T19:39:03Z an instance was taken out of service in response to an ELB system health check failure.",
+            "StartTime": "2026-10-29T19:39:03.023000+00:00",
+            "EndTime": "2026-10-29T19:40:15+00:00",
+            "StatusCode": "Successful",
+            "Progress": 100,
+            "Details": "{\"Availability Zone ID\":\"aps1-az1\",\"Subnet ID\":\"subnet-0c3146a5aa2d1699b\",\"Availability Zone\":\"ap-south-1a\"}",
+            "AutoScalingGroupARN": "arn:aws:autoscaling:ap-south-1:166493338765:autoScalingGroup:2cb3b45f-eeed-4c18-9d47-df934c85b8b1:autoScalingGroupName/digilocker-app-asg"
+        },
+        {
+            "ActivityId": "f3668624-a317-290f-5549-74351e133456",
+            "AutoScalingGroupName": "digilocker-app-asg",
+            "Description": "Launching a new EC2 instance: i-039ff554bec61a2ff",
+            "Cause": "At 2026-10-29T19:35:11Z an instance was launched in response to an unhealthy instance needing to be replaced.",
+            "StartTime": "2026-10-29T19:35:13.098000+00:00",
+            "EndTime": "2026-10-29T19:35:18+00:00",
+            "StatusCode": "Successful",
+            "Progress": 100,
+            "Details": "{\"Availability Zone ID\":\"aps1-az1\",\"Subnet ID\":\"subnet-0c3146a5aa2d1699b\",\"Availability Zone\":\"ap-south-1a\"}",
+            "AutoScalingGroupARN": "arn:aws:autoscaling:ap-south-1:166493338765:autoScalingGroup:2cb3b45f-eeed-4c18-9d47-df934c85b8b1:autoScalingGroupName/digilocker-app-asg"
+        },
+        {
+            "ActivityId": "1de68624-a2fe-bab8-b831-406f604ab961",
+            "AutoScalingGroupName": "digilocker-app-asg",
+            "Description": "Terminating EC2 instance: i-0000eff949867a925",
+            "Cause": "At 2026-10-29T19:35:11Z an instance was taken out of service in response to an ELB system health check failure.",
+            "StartTime": "2026-10-29T19:35:11.534000+00:00",
+            "EndTime": "2026-10-29T19:36:23+00:00",
+            "StatusCode": "Successful",
+            "Progress": 100,
+            "Details": "{\"Availability Zone ID\":\"aps1-az1\",\"Subnet ID\":\"subnet-0c3146a5aa2d1699b\",\"Availability Zone\":\"ap-south-1a\"}",
+            "AutoScalingGroupARN": "arn:aws:autoscaling:ap-south-1:166493338765:autoScalingGroup:2cb3b45f-eeed-4c18-9d47-df934c85b8b1:autoScalingGroupName/digilocker-app-asg"
+        },
+        {
+            "ActivityId": "52968624-9457-3c4d-44ef-5758071c7145",
+            "AutoScalingGroupName": "digilocker-app-asg",
+            "Description": "Launching a new EC2 instance: i-0000eff949867a925",
+            "Cause": "At 2026-10-29T19:31:09Z an instance was launched in response to an unhealthy instance needing to be replaced.",
+            "StartTime": "2026-10-29T19:31:11.439000+00:00",
+            "EndTime": "2026-10-29T19:31:16+00:00",
+            "StatusCode": "Successful",
+            "Progress": 100,
+            "Details": "{\"Availability Zone ID\":\"aps1-az1\",\"Subnet ID\":\"subnet-0c3146a5aa2d1699b\",\"Availability Zone\":\"ap-south-1a\"}",
+            "AutoScalingGroupARN": "arn:aws:autoscaling:ap-south-1:166493338765:autoScalingGroup:2cb3b45f-eeed-4c18-9d47-df934c85b8b1:autoScalingGroupName/digilocker-app-asg"
+        },
+        {
+            "ActivityId": "1c468624-943c-3836-c8ba-6c80272292b3",
+            "AutoScalingGroupName": "digilocker-app-asg",
+            "Description": "Terminating EC2 instance: i-01fa35f5986c8a9f9",
+            "Cause": "At 2026-10-29T19:31:09Z an instance was taken out of service in response to an ELB system health check failure.",
+            "StartTime": "2026-10-29T19:31:09.710000+00:00",
+            "EndTime": "2026-10-29T19:32:21+00:00",
+            "StatusCode": "Successful",
+            "Progress": 100,
+            "Details": "{\"Availability Zone ID\":\"aps1-az1\",\"Subnet ID\":\"subnet-0c3146a5aa2d1699b\",\"Availability Zone\":\"ap-south-1a\"}",
+            "AutoScalingGroupARN": "arn:aws:autoscaling:ap-south-1:166493338765:autoScalingGroup:2cb3b45f-eeed-4c18-9d47-df934c85b8b1:autoScalingGroupName/digilocker-app-asg"
+        },
+        {
+            "ActivityId": "edc68624-859c-251e-5635-edc31043836e",
+            "AutoScalingGroupName": "digilocker-app-asg",
+            "Description": "Launching a new EC2 instance: i-0b1e2d0aee35e2523",
+            "Cause": "At 2026-10-29T19:27:05Z a user request created an AutoScalingGroup changing the desired capacity from 0 to 2.  At 2026-10-29T19:27:08Z an instance was started in response to a difference between desired and actual capacity, increasing the capacity from 0 to 2.",
+            "StartTime": "2026-10-29T19:27:10.089000+00:00",
+            "EndTime": "2026-10-29T19:27:15+00:00",
+            "StatusCode": "Successful",
+            "Progress": 100,
+            "Details": "{\"Availability Zone ID\":\"aps1-az3\",\"Subnet ID\":\"subnet-0d89651bf71a372e3\",\"Availability Zone\":\"ap-south-1b\"}",
+            "AutoScalingGroupARN": "arn:aws:autoscaling:ap-south-1:166493338765:autoScalingGroup:2cb3b45f-eeed-4c18-9d47-df934c85b8b1:autoScalingGroupName/digilocker-app-asg"
+        },
+        {
+            "ActivityId": "fec68624-859a-7888-082f-4f26e4a345be",
+            "AutoScalingGroupName": "digilocker-app-asg",
+            "Description": "Launching a new EC2 instance: i-01fa35f5986c8a9f9",
+            "Cause": "At 2026-10-29T19:27:05Z a user request created an AutoScalingGroup changing the desired capacity from 0 to 2.  At 2026-10-29T19:27:08Z an instance was started in response to a difference between desired and actual capacity, increasing the capacity from 0 to 2.",
+            "StartTime": "2026-10-29T19:27:09.982000+00:00",
+            "EndTime": "2026-10-29T19:27:15+00:00",
+            "StatusCode": "Successful",
+            "Progress": 100,
+            "Details": "{\"Availability Zone ID\":\"aps1-az1\",\"Subnet ID\":\"subnet-0c3146a5aa2d1699b\",\"Availability Zone\":\"ap-south-1a\"}",
+            "AutoScalingGroupARN": "arn:aws:autoscaling:ap-south-1:166493338765:autoScalingGroup:2cb3b45f-eeed-4c18-9d47-df934c85b8b1:autoScalingGroupName/digilocker-app-asg"
+        }
+    ]
+}

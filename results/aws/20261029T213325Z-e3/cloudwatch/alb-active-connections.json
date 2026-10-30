@@ -1,0 +1,40 @@
+{
+    "Label": "ActiveConnectionCount",
+    "Datapoints": [
+        {
+            "Timestamp": "2026-10-30T03:04:00+05:30",
+            "Sum": 59.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T03:05:00+05:30",
+            "Sum": 49.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T03:06:00+05:30",
+            "Sum": 213.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T03:02:00+05:30",
+            "Sum": 2.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T03:07:00+05:30",
+            "Sum": 159.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T03:03:00+05:30",
+            "Sum": 61.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T03:08:00+05:30",
+            "Sum": 89.0,
+            "Unit": "Count"
+        }
+    ]
+}

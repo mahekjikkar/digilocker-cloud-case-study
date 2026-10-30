@@ -1,0 +1,55 @@
+{
+    "Label": "GroupPendingInstances",
+    "Datapoints": [
+        {
+            "Timestamp": "2026-10-30T01:20:00+05:30",
+            "Average": 0.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T01:15:00+05:30",
+            "Average": 0.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T01:19:00+05:30",
+            "Average": 0.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T01:23:00+05:30",
+            "Average": 0.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T01:14:00+05:30",
+            "Average": 0.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T01:18:00+05:30",
+            "Average": 0.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T01:22:00+05:30",
+            "Average": 0.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T01:17:00+05:30",
+            "Average": 0.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T01:21:00+05:30",
+            "Average": 0.0,
+            "Unit": "None"
+        },
+        {
+            "Timestamp": "2026-10-30T01:16:00+05:30",
+            "Average": 0.0,
+            "Unit": "None"
+        }
+    ]
+}

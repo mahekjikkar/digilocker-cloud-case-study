@@ -1,0 +1,85 @@
+{
+    "Label": "HTTPCode_Target_2XX_Count",
+    "Datapoints": [
+        {
+            "Timestamp": "2026-10-30T02:42:00+05:30",
+            "Sum": 8485.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:51:00+05:30",
+            "Sum": 16613.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:43:00+05:30",
+            "Sum": 9175.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:52:00+05:30",
+            "Sum": 16779.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:44:00+05:30",
+            "Sum": 16094.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:53:00+05:30",
+            "Sum": 16753.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:45:00+05:30",
+            "Sum": 16692.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:54:00+05:30",
+            "Sum": 13008.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:46:00+05:30",
+            "Sum": 20630.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:47:00+05:30",
+            "Sum": 20572.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:39:00+05:30",
+            "Sum": 287.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:48:00+05:30",
+            "Sum": 17656.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:40:00+05:30",
+            "Sum": 3414.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:49:00+05:30",
+            "Sum": 14002.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:41:00+05:30",
+            "Sum": 3884.0,
+            "Unit": "Count"
+        },
+        {
+            "Timestamp": "2026-10-30T02:50:00+05:30",
+            "Sum": 16462.0,
+            "Unit": "Count"
+        }
+    ]
+}
