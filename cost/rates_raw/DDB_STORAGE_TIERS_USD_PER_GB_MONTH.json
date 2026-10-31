@@ -1,0 +1,53 @@
+{
+  "product": {
+    "productFamily": "Database Storage",
+    "attributes": {
+      "volumeType": "Amazon DynamoDB - Indexed DataStore",
+      "regionCode": "ap-south-1",
+      "servicecode": "AmazonDynamoDB",
+      "usagetype": "APS3-TimedStorage-ByteHrs",
+      "locationType": "AWS Region",
+      "location": "Asia Pacific (Mumbai)",
+      "servicename": "Amazon DynamoDB",
+      "operation": ""
+    },
+    "sku": "8Q6HK3ASV67MN388"
+  },
+  "serviceCode": "AmazonDynamoDB",
+  "terms": {
+    "OnDemand": {
+      "8Q6HK3ASV67MN388.JRTCKXETXF": {
+        "priceDimensions": {
+          "8Q6HK3ASV67MN388.JRTCKXETXF.VYAP54KATQ": {
+            "unit": "GB-Mo",
+            "endRange": "Inf",
+            "description": "$0.285 per GB-Month of storage used beyond first 25 free GB-Months",
+            "appliesTo": [],
+            "rateCode": "8Q6HK3ASV67MN388.JRTCKXETXF.VYAP54KATQ",
+            "beginRange": "25",
+            "pricePerUnit": {
+              "USD": "0.2850000000"
+            }
+          },
+          "8Q6HK3ASV67MN388.JRTCKXETXF.G2A93NZ7DT": {
+            "unit": "GB-Mo",
+            "endRange": "25",
+            "description": "$0.00 per GB-Month of storage for first 25 free GB-Months",
+            "appliesTo": [],
+            "rateCode": "8Q6HK3ASV67MN388.JRTCKXETXF.G2A93NZ7DT",
+            "beginRange": "0",
+            "pricePerUnit": {
+              "USD": "0.0000000000"
+            }
+          }
+        },
+        "sku": "8Q6HK3ASV67MN388",
+        "effectiveDate": "2026-08-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+      }
+    }
+  },
+  "version": "20260911124422",
+  "publicationDate": "2026-09-11T12:44:22Z"
+}

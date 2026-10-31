@@ -1,0 +1,43 @@
+{
+  "product": {
+    "productFamily": "Amazon DynamoDB PayPerRequest Throughput",
+    "attributes": {
+      "regionCode": "ap-south-1",
+      "servicecode": "AmazonDynamoDB",
+      "groupDescription": "DynamoDB PayPerRequest Read Request Units",
+      "usagetype": "APS3-ReadRequestUnits",
+      "locationType": "AWS Region",
+      "location": "Asia Pacific (Mumbai)",
+      "servicename": "Amazon DynamoDB",
+      "operation": "PayPerRequestThroughput",
+      "group": "DDB-ReadUnits"
+    },
+    "sku": "HQZY4ZFUTRDPV7ZE"
+  },
+  "serviceCode": "AmazonDynamoDB",
+  "terms": {
+    "OnDemand": {
+      "HQZY4ZFUTRDPV7ZE.JRTCKXETXF": {
+        "priceDimensions": {
+          "HQZY4ZFUTRDPV7ZE.JRTCKXETXF.6YS6EN2CT7": {
+            "unit": "ReadRequestUnits",
+            "endRange": "Inf",
+            "description": "$0.1425 per million read request units (Asia Pacific (India))",
+            "appliesTo": [],
+            "rateCode": "HQZY4ZFUTRDPV7ZE.JRTCKXETXF.6YS6EN2CT7",
+            "beginRange": "0",
+            "pricePerUnit": {
+              "USD": "0.0000001425"
+            }
+          }
+        },
+        "sku": "HQZY4ZFUTRDPV7ZE",
+        "effectiveDate": "2026-08-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+      }
+    }
+  },
+  "version": "20260911124422",
+  "publicationDate": "2026-09-11T12:44:22Z"
+}

@@ -1,0 +1,44 @@
+{
+  "product": {
+    "productFamily": "Alarm",
+    "attributes": {
+      "alarmType": "Standard",
+      "regionCode": "ap-south-1",
+      "servicecode": "AmazonCloudWatch",
+      "groupDescription": "CloudWatch Alarms",
+      "usagetype": "APS3-CW:AlarmMonitorUsage",
+      "locationType": "AWS Region",
+      "location": "Asia Pacific (Mumbai)",
+      "servicename": "AmazonCloudWatch",
+      "operation": "",
+      "group": "Alarm"
+    },
+    "sku": "MBFPHE42AKJWSCZH"
+  },
+  "serviceCode": "AmazonCloudWatch",
+  "terms": {
+    "OnDemand": {
+      "MBFPHE42AKJWSCZH.JRTCKXETXF": {
+        "priceDimensions": {
+          "MBFPHE42AKJWSCZH.JRTCKXETXF.6YS6EN2CT7": {
+            "unit": "Alarms",
+            "endRange": "Inf",
+            "description": "$0.10 per alarm metric month (standard resolution) - Asia Pacific (Mumbai)",
+            "appliesTo": [],
+            "rateCode": "MBFPHE42AKJWSCZH.JRTCKXETXF.6YS6EN2CT7",
+            "beginRange": "0",
+            "pricePerUnit": {
+              "USD": "0.1000000000"
+            }
+          }
+        },
+        "sku": "MBFPHE42AKJWSCZH",
+        "effectiveDate": "2026-10-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+      }
+    }
+  },
+  "version": "20261007115540",
+  "publicationDate": "2026-10-07T11:55:40Z"
+}

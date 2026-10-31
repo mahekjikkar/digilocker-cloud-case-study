@@ -1,0 +1,43 @@
+{
+  "product": {
+    "productFamily": "Amazon DynamoDB PayPerRequest Throughput",
+    "attributes": {
+      "regionCode": "ap-south-1",
+      "servicecode": "AmazonDynamoDB",
+      "groupDescription": "DynamoDB PayPerRequest Write Request Units",
+      "usagetype": "APS3-WriteRequestUnits",
+      "locationType": "AWS Region",
+      "location": "Asia Pacific (Mumbai)",
+      "servicename": "Amazon DynamoDB",
+      "operation": "PayPerRequestThroughput",
+      "group": "DDB-WriteUnits"
+    },
+    "sku": "A5DP2X4YSZ84WEJA"
+  },
+  "serviceCode": "AmazonDynamoDB",
+  "terms": {
+    "OnDemand": {
+      "A5DP2X4YSZ84WEJA.JRTCKXETXF": {
+        "priceDimensions": {
+          "A5DP2X4YSZ84WEJA.JRTCKXETXF.6YS6EN2CT7": {
+            "unit": "WriteRequestUnits",
+            "endRange": "Inf",
+            "description": "$0.71 per million write request units (Asia Pacific (India))",
+            "appliesTo": [],
+            "rateCode": "A5DP2X4YSZ84WEJA.JRTCKXETXF.6YS6EN2CT7",
+            "beginRange": "0",
+            "pricePerUnit": {
+              "USD": "0.0000007100"
+            }
+          }
+        },
+        "sku": "A5DP2X4YSZ84WEJA",
+        "effectiveDate": "2026-08-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+      }
+    }
+  },
+  "version": "20260911124422",
+  "publicationDate": "2026-09-11T12:44:22Z"
+}

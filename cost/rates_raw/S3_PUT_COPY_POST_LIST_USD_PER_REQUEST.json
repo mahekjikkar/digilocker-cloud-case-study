@@ -1,0 +1,43 @@
+{
+  "product": {
+    "productFamily": "API Request",
+    "attributes": {
+      "regionCode": "ap-south-1",
+      "servicecode": "AmazonS3",
+      "groupDescription": "PUT/COPY/POST or LIST requests",
+      "usagetype": "APS3-Requests-Tier1",
+      "locationType": "AWS Region",
+      "location": "Asia Pacific (Mumbai)",
+      "servicename": "Amazon Simple Storage Service",
+      "operation": "",
+      "group": "S3-API-Tier1"
+    },
+    "sku": "UJ844B8DVMQUFJQP"
+  },
+  "serviceCode": "AmazonS3",
+  "terms": {
+    "OnDemand": {
+      "UJ844B8DVMQUFJQP.JRTCKXETXF": {
+        "priceDimensions": {
+          "UJ844B8DVMQUFJQP.JRTCKXETXF.6YS6EN2CT7": {
+            "unit": "Requests",
+            "endRange": "Inf",
+            "description": "$0.005 per 1,000 PUT, COPY, POST, or LIST requests",
+            "appliesTo": [],
+            "rateCode": "UJ844B8DVMQUFJQP.JRTCKXETXF.6YS6EN2CT7",
+            "beginRange": "0",
+            "pricePerUnit": {
+              "USD": "0.0000050000"
+            }
+          }
+        },
+        "sku": "UJ844B8DVMQUFJQP",
+        "effectiveDate": "2026-10-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+      }
+    }
+  },
+  "version": "20261015173540",
+  "publicationDate": "2026-10-15T17:35:40Z"
+}

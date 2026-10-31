@@ -1,0 +1,43 @@
+{
+  "product": {
+    "productFamily": "Load Balancer-Application",
+    "attributes": {
+      "regionCode": "ap-south-1",
+      "servicecode": "AWSELB",
+      "groupDescription": "LoadBalancer hourly usage by Application Load Balancer",
+      "usagetype": "APS3-LoadBalancerUsage",
+      "locationType": "AWS Region",
+      "location": "Asia Pacific (Mumbai)",
+      "servicename": "Elastic Load Balancing",
+      "operation": "LoadBalancing:Application",
+      "group": "ELB:Balancing"
+    },
+    "sku": "WJ2MHASNP2ZNKFXX"
+  },
+  "serviceCode": "AWSELB",
+  "terms": {
+    "OnDemand": {
+      "WJ2MHASNP2ZNKFXX.JRTCKXETXF": {
+        "priceDimensions": {
+          "WJ2MHASNP2ZNKFXX.JRTCKXETXF.6YS6EN2CT7": {
+            "unit": "Hrs",
+            "endRange": "Inf",
+            "description": "$0.0239 per Application LoadBalancer-hour (or partial hour)",
+            "appliesTo": [],
+            "rateCode": "WJ2MHASNP2ZNKFXX.JRTCKXETXF.6YS6EN2CT7",
+            "beginRange": "0",
+            "pricePerUnit": {
+              "USD": "0.0239000000"
+            }
+          }
+        },
+        "sku": "WJ2MHASNP2ZNKFXX",
+        "effectiveDate": "2026-08-01T00:00:00Z",
+        "offerTermCode": "JRTCKXETXF",
+        "termAttributes": {}
+      }
+    }
+  },
+  "version": "20260911124544",
+  "publicationDate": "2026-09-11T12:45:44Z"
+}
