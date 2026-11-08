@@ -1,0 +1,4 @@
+API_ID=407xctwyx6
+BASE=https://407xctwyx6.execute-api.ap-south-1.amazonaws.com
+CBSE=https://407xctwyx6.execute-api.ap-south-1.amazonaws.com/cbse
+PARIVAHAN=https://407xctwyx6.execute-api.ap-south-1.amazonaws.com/parivahan
