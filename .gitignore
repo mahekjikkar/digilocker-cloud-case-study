@@ -12,3 +12,6 @@ venv/
 infra/.tmp/
 infra/.state.env
 loadtest/.smoke/
+
+.early.coverage
+*.zip
