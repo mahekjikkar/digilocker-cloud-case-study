@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DigiLocker registry — live demonstration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Spectral:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16213E;
+    --ink2:#5A6782;
+    --paper:#FFFFFF;
+    --bg:#E9ECF3;
+    --line:#C3CAD9;
+    --line-soft:#DFE4EC;
+    --accent:#1F5FA8;
+    --accent-dk:#1A528F;
+    --live:#0E6B45;
+    --live-bg:#E4F2EC;
+    --live-ln:#BFE0D2;
+    --fault:#A32B23;
+    --fault-bg:#FBE9E7;
+    --fault-ln:#F0C8C3;
+    --warn:#8A5A00;
+    --warn-bg:#FBF1DC;
+    --warn-ln:#EBD9AC;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:Archivo,system-ui,sans-serif;background:var(--bg);color:var(--ink);
+    line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:64rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+
+  header{display:flex;justify-content:space-between;align-items:flex-start;
+    gap:1.5rem;flex-wrap:wrap;margin-bottom:2.25rem}
+  h1{font-family:Spectral,Georgia,serif;font-weight:600;font-size:2rem;
+    letter-spacing:-.01em;margin:0 0 .4rem}
+  .sub{color:var(--ink2);max-width:52ch;margin:0;font-size:.94rem}
+  .conn{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;
+    color:var(--ink2);background:var(--paper);border:1px solid var(--line);
+    border-radius:2rem;padding:.35rem .8rem;white-space:nowrap}
+  .dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--line)}
+  .dot.ok{background:var(--live)}
+  .dot.bad{background:var(--fault)}
+
+  .shead{display:flex;align-items:baseline;gap:.75rem;margin:0 0 .85rem;flex-wrap:wrap}
+  .shead h2{font-size:.95rem;font-weight:600;margin:0}
+  .shead span{font-size:.82rem;color:var(--ink2)}
+
+  .issuers{display:grid;gap:1rem;grid-template-columns:1fr 1fr;margin-bottom:2.25rem}
+  @media(max-width:40rem){.issuers{grid-template-columns:1fr}}
+  .issuer{background:var(--paper);border:1px solid var(--line);border-radius:.5rem;
+    overflow:hidden}
+  .ibar{height:4px;background:var(--live)}
+  .issuer[data-health="slow"] .ibar{background:var(--warn)}
+  .issuer[data-health="down"] .ibar{background:var(--fault)}
+  .ibody{padding:1rem 1.15rem 1.15rem}
+  .issuer h3{margin:0;font-size:1.1rem;font-weight:700;letter-spacing:-.01em}
+  .dept{color:var(--ink2);font-size:.8rem;margin:.1rem 0 .9rem}
+  .pills{display:flex;gap:.45rem;margin-bottom:1rem;flex-wrap:wrap}
+  .pill{font-size:.76rem;font-weight:600;padding:.22rem .6rem;border-radius:2rem;
+    border:1px solid transparent}
+  .pill.live{color:var(--live);background:var(--live-bg);border-color:var(--live-ln)}
+  .pill.fault{color:var(--fault);background:var(--fault-bg);border-color:var(--fault-ln)}
+  .pill.warn{color:var(--warn);background:var(--warn-bg);border-color:var(--warn-ln)}
+  .pill.idle{color:var(--ink2);background:var(--bg);border-color:var(--line-soft)}
+  .ctrl-label{display:block;font-size:.74rem;color:var(--ink2);margin-bottom:.3rem}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:.35rem;overflow:hidden}
+  .seg button{font:inherit;font-size:.82rem;font-weight:500;padding:.4rem .78rem;
+    border:0;border-right:1px solid var(--line);background:var(--paper);
+    color:var(--ink2);cursor:pointer}
+  .seg button:last-child{border-right:0}
+  .seg button:hover{background:var(--bg);color:var(--ink)}
+  .seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+  .seg button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+  .docs{display:grid;gap:1rem;grid-template-columns:1fr 1fr;margin-bottom:2.25rem}
+  @media(max-width:40rem){.docs{grid-template-columns:1fr}}
+  .rec{background:var(--paper);border:1px solid var(--line);border-radius:.5rem;
+    padding:1.05rem 1.15rem;display:flex;flex-direction:column}
+  .issued{font-size:.72rem;font-weight:600;color:var(--accent);margin-bottom:.3rem}
+  .rec h4{font-family:Spectral,Georgia,serif;font-weight:600;font-size:1.15rem;
+    margin:0 0 .55rem}
+  .ref{font-family:var(--mono);font-size:.76rem;color:var(--ink2);background:var(--bg);
+    border:1px solid var(--line-soft);border-radius:.25rem;padding:.3rem .5rem;
+    margin-bottom:.4rem;word-break:break-all}
+  .refnote{font-size:.73rem;color:var(--ink2);margin:0 0 .9rem}
+  .act{margin-top:auto}
+  .btn{font:inherit;font-size:.86rem;font-weight:600;padding:.45rem .95rem;
+    border:1px solid var(--accent);background:var(--accent);color:#fff;
+    border-radius:.3rem;cursor:pointer}
+  .btn:hover{background:var(--accent-dk);border-color:var(--accent-dk)}
+  .btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+  .btn:disabled{opacity:.55;cursor:default}
+  .out{margin-top:.85rem;border-top:1px solid var(--line-soft);padding-top:.75rem;
+    font-size:.84rem}
+  .verdict{font-weight:600}
+  .verdict.ok{color:var(--live)}
+  .verdict.no{color:var(--fault)}
+  .why{color:var(--ink2);display:block;margin-top:.15rem;font-size:.8rem}
+  .cert{font-family:var(--mono);font-size:.7rem;line-height:1.5;margin-top:.55rem;
+    padding:.55rem .65rem;background:var(--live-bg);border:1px solid var(--live-ln);
+    border-radius:.25rem;color:#0B4C32;white-space:pre-wrap;word-break:break-all}
+
+  .log{background:var(--paper);border:1px solid var(--line);border-radius:.5rem;
+    padding:.4rem 0;max-height:15rem;overflow:auto}
+  .log p{margin:0;padding:.42rem 1.1rem;font-size:.82rem;display:flex;gap:.85rem;
+    border-bottom:1px solid var(--line-soft)}
+  .log p:last-child{border-bottom:0}
+  .log time{font-family:var(--mono);font-size:.74rem;color:var(--ink2);flex:none}
+  .log .empty{color:var(--ink2);justify-content:center}
+  .log b{font-weight:600}
+  .log .g{color:var(--live)}
+  .log .r{color:var(--fault)}
+
+  .steps{margin-top:2.25rem;background:var(--paper);border:1px solid var(--line);
+    border-radius:.5rem;padding:1.15rem 1.35rem}
+  .steps h2{font-size:.95rem;margin:0 0 .5rem}
+  .steps ol{margin:0;padding-left:1.25rem}
+  .steps li{margin-bottom:.4rem;color:var(--ink2);font-size:.9rem}
+  .steps li b{color:var(--ink);font-weight:600}
+  footer{margin-top:2.25rem;font-size:.8rem;color:var(--ink2)}
+  footer a{color:var(--accent)}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div>
+    <h1>DigiLocker registry</h1>
+    <p class="sub">A working model of India's document wallet. The registry stores a
+      pointer to each document, never the document itself, and fetches it live from the
+      issuing department. Take one department offline and watch what happens to the other.</p>
+  </div>
+  <span class="conn"><span class="dot" id="conn-dot"></span><span id="conn-text">connecting…</span></span>
+</header>
+
+<div class="shead"><h2>Issuing departments</h2><span>change how a department behaves and see how the registry responds</span></div>
+<div class="issuers" id="issuers"></div>
+
+<div class="shead"><h2>Documents</h2><span>the reference on each record is all the registry keeps</span></div>
+<div class="docs" id="docs"></div>
+
+<div class="shead"><h2>Activity</h2><span>every request the registry handled</span></div>
+<div class="log" id="log"><p class="empty">Nothing yet. Open a document to begin.</p></div>
+
+<div class="steps">
+  <h2>Try this</h2>
+  <ol>
+    <li>Open the driving licence. Note the time, usually under <b>100 ms</b>.</li>
+    <li>Set CBSE to <b>Offline</b>.</li>
+    <li>Open a CBSE marksheet three times. Each fails only after a real call is attempted.</li>
+    <li>Open it once more. The breaker is open now, so <b>no call is made at all</b>.</li>
+    <li>Open the driving licence again. PARIVAHAN is unaffected. Set CBSE back to Healthy, wait ten seconds, then open the marksheet to watch it recover.</li>
+  </ol>
+</div>
+
+<footer>
+  IT457 Group 36 · Registry and issuers on AWS Lambda behind API Gateway, pointers and
+  breaker state in DynamoDB, Mumbai region ·
+  <a href="https://github.com/mahekjikkar/digilocker-cloud-case-study">Source on GitHub</a>
+</footer>
+
+</div>
+
+<script>
+const BASE = "https://407xctwyx6.execute-api.ap-south-1.amazonaws.com";
+const ISSUERS = [
+  {id:"CBSE",      path:"cbse",      dept:"Central Board of Secondary Education"},
+  {id:"PARIVAHAN", path:"parivahan", dept:"Ministry of Road Transport and Highways"}
+];
+const state = {};
+let logged = false;
+const $ = id => document.getElementById(id);
+
+function setConn(ok, msg){
+  $("conn-dot").className = "dot " + (ok ? "ok" : "bad");
+  $("conn-text").textContent = msg;
+}
+
+async function api(path, opts){
+  const r = await fetch(BASE + path, opts);
+  if(!r.ok) throw new Error("HTTP " + r.status);
+  return r.json();
+}
+
+function log(html){
+  if(!logged){ $("log").innerHTML = ""; logged = true; }
+  const p = document.createElement("p");
+  p.innerHTML = `<time>${new Date().toLocaleTimeString("en-GB")}</time><span>${html}</span>`;
+  $("log").prepend(p);
+}
+
+function health(s){
+  if(!s || s.down === undefined) return {label:"Unknown", cls:"idle", key:"unknown"};
+  if(s.down) return {label:"Offline", cls:"fault", key:"down"};
+  if(s.latency_ms >= 1000) return {label:`Responding in ${s.latency_ms} ms`, cls:"warn", key:"slow"};
+  return {label:"Responding normally", cls:"live", key:"healthy"};
+}
+
+function renderIssuers(){
+  $("issuers").innerHTML = ISSUERS.map(i => {
+    const s = state[i.id] || {};
+    const h = health(s);
+    const open = s.breaker === "open";
+    return `
+    <section class="issuer" data-health="${h.key}">
+      <div class="ibar"></div>
+      <div class="ibody">
+        <h3>${i.id}</h3>
+        <p class="dept">${i.dept}</p>
+        <div class="pills">
+          <span class="pill ${h.cls}">${h.label}</span>
+          <span class="pill ${open ? "fault" : "live"}">${open
+            ? "Breaker open" + (s.failures ? " · " + s.failures + " failures" : "")
+            : "Breaker closed"}</span>
+        </div>
+        <span class="ctrl-label">Department behaviour</span>
+        <div class="seg" role="group" aria-label="${i.id} behaviour">
+          <button data-i="${i.path}" data-set="healthy" aria-pressed="${h.key==="healthy"}">Healthy</button>
+          <button data-i="${i.path}" data-set="slow"    aria-pressed="${h.key==="slow"}">Slow</button>
+          <button data-i="${i.path}" data-set="down"    aria-pressed="${h.key==="down"}">Offline</button>
+        </div>
+      </div>
+    </section>`;
+  }).join("");
+}
+
+function renderDocs(docs){
+  $("docs").innerHTML = docs.map(d => `
+    <article class="rec">
+      <span class="issued">Issued by ${d.issuer}</span>
+      <h4>${d.title}</h4>
+      <div class="ref">${d.uri}</div>
+      <p class="refnote">This reference is all the registry stores.</p>
+      <div class="act"><button class="btn" data-doc="${d.uri}">Open document</button></div>
+      <div class="out" id="o-${d.uri}" hidden></div>
+    </article>`).join("");
+}
+
+async function openDoc(uri, btn){
+  const out = $("o-" + uri);
+  btn.disabled = true;
+  out.hidden = false;
+  out.innerHTML = `<span class="why">Fetching from the issuing department…</span>`;
+  try{
+    const d = await api("/api/documents/" + uri);
+    if(d.degraded){
+      const noCall = d.elapsed_ms === undefined;
+      out.innerHTML = `<span class="verdict no">Not served</span><span class="why">${
+        noCall ? "The breaker is open, so no call was made."
+               : `A call was attempted and failed after ${d.elapsed_ms} ms (${d.reason}).`
+      }</span>`;
+      log(`<b class="r">Not served</b> ${uri} — ${
+        noCall ? "breaker refused, no call made"
+               : d.reason + " after " + d.elapsed_ms + " ms"}`);
+    } else {
+      out.innerHTML = `<span class="verdict ok">Served in ${d.elapsed_ms} ms</span>`
+        + `<span class="why">Fetched live from ${d.issuer}.</span>`
+        + `<div class="cert">${d.document.signed_xml.replace(/</g,"&lt;")}</div>`;
+      log(`<b class="g">Served</b> ${uri} — ${d.elapsed_ms} ms from ${d.issuer}`);
+    }
+  }catch(e){
+    out.innerHTML = `<span class="verdict no">Request failed</span><span class="why">${e.message}</span>`;
+    log(`<b class="r">Request failed</b> ${uri} — ${e.message}`);
+  }
+  btn.disabled = false;
+  refreshBreakers();
+}
+
+async function setFault(path, mode){
+  const body = mode === "healthy" ? {down:false, latency_ms:20}
+             : mode === "slow"    ? {down:false, latency_ms:3000}
+             :                      {down:true};
+  const id = ISSUERS.find(i => i.path === path).id;
+  try{
+    const s = await api("/" + path + "/control", {
+      method:"POST", headers:{"Content-Type":"application/json"},
+      body: JSON.stringify(body)});
+    state[id] = Object.assign(state[id] || {}, s);
+    renderIssuers();
+    log(`${id} set to <b>${health(s).label.toLowerCase()}</b>`);
+  }catch(e){
+    log(`<b class="r">Could not change ${id}</b> — ${e.message}`);
+  }
+}
+
+async function refreshBreakers(){
+  try{
+    (await api("/api/breakers")).forEach(b => {
+      state[b.issuer] = Object.assign(state[b.issuer] || {},
+        {breaker:b.state, failures:b.failures});
+    });
+    renderIssuers();
+  }catch(e){}
+}
+
+async function init(){
+  try{
+    await api("/api/health");
+    setConn(true, "Connected · ap-south-1");
+  }catch(e){
+    setConn(false, "Cannot reach the registry");
+    $("docs").innerHTML = `<p style="color:var(--ink2)">The registry is not responding.
+      Check that the API is deployed and reachable.</p>`;
+    return;
+  }
+  for(const i of ISSUERS){
+    try{
+      state[i.id] = await api("/" + i.path + "/control",
+        {method:"POST", headers:{"Content-Type":"application/json"}, body:"{}"});
+    }catch(e){ state[i.id] = {}; }
+  }
+  renderIssuers();
+  renderDocs(await api("/api/documents"));
+  refreshBreakers();
+  setInterval(refreshBreakers, 3000);
+}
+
+document.addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if(!b) return;
+  if(b.dataset.doc) openDoc(b.dataset.doc, b);
+  if(b.dataset.set) setFault(b.dataset.i, b.dataset.set);
+});
+
+init();
+</script>
+</body>
+</html>
