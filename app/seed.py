@@ -1,7 +1,8 @@
 """
 Load the pointer table into DynamoDB. Idempotent.
 
-Usage: DYNAMODB_TABLE=digilocker-pointers python seed.py
+Usage: DYNAMODB_TABLE=digilocker-ec2-pointers python seed.py
+(infra/up.sh runs this for you with the table name from infra/config.sh.)
 """
 import os
 

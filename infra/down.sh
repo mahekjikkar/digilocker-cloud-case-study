@@ -36,9 +36,10 @@ if [ -n "$TG_ARN" ] && [ "$TG_ARN" != "None" ]; then
   done
 fi
 
-say "Mock issuer instances"
+say "Registry and mock issuer instances (matched by exact Name tag, not by project tag alone)"
 IDS=$(aws ec2 describe-instances \
-        --filters Name=tag:Project,Values="$PROJECT" Name=instance-state-name,Values=pending,running,stopping,stopped \
+        --filters Name=tag:Project,Values="$PROJECT" Name=tag:Name,Values="$OUR_INSTANCE_NAMES" \
+                  Name=instance-state-name,Values=pending,running,stopping,stopped \
         --query 'Reservations[].Instances[].InstanceId' --output text)
 if [ -n "$IDS" ]; then
   aws ec2 terminate-instances --instance-ids $IDS >/dev/null
@@ -76,7 +77,8 @@ rm -f "$STATE_FILE"
 
 say "Leftover check"
 LEFT=$(aws ec2 describe-instances \
-         --filters Name=tag:Project,Values="$PROJECT" Name=instance-state-name,Values=pending,running,stopping,stopped \
+         --filters Name=tag:Project,Values="$PROJECT" Name=tag:Name,Values="$OUR_INSTANCE_NAMES" \
+                   Name=instance-state-name,Values=pending,running,stopping,stopped \
          --query 'length(Reservations[].Instances[])' --output text)
 echo "live $PROJECT instances: $LEFT"
 echo "load balancers: $(aws elbv2 describe-load-balancers --query "length(LoadBalancers[?LoadBalancerName=='$ALB_NAME'])" --output text 2>/dev/null || echo 0)"

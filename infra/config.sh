@@ -30,7 +30,9 @@ if [ "$(aws configure get region 2>/dev/null)" != "$REGION" ]; then
 fi
 
 BUCKET="$PROJECT-artifacts-$ACCOUNT"
-TABLE="$PROJECT-pointers"
+# Not "$PROJECT-pointers": the serverless demo (lambda/) in the same account uses that name,
+# and down.sh deletes this table by name.
+TABLE="$PROJECT-ec2-pointers"
 ROLE="$PROJECT-instance-role"
 PROFILE="$PROJECT-instance-profile"
 ALB_SG_NAME="$PROJECT-alb-sg"
@@ -43,3 +45,17 @@ ASG_NAME="$PROJECT-app-asg"
 PARAM_KEY="/$PROJECT/api_key"
 PARAM_BREAKER="/$PROJECT/breaker_enabled"
 BUDGET_NAME="$PROJECT-5usd"
+# Exact Name tags of the instances this stack launches (see the tags in up.sh).
+OUR_INSTANCE_NAMES="$PROJECT-app,$PROJECT-issuer-CBSE,$PROJECT-issuer-PARIVAHAN"
+
+# The serverless demo (lambda/, web/) lives in the same AWS account. Refuse to run if any
+# name above matches one of its resources, so up.sh can never write to them and down.sh
+# can never delete them. Add to this list if the demo gains resources.
+DEMO_RESOURCE_NAMES=" digilocker-pointers digilocker-breakers digilocker-issuer-control \
+digilocker-lambda-role digilocker-registry digilocker-issuer-cbse digilocker-issuer-parivahan "
+for name in "$BUCKET" "$TABLE" "$ROLE" "$PROFILE" "$ALB_SG_NAME" "$APP_SG_NAME" "$ISSUER_SG_NAME" \
+            "$LT_NAME" "$TG_NAME" "$ALB_NAME" "$ASG_NAME" "$PARAM_KEY" "$PARAM_BREAKER" "$BUDGET_NAME"; do
+  case "$DEMO_RESOURCE_NAMES" in
+    *" $name "*) echo "refusing to run: '$name' is a serverless-demo resource name"; exit 1 ;;
+  esac
+done
