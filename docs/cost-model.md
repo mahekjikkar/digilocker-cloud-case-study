@@ -89,7 +89,7 @@ national-scale service handles. Every scenario is therefore priced twice:
 | Profile | Response size | Pointer lookups | Pointer table |
 |---|---|---|---|
 | **As tested** | measured, about 0.4 KB | cached: at most (instances x 4 pointers x 60 refreshes per hour) | 4 items |
-| **National scale** | assumed 100 KiB document | every request is a cache miss and reads DynamoDB | 941 crore pointers |
+| **National scale** | assumed 100 KiB document | every request is a cache miss and reads DynamoDB | 934 crore pointers |
 
 Compute here is always based on the throughput we measured. For the national-scale
 profile that means the compute line is a **lower bound**: real 100 KiB documents would
@@ -140,11 +140,11 @@ results or the Price List cannot tell us.
 
 | Assumption | Value | Basis |
 |---|---|---|
-| Documents in the system | 941 crore = 9,410,000,000 | Week 2 report, section 5. The source of that figure is not named in the report (see the research log). |
+| Documents in the system | 934 crore = 9,340,000,000 | "More than 934 crore documents as of 31 July 2026", cited to the PIB factsheet <https://pib.gov.in/FactsheetDetails.aspx?Id=150840> (see the research log). This **replaces the Week 2 report's 941 crore**, which matches no official figure at any date. Official counts differ by date: 950+ crore in March 2026, 967+ in June 2026. The factsheet ("Empowering Governance through Digital Infrastructure", posted 12 Aug 2026) was read directly and says "As of 31 July 2026, the platform has registered over 72 crore users and issued more than 934+ Cr documents." |
 | **Average document size** | **100 KiB** | **Assumed.** No source gives it. A signed XML plus a printable PDF is plausibly tens to hundreds of KiB. Sensitivity at 25 and 500 KiB is in section 5. |
 | Pointer record size | 100 B of attributes + 100 B DynamoDB overhead = 200 B billed | Assumed. The 4 pointers in the tested table average 57 B of attributes; real identifiers are longer. Sensitivity in section 5. |
 | Request mix | every request is one document fetch: one pointer lookup, one issuer call, one response of one document | The k6 scenarios request single documents only. |
-| Pointer lookups at national scale | 100% cache misses | Assumed: 941 crore distinct pointers and a 60 s cache give almost no repeat hits. The 60 s figure is the registry's setting. |
+| Pointer lookups at national scale | 100% cache misses | Assumed: 934 crore distinct pointers and a 60 s cache give almost no repeat hits. The 60 s figure is the registry's setting. |
 | Hours per month | 730 | 365 x 24 / 12 |
 | Fleet | baseline: 2 instances (the ASG minimum); peak: the measured serving count; 1 ALB; 8 GB gp3 root disk per instance | Measured (disk size read from the AMI) |
 | Public IPv4 addresses | one per instance (as deployed) plus 2 for the load balancer | Assumed 2 for the ALB (one per zone). A private-subnet design would drop the instance addresses. |
@@ -164,22 +164,22 @@ results or the Price List cannot tell us.
 | Scenario | Profile | USD per hour | USD per 1,000 requests | USD per million requests |
 |---|---|---|---|---|
 | Baseline, 5.0 req/s, 2 instances | As tested | 0.0695 | **0.003828** | 3.83 |
-| | National scale | 0.9485 | **0.052258** | 52.26 |
+| | National scale | 0.9434 | **0.051978** | 51.98 |
 | Peak, burst, 343 req/s, 2 instances | As tested | 0.1279 | **0.000103** | 0.10 |
-| | National scale | 14.7298 | **0.011917** | 11.92 |
+| | National scale | 14.7247 | **0.011913** | 11.91 |
 | Peak, sustained, 279 req/s, 4 instances, 81.6% served | As tested | 0.1509 | **0.000150** (0.000184 per 1,000 served) | 0.15 |
-| | National scale | 12.1259 | **0.012091** (0.014820 per 1,000 served) | 12.09 |
+| | National scale | 12.1208 | **0.012086** (0.014814 per 1,000 served) | 12.09 |
 
 ### Where the money goes (USD per 1,000 requests)
 
 | Scenario / profile | Compute | IPv4 | Load balancer | DynamoDB | Data transfer | Monitoring |
 |---|---|---|---|---|---|---|
 | Baseline, as tested | 0.001344 | 0.001102 | 0.001322 | 0.000002 | 0.000043 | 0.000015 |
-| Baseline, national scale | 0.001344 | 0.001102 | 0.002137 | 0.037236 | 0.010424 | 0.000015 |
+| Baseline, national scale | 0.001344 | 0.001102 | 0.002137 | 0.036955 | 0.010424 | 0.000015 |
 | Peak burst, as tested | 0.000020 | 0.000016 | 0.000024 | 0.000000 | 0.000043 | 0.000000 |
-| Peak burst, national scale | 0.000020 | 0.000016 | 0.000840 | 0.000617 | 0.010424 | 0.000000 |
+| Peak burst, national scale | 0.000020 | 0.000016 | 0.000840 | 0.000613 | 0.010424 | 0.000000 |
 | Sustained, as tested | 0.000049 | 0.000030 | 0.000029 | 0.000000 | 0.000043 | 0.000000 |
-| Sustained, national scale | 0.000049 | 0.000030 | 0.000844 | 0.000744 | 0.010424 | 0.000000 |
+| Sustained, national scale | 0.000049 | 0.000030 | 0.000844 | 0.000739 | 0.010424 | 0.000000 |
 
 ### What the numbers say
 
@@ -190,7 +190,7 @@ results or the Price List cannot tell us.
   busy. The report's observation that average load is low (7 to 8 req/s) makes the
   fixed cost the main cost of the idle platform.
 - **At national scale and baseline traffic, storing the pointers dominates.** The
-  pointer table for 941 crore documents is $0.037 of the $0.052 per 1,000 requests.
+  pointer table for 934 crore documents is $0.037 of the $0.052 per 1,000 requests.
   This is a fixed monthly cost that is spread over very few requests at 5 req/s.
 - **At national scale and peak traffic, data transfer dominates.** Sending 100 KiB
   per request costs $0.0104 per 1,000 requests, 87.5% of the peak cost. That cost is
@@ -212,30 +212,30 @@ results or the Price List cannot tell us.
 
 ![Architecture B against the S3 counterfactual](../cost/architecture-b-vs-s3.png)
 
-Priced at baseline traffic (5.04 req/s = 13,249,500 requests per month), for 9.41
-billion documents of an **assumed 100 KiB** each = 897,408 GiB (876 TiB) stored in S3
-Standard. Architecture B stores 9.41 billion pointers of 200 B billed each =
-1,753 GiB in DynamoDB. Data transfer out is the same in both designs and is included in
+Priced at baseline traffic (5.04 req/s = 13,249,500 requests per month), for 9.34
+billion documents of an **assumed 100 KiB** each = 890,732 GiB (870 TiB) stored in S3
+Standard. Architecture B stores 9.34 billion pointers of 200 B billed each =
+1,740 GiB in DynamoDB. Data transfer out is the same in both designs and is included in
 both so that the totals are complete.
 
 | USD per month | Architecture B | Centralised S3 (storage + requests + transfer) |
 |---|---|---|
-| Storage | 492.41 (pointers, DynamoDB) | 21,203.57 (documents, S3) |
+| Storage | 488.69 (pointers, DynamoDB) | 21,050.03 (documents, S3) |
 | Request charges | 0.94 (DynamoDB reads) | 5.30 (S3 GETs) |
 | Data transfer out | 138.11 | 138.11 |
 | Compute | 17.81 | |
 | Load balancer | 28.32 | |
 | Public IPv4 | 14.60 | |
 | Monitoring | 0.20 | |
-| **Total** | **692.39** | **21,346.98** |
+| **Total** | **688.68** | **21,193.44** |
 
-- **The gap is $20,654.59 per month, a factor of 30.8**, on the comparison as the
+- **The gap is $20,504.76 per month, a factor of 30.8**, on the comparison as the
   Week 2 report framed it (B in full against S3 storage and requests).
 - That comparison flatters the saving slightly, because a centralised design would
   still need an access tier (compute, load balancer, addresses, monitoring) to enforce
-  login and consent. Adding the same $60.93 a month to the S3 side gives $21,407.91 and a
-  like-for-like gap of **$20,715.52 (30.9 times)**. That equals S3 storage and GETs
-  ($21,208.87) minus DynamoDB storage and reads ($493.35).
+  login and consent. Adding the same $60.93 a month to the S3 side gives $21,254.37 and a
+  like-for-like gap of **$20,565.69 (30.9 times)**. That equals S3 storage and GETs
+  ($21,055.33) minus DynamoDB storage and reads ($489.64).
 - **The saving is all storage.** Data transfer costs the same in both designs, so the
   pointer design does not make delivering documents cheaper; it avoids storing them.
 - The saving is DigiLocker's. The issuers still store their documents. The model does
@@ -245,18 +245,18 @@ both so that the totals are complete.
 
 | One-off | USD |
 |---|---|
-| S3: 9.41 billion PUT requests to load the documents | 47,050 |
-| DynamoDB: 9.41 billion pointer writes (one write unit each) | 6,681 |
+| S3: 9.34 billion PUT requests to load the documents | 46,700 |
+| DynamoDB: 9.34 billion pointer writes (one write unit each) | 6,631 |
 
 ### Sensitivity (all from `results.json`)
 
 | Change | Effect |
 |---|---|
-| Document size 25 KiB | S3 storage $5,435.60 per month; gap $4,894.80 (9.4 times) |
-| Document size 100 KiB (base) | S3 storage $21,203.57; gap $20,654.59 (30.8 times) |
-| Document size 500 KiB | S3 storage $103,765.10; gap $103,172.70 (81.1 times) |
-| Pointer attributes 50 / 100 / 200 B (billed 150 / 200 / 300 B) | DynamoDB storage $367.53 / $492.41 / $742.18 per month |
-| Two stored copies of everything (for example a standby region) | gap $41,365.75 (35.9 times) |
+| Document size 25 KiB | S3 storage $5,395.59; gap $4,858.46 (9.4 times) |
+| Document size 100 KiB (base) | S3 storage $21,050.03; gap $20,504.76 (30.8 times) |
+| Document size 500 KiB | S3 storage $102,997.36; gap $102,408.67 (80.7 times) |
+| Pointer attributes 50 / 100 / 200 B (billed 150 / 200 / 300 B) | DynamoDB storage $364.74 / $488.69 / $736.60 per month |
+| Two stored copies of everything (for example a standby region) | gap $41,066.10 (35.9 times) |
 | Every request opens a new connection to the load balancer | national scale: no change; as tested: peak burst rises from $0.000103 to $0.000188 per 1,000 |
 
 The size of the gap is driven almost entirely by the document-size assumption. The
@@ -303,7 +303,12 @@ I could confirm from AWS or from the results:
 6. That a "GB" for S3 and transfer billing is 2^30 bytes.
 7. That the Price List API's list prices equal what the Pricing Calculator shows. I
    expect them to, but I could not query the calculator itself.
-8. The 941 crore figure, whose source the report does not name.
+8. The 934 crore document count. It is verified in the PIB factsheet
+   <https://pib.gov.in/FactsheetDetails.aspx?Id=150840> ("more than 934+ Cr documents" as of
+   31 July 2026), but official counts differ by date (936.03 crore in releases of 29 Jul and
+   5 Aug 2026, 950+ in March 2026, 967+ in June 2026). The model's conclusion barely depends on
+   it: across 900 to 990 crore documents the central-storage ratio stays between 30.5 and 31.2
+   times.
 
 ### To confirm in the AWS Pricing Calculator
 

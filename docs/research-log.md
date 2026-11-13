@@ -36,12 +36,103 @@ Center, Circuit Breaker pattern.
 | Figure | Where it appears | Provenance |
 |---|---|---|
 | 72.43 crore registered users, as of 31 Jul 2026 | Week 1, Week 2 s.1 | Week 1 attributes current figures to the PIB release of 12 Aug 2026 |
-| 5,437 document types and services; 2,347 issuers; 4,776 state-level | Week 1, Week 2 s.1-2 | PIB / MeitY Annual Report per Week 1 |
-| About 72.86 crore access transactions over three years, so roughly 7 to 8 requests per second | Week 1 point 1, Week 2 F1 | The rate is derived, not published. Recomputed: 72.86 crore = 728.6 million over 3 x 365 x 86,400 s (94.6 million s) is about 7.7 req/s, if "three years" is exactly three. It is an average and says nothing about peaks. |
-| More than 941 crore documents made available | Week 2 s.5 | **Source not named in the report text.** Confirm and cite before the final report. |
-| Hosting at NIC / MeghRaj data centres in Delhi, Hyderabad, Pune, Bhubaneswar | Week 2 s.2 | **Source not named in the report text.** Presumably the PIB cloud-infrastructure release. Confirm. |
+| 5,437 document types and services (661 Central, 4,776 State) as of 31 Jul 2026 | Week 1, Week 2 s.1-2 | **Read directly** in the PIB (MeitY) release "Government Expands Citizen-Centric Digital Public Service Delivery through UMANG and DigiLocker", posted 12 Aug 2026: <https://www.pib.gov.in/PressReleasePage.aspx?PRID=2298116>. It says "5,437 document types/services [Central Government: 661; State Government: 4,776] are available on DigiLocker platform". Also reported by IBEF: <https://www.ibef.org/news/government-expands-citizen-centric-digital-public-service-delivery-through-umang-and-digilocker>. |
+| 2,347 issuers | Week 1, Week 2 s.1-2 | **Kept; an older dated figure, not an error.** Week 1 takes the issuer count from the MeitY Annual Report 2025-26 (published Apr 2026), listed at <https://www.meity.gov.in/documents/reports/annual-report?pageTitle=Annual-Reports>. That listing is a script-driven page and the report itself was not reached, so the report's as-of date for 2,347 is **not yet confirmed** (open it in a browser). Issuer counts rise over time. The latest official count, **read directly**, is **2,822 onboarded issuers** in PIB releases posted 29 Jul 2026 (<https://www.pib.gov.in/PressReleasePage.aspx?PRID=2291148>) and 5 Aug 2026 (<https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294910>): "over 71.66 crore registered users, with more than 936.03 crore documents issued by 2,822 onboarded issuers". Intermediate counts (1,800+, 1,936, 2,131, 2,311) were seen only in search-result summaries. So 2,347 fits as an earlier figure. It is **not replaced** by 2,822. State it as "2,347 issuers (MeitY Annual Report 2025-26)", adding the report's as-of date once read. |
+| ~~More than 941 crore documents~~ **More than 934 crore documents as of 31 July 2026** | Week 2 s.5 | **Corrected and verified.** 941 crore matches no official figure at any date, so it was wrong, not just old. The PIB factsheet https://pib.gov.in/FactsheetDetails.aspx?Id=150840 ("Empowering Governance through Digital Infrastructure", posted 12 Aug 2026) was **read directly** and says "As of 31 July 2026, the platform has registered over 72 crore users and issued more than 934+ Cr documents." The count depends on date and source (934+ crore end-July 2026; 950+ crore March 2026): see below. |
+| Hosting at NIC / MeghRaj data centres in Delhi, Hyderabad, Pune, Bhubaneswar | Week 2 s.2 | **Sourced in part.** NIC's four National Data Centres are named verbatim on <https://nichimachal.nic.in/infrastructure/> and <https://ndcbbsr.nic.in/aboutus>. That DigiLocker itself runs from them is **not** stated by any source I read. |
 | 1 GB cap on self-uploaded documents | Week 1, Week 2 s.2 | DLTS / NeGD material |
-| CBSE ran several result platforms at once, May 2026 | Week 1, Week 2 s.1 | Press reporting cited by the team; no source listed. Confirm. |
+| CBSE ran several result platforms at once, May 2026 | Week 1, Week 2 s.1 | **Sourced in part.** CBSE declared the Class 12 results on 13 May 2026 and they were offered through several channels (press reports, below). That CBSE did this *deliberately to spread demand* is **UNATTRIBUTED**: no CBSE statement found. |
+
+### Sourcing the three figures (searched and read 2026-11-13)
+
+Only pages I actually opened are quoted. Quotes are verbatim (PDF text extraction can
+add stray spaces, which are removed). Pages I could not read are listed at the end; nothing from them is quoted.
+PIB pages returned HTTP 403 to my web-fetch tool but open with a plain HTTP request that
+follows redirects, which is how the PIB pages below were read.
+
+**1. "More than 941 crore documents" was wrong; replaced by "more than 934 crore documents as
+of 31 July 2026".** Official sources give different counts for "documents issued", varying with
+date and probably with how they are counted. None is 941. The count is date-dependent: 934+
+crore at the end of July 2026, 950+ crore in March 2026:
+
+| Source (publisher, date) | What it says | URL |
+|---|---|---|
+| **PIB factsheet "Empowering Governance through Digital Infrastructure"** (posted 12 Aug 2026; the figure this report now uses) | "As of 31 July 2026, the platform has registered over 72 crore users and issued more than 934+ Cr documents." (read directly 2026-11-13; the URL redirects to `https://www.pib.gov.in/FactsheetDetails.aspx?Id=150840&reg=48&lang=2`) | https://pib.gov.in/FactsheetDetails.aspx?Id=150840 |
+| PIB releases posted 29 Jul 2026 and 5 Aug 2026 (MeitY / Digital India) | "over 71.66 crore registered users, with more than 936.03 crore documents issued by 2,822 onboarded issuers" (read directly). Consistent with "934+", which is a rounded floor | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2291148 and https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294910 |
+| DigiLocker homepage (NeGD / MeitY; page labelled "Last Updated: Nov 12, 2026", read 2026-11-13) | "900+ Crore" under "Issued Documents"; "70+ Crore" under "Registered Users" | https://www.digilocker.gov.in/ |
+| PIB backgrounder "India's Digital Public Infrastructure" (6 Mar 2026) | "As of 5 March 2026, DigiLocker had 67.63 crore users. By March 2026, over 950 crore documents had been issued through the platform" | https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/mar/doc202636812701.pdf |
+| PIB backgrounder "Infrastructure at the Core of India's Development" (9 Jun 2026) | "DigiLocker, with 68.91 crore+ registered users and more than 967 crore issued digital documents" | https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/jun/doc2026611890701.pdf |
+| NeGD case study "DigiLocker: Citizen's Vault of Trust on Public Cloud of India" (Capacity Building Division, NeGD; PDF created 22 Oct 2025) | "as of August 2025, DigiLocker has issued over 990 crore documents and served more than 57 crore registered users across India (source: DigiLocker Statistics dashboard, August 2025)" | https://negd.gov.in/wp-content/uploads/2025/10/Charru-Malhotra-DIgilocker-the-digital-Vault-of-India.pdf |
+
+The exact-number dashboard (`digilocker.gov.in/statistics`) returned HTTP 403 to my tool and was not read.
+**Why the number moves:** it depends on the as-of date and on the source's way of counting. The
+end-of-July 2026 count is about 936 crore ("936.03 crore" in the 29 Jul and 5 Aug releases, "934+" in
+the 12 Aug factsheet, a rounded floor). Earlier and later counts do not rise steadily: 990+ in
+Aug 2025, 950+ in Mar 2026, 967+ in Jun 2026, then about 936 at end-July 2026. That points to
+different definitions or a recount, not simple growth, and is why 941 cannot be placed: it equals
+none of them.
+
+*Effect on the cost model:* the model now takes 934 crore (`DOCUMENTS` in `cost/model.py`),
+and `docs/cost-model.md` and the charts were regenerated from it. The conclusion is not
+sensitive to the count: the central-storage ratio is 30.5, 30.8, 30.9, 31.0 and 31.2 times
+for 900, 934, 950, 967 and 990 crore documents.
+
+**2. NIC / MeghRaj data centres in Delhi, Hyderabad, Pune and Bhubaneswar: sourced.**
+
+| Source | What it says | URL |
+|---|---|---|
+| NIC Himachal Pradesh State Centre, Infrastructure page (NIC; "Last Updated: 30.10.2026") | "NIC provides Data Centers Services from National Data Centres at Delhi, Hyderabad, Pune and Bhubaneswar." and "NIC launched National Cloud Services in year 2014 under MeghRaj Government of India Cloud Initiative." | https://nichimachal.nic.in/infrastructure/ |
+| NDC Bhubaneswar, "About Us" page (NIC National Data Centre Bhubaneswar; footer "© 2018") | "NIC has set up state-of-the-art National Data Centres at NIC Hqrs, Delhi, Pune , Hyderabad and Bhubaneswar" and "30 small data centres at various state capitals" | https://ndcbbsr.nic.in/aboutus |
+| NIC Meghalaya State Centre, Infrastructure page (NIC; "Last Updated: Oct 06, 2026") | the same two sentences, and "NIC has been offering services to the government through its 4 National Data Centres and 30 Mini Data Centres" | https://meg.nic.in/infrastructure/ |
+| PIB (MeitY) "India building secure, scalable and AI-ready cloud infrastructure to support digital governance", 12 Dec 2025 (read from NeGD's PDF copy) | "The 'GI Cloud', known as MeghRaj, provides secure, scalable and elastic cloud facilities for delivery of e-Governance services." "National Informatics Centre (NIC) offers the cloud services to various Ministries/Departments. As on date, 2,170 Ministries/Departments have hosted their cloud-based applications on 'MeghRaj'." It **does not name the cities** | https://negd.gov.in/wp-content/uploads/2025/12/Press-Release_Press-Information-Bureau3-3.pdf (PIB page: PRID 2202897) |
+
+Two checks on these pages. NIC's national address <https://www.nic.in/service/data-centre/> redirects to the NIC
+homepage (`https://www.nic.gov.in/`) and shows no data-centre text, so it is not cited. NIC Delhi's own "Data Centres" page
+(<https://del.nic.in/service/data-centres/>, "Oct 23, 2026") lists only **three** centres
+("National Data Centres at NIC Hqrs, Delhi, Pune and Hyderabad"), an older wording, so cite the
+two pages that name all four. Limits to state in the report. These pages describe NIC's data
+centres in general. **No
+source I read says DigiLocker runs from those four sites today.** What the NeGD case study
+says about DigiLocker's hosting (same URL as above): "The first version of DigiLocker was
+released in 2015 and hosted at the National Informatics Centre (NIC)." and "DigiLocker
+operates on a secure, government-managed public cloud infrastructure, aligned with
+India's digital governance standards and hosted on ISO 27001 certified data centers
+under the aegis of MeitY." So the report may say that NIC runs four National Data
+Centres, that DigiLocker's first version was hosted at NIC, and that DigiLocker runs on
+government-managed ISO 27001 data centres under MeitY, but should not say it runs on
+MeghRaj at those four sites.
+
+**3. CBSE results on several platforms, May 2026: sourced in part.**
+
+| Source | What it says | URL |
+|---|---|---|
+| Careers360 News (Aatif Ammad, 13 May 2026, 1:30 PM IST) | "marksheets available on DigiLocker, UMANG and SMS services"; CBSE "has declared the Class 12 Results 2026 for all streams including science, arts and commerce today, May 13"; "Students can also check their CBSE Class 12 Results 2026 through SMS if the official websites experience heavy traffic." | https://news.careers360.com/cbse-class-12-result-2026-declared-results-nic-in-digilocker-umang-sms-scorecard-download-steps-pass-percentage-osm |
+| Onmanorama (staff, 13 May 2026, 2:16 PM IST) | "The Central Board of Secondary Education (CBSE) on Wednesday declared the results of the Class 12 board examination."; lists results.cbse.nic.in, cbse.gov.in, results.nic.in, results.digilocker.gov.in and umang.gov.in, SMS to 7738299899, and IVRS | https://www.onmanorama.com/news/india/2026/05/13/cbse-class-12-results-declared-check-scores.amp.html |
+| India.com (13 May 2026, updated 2:52 PM IST) | CBSE websites named; DigiLocker and UMANG described as "coming soon" at that time, so the app channels went live after the websites. No CBSE quote | https://www.india.com/education/cbse-class-12-result-umang-app-digilocker-sms-class-10-hrd-ministry-dhamendra-pradhan-toppers-list-registration-admit-card-supplementary-exam-8413007/amp/ |
+
+Supported: CBSE declared the Class 12 results on 13 May 2026, and they could be
+reached through its websites, DigiLocker, UMANG, SMS and IVRS. "At once" is only roughly
+true: the app channels followed the websites by hours. **Unattributed: the claim that
+CBSE did this deliberately to spread demand.** No CBSE statement says so. The only
+load-related sentence is Careers360's own advice about SMS. An official CBSE notice would
+settle it, and none could be read. *Recommended wording:* "CBSE declared the Class 12
+results on 13 May 2026, available through its websites, DigiLocker, UMANG, SMS and IVRS
+(press reports)", without the stated motive.
+
+**Other figures, verified at the source.** Over 72.43 crore registered users, about 72.86 crore access
+transactions over the last three years, and 5,437 document types and services (661 Central, 4,776
+State) are in the PIB (MeitY) release posted 12 Aug 2026, read directly:
+<https://www.pib.gov.in/PressReleasePage.aspx?PRID=2298116>. IBEF and GKToday report the same numbers
+(<https://www.ibef.org/news/government-expands-citizen-centric-digital-public-service-delivery-through-umang-and-digilocker>,
+<https://www.gktoday.in/digilocker-crosses-72-crore-users-umang-reaches-11-crore/>). The latest issuer
+count, 2,822, is also at the source (see the 2,347 issuers row in part 2).
+
+**Not read, so not cited:** the MeitY Annual Report 2025-26 (its listing page is script-driven and
+the report was not reached), `www.digilocker.gov.in/statistics` (403), `cbse.gov.in` pages (403),
+`cbseresults.nic.in` and `results.cbse.nic.in` (no DNS answer from this machine),
+`www.nic.in/service/data-centre/` (redirects to the homepage), Shiksha (403), Oneindia (410), and
+the Wayback Machine (not fetchable from this tool). The CBSE and DigiLocker-statistics pages were
+not retried with a plain HTTP request.
 
 ## 3. Inferred or unknown
 
@@ -150,6 +241,28 @@ Other facts from the AWS session:
 | After E2 the fleet was at 4 instances. E3 and E4 are defined against 2. | The two throttled scale-out instances were removed (terminated with desired capacity decremented) before E3, leaving one registry instance per zone. |
 | CloudWatch retains basic-monitoring EC2 data after instances terminate, so per-instance data could be collected the day after teardown. | Used for finding A. |
 
+### Serverless variant and live demonstration (teammate, 2026-11-08 to 2026-11-11)
+
+Mahek Jikkar added a simplified serverless variant of the registry and issuers (AWS
+Lambda, API Gateway, DynamoDB; `lambda/`) and a browser console for it (`web/`, served by
+GitHub Pages). It is documented in [live-demo.md](live-demo.md) as the project's live
+demonstration. Findings:
+
+- **Verified 2026-11-13:** the console URL serves the committed `web/index.html`, every API
+  call the page makes succeeds, the cross-origin headers are present, and both issuers
+  were healthy. This was checked with HTTP requests, not in a browser, and the Pages
+  source setting could not be read without admin access (inferred from the deployments).
+  Full log in `live-demo.md`.
+- **Not measured:** no load test or results exist for it. The breaker-off against
+  breaker-on comparison is available only from E4 on the EC2 build, because the page has
+  no breaker switch.
+- **Name clash (2026-11-13):** it shares the AWS account with the EC2 stack and both used
+  a DynamoDB table named `digilocker-pointers`, which `down.sh` deletes by name. The EC2
+  table is now `digilocker-ec2-pointers`, `infra/config.sh` refuses to run on a name that
+  matches a demo resource, and `down.sh` finds instances by exact Name tag.
+- **Its design differs** from the EC2 build in the breaker rule, shared breaker state, no
+  retries, no API key and open control addresses (table in `live-demo.md`).
+
 ## 5. Status of open items
 
 Done in this build:
@@ -161,7 +274,14 @@ Done in this build:
 Still open, and not part of the build:
 - Cost model from measured throughput, plus the object-storage counterfactual
   (Week 2 s.5), and the Week 3 report.
-- Confirm and cite the three unattributed figures in part 2.
+- The three figures were searched on 2026-11-13 and corrected (see "Sourcing the three
+  figures"). **941 crore documents is replaced by "more than 934 crore documents as of 31 July
+  2026"**, verified in the PIB factsheet <https://pib.gov.in/FactsheetDetails.aspx?Id=150840>. The NIC locations are sourced. The CBSE
+  result day is sourced except the claim that it was deliberate to spread demand.
+  **2,347 issuers is kept** as an older dated figure from the MeitY Annual Report 2025-26.
+- Still open: read the MeitY Annual Report 2025-26 in a browser for the as-of date of 2,347
+  issuers; then carry the corrected wording into the final report (the Week 2 PDF itself still
+  says 941 crore).
 
 Possible follow-ups, not done: re-run E2 with a non-burstable instance type or
 unlimited credits to separate capacity from credit exhaustion; test a hard instance

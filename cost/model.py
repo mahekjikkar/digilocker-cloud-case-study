@@ -59,7 +59,11 @@ GIB = 2 ** 30                          # AWS bills storage and transfer "GB" as 
 # 2. ASSUMPTIONS (not measured, not in the Price List). Change them here.
 # ---------------------------------------------------------------------------
 HOURS_PER_MONTH = 730                  # 365 x 24 / 12
-DOCUMENTS = 941 * 10 ** 7              # 941 crore documents (Week 2 report s.5; source not named there)
+# 934 crore issued documents as of 31 July 2026: PIB factsheet, https://pib.gov.in/FactsheetDetails.aspx?Id=150840
+# (read directly: "As of 31 July 2026, the platform has registered over 72 crore users and issued more than 934+ Cr documents").
+# This replaces the Week 2 report's 941 crore, which matches no official figure. Official counts vary by date:
+# docs/research-log.md, "Sourcing the three figures".
+DOCUMENTS = 934 * 10 ** 7
 DOC_SIZE_BYTES = 100 * 1024            # ASSUMED average issued document (signed XML + PDF): 100 KiB
 POINTER_ATTR_BYTES = 100               # ASSUMED attribute bytes per pointer (measured seed average is below)
 ALB_PUBLIC_IPV4_ADDRESSES = 2          # ASSUMED: one per zone for an internet-facing ALB in 2 zones
@@ -187,7 +191,7 @@ def pointer_storage_month(items, attr_bytes=POINTER_ATTR_BYTES):
 
 PROFILES = {
     "as_tested": "As tested: the mock payload (about 0.4 KB), the 4 pointers that existed (cache hits)",
-    "national_scale": "National scale: assumed 100 KiB documents, every lookup a cache miss, 941 crore pointers stored",
+    "national_scale": "National scale: assumed 100 KiB documents, every lookup a cache miss, 934 crore pointers stored",
 }
 
 
@@ -396,7 +400,7 @@ def chart_b_vs_s3(results, path):
 
     fig.text(0.04, 0.955, NOTE, fontsize=8.5, color="#B03030", ha="left")
     fig.text(0.04, 0.02,
-             f"{cmp_['documents']:,} documents (941 crore) at an ASSUMED {cmp_['doc_size_bytes'] // 1024} KiB each = "
+             f"{cmp_['documents']:,} documents (934 crore) at an ASSUMED {cmp_['doc_size_bytes'] // 1024} KiB each = "
              f"{cmp_['s3_gib'] / 1024:,.0f} TiB; baseline {results['measured']['baseline']['requests_per_second']:.1f} "
              f"req/s measured in E1; {HOURS_PER_MONTH} h/month; one region, one copy; list prices. "
              f"Left and right panels use different scales.", fontsize=8, ha="left")

@@ -97,7 +97,7 @@
   },
   "assumptions": {
     "hours_per_month": 730,
-    "documents": 9410000000,
+    "documents": 9340000000,
     "doc_size_bytes": 102400,
     "pointer_attribute_bytes": 100,
     "pointer_item_billed_bytes": 200,
@@ -109,7 +109,7 @@
     "pointer_cache_ttl_seconds": 60,
     "profiles": {
       "as_tested": "As tested: the mock payload (about 0.4 KB), the 4 pointers that existed (cache hits)",
-      "national_scale": "National scale: assumed 100 KiB documents, every lookup a cache miss, 941 crore pointers stored"
+      "national_scale": "National scale: assumed 100 KiB documents, every lookup a cache miss, 934 crore pointers stored"
     }
   },
   "measured": {
@@ -201,12 +201,12 @@
         }
       },
       "national_scale": {
-        "usd_per_hour": 0.9484827272924318,
+        "usd_per_hour": 0.9433923477407663,
         "components_usd_per_hour": {
           "compute": 0.024398904109589042,
           "public_ipv4": 0.02,
           "alb": 0.03879505184159734,
-          "dynamodb": 0.675825364686992,
+          "dynamodb": 0.6707349851353265,
           "data_transfer": 0.18918943405151367,
           "monitoring": 0.00027397260273972606
         },
@@ -214,13 +214,13 @@
           "compute": 0.0013442922374429225,
           "public_ipv4": 0.0011019283746556475,
           "alb": 0.002137468421024647,
-          "dynamodb": 0.03723555728302986,
+          "dynamodb": 0.036955095599742506,
           "data_transfer": 0.010423660278320312,
           "monitoring": 1.5094909241858186e-05
         },
-        "usd_per_1000_requests": 0.052258001503715255,
-        "usd_per_1000_served_requests": 0.052258001503715255,
-        "usd_per_1000_requests_if_every_request_is_a_new_connection": 0.052258001503715255,
+        "usd_per_1000_requests": 0.0519775398204279,
+        "usd_per_1000_served_requests": 0.0519775398204279,
+        "usd_per_1000_requests_if_every_request_is_a_new_connection": 0.0519775398204279,
         "marginal_usd_per_1000_requests_at_scale": 0.013210830716402205,
         "detail": {
           "lcu": 1.8618814801996673,
@@ -267,12 +267,12 @@
         }
       },
       "national_scale": {
-        "usd_per_hour": 14.729833796839856,
+        "usd_per_hour": 14.72474341728819,
         "components_usd_per_hour": {
           "compute": 0.024398904109589042,
           "public_ipv4": 0.02,
           "alb": 1.03828994431993,
-          "dynamodb": 0.7626014521869919,
+          "dynamodb": 0.7575110726353265,
           "data_transfer": 12.884269523620604,
           "monitoring": 0.00027397260273972606
         },
@@ -280,13 +280,13 @@
           "compute": 1.9739255464612594e-05,
           "public_ipv4": 1.618044431500089e-05,
           "alb": 0.0008399996313447002,
-          "dynamodb": 0.0006169615165825218,
+          "dynamodb": 0.0006128432864386247,
           "data_transfer": 0.010423660278320312,
           "monitoring": 2.216499221232999e-07
         },
-        "usd_per_1000_requests": 0.011916762775949271,
-        "usd_per_1000_served_requests": 0.011916762775949271,
-        "usd_per_1000_requests_if_every_request_is_a_new_connection": 0.011916762775949271,
+        "usd_per_1000_requests": 0.011912644545805373,
+        "usd_per_1000_served_requests": 0.011912644545805373,
+        "usd_per_1000_requests_if_every_request_is_a_new_connection": 0.011912644545805373,
         "marginal_usd_per_1000_requests_at_scale": 0.0113434037563307,
         "detail": {
           "lcu": 126.79874303999125,
@@ -333,12 +333,12 @@
         }
       },
       "national_scale": {
-        "usd_per_hour": 12.125892778015638,
+        "usd_per_hour": 12.120802398463972,
         "components_usd_per_hour": {
           "compute": 0.048797808219178083,
           "public_ipv4": 0.03,
           "alb": 0.846943301879288,
-          "dynamodb": 0.745988802186992,
+          "dynamodb": 0.7408984226353266,
           "data_transfer": 10.45388889312744,
           "monitoring": 0.00027397260273972606
         },
@@ -346,13 +346,13 @@
           "compute": 4.865670377822125e-05,
           "public_ipv4": 2.9913251570445712e-05,
           "alb": 0.0008444942685006363,
-          "dynamodb": 0.0007438316902851652,
+          "dynamodb": 0.0007387560301478978,
           "data_transfer": 0.010423660278320312,
           "monitoring": 2.7318037963877366e-07
         },
-        "usd_per_1000_requests": 0.01209082937283442,
-        "usd_per_1000_served_requests": 0.014820329815804183,
-        "usd_per_1000_requests_if_every_request_is_a_new_connection": 0.01209082937283442,
+        "usd_per_1000_requests": 0.012085753712697152,
+        "usd_per_1000_served_requests": 0.014814108327190982,
+        "usd_per_1000_requests_if_every_request_is_a_new_connection": 0.012085753712697152,
         "marginal_usd_per_1000_requests_at_scale": 0.011384172527895012,
         "detail": {
           "lcu": 102.88041273491099,
@@ -369,82 +369,82 @@
   "comparison": {
     "base": {
       "requests_per_month": 13249500.0,
-      "documents": 9410000000,
+      "documents": 9340000000,
       "doc_size_bytes": 102400,
-      "s3_gib": 897407.5317382812,
-      "pointer_table_gib": 1752.7490854263306,
+      "s3_gib": 890731.8115234375,
+      "pointer_table_gib": 1739.7105693817139,
       "copies": 1,
       "architecture_b": {
         "components_usd_per_month": {
           "compute": 17.8112,
           "public_ipv4": 14.6,
           "alb": 28.320387844366056,
-          "dynamodb_storage": 492.40848934650415,
+          "dynamodb_storage": 488.6925122737884,
           "dynamodb_reads": 0.944026875,
           "data_transfer": 138.10828685760498,
           "monitoring": 0.2
         },
-        "total_usd_per_month": 692.3923909234752
+        "total_usd_per_month": 688.6764138507594
       },
       "s3_only": {
         "components_usd_per_month": {
-          "s3_storage": 21203.57322998047,
+          "s3_storage": 21050.031665039063,
           "s3_get_requests": 5.299799999999999,
           "data_transfer": 138.10828685760498
         },
-        "total_usd_per_month": 21346.981316838075
+        "total_usd_per_month": 21193.43975189667
       },
       "centralised_same_access_tier": {
         "components_usd_per_month": {
           "access_tier": 60.931587844366064,
-          "s3_storage": 21203.57322998047,
+          "s3_storage": 21050.031665039063,
           "s3_get_requests": 5.299799999999999,
           "data_transfer": 138.10828685760498
         },
-        "total_usd_per_month": 21407.912904682442
+        "total_usd_per_month": 21254.371339741036
       },
-      "gap_s3_only_minus_b": 20654.5889259146,
-      "ratio_s3_only_over_b": 30.830756658614686,
-      "gap_centralised_minus_b": 20715.520513758966,
-      "ratio_centralised_over_b": 30.918758185845654,
+      "gap_s3_only_minus_b": 20504.76333804591,
+      "ratio_s3_only_over_b": 30.774162328854523,
+      "gap_centralised_minus_b": 20565.694925890275,
+      "ratio_centralised_over_b": 30.862638696882964,
       "one_off_ingestion": {
-        "s3_put_requests_usd": 47050.00000000001,
-        "dynamodb_pointer_writes_usd": 6681.099999999999
+        "s3_put_requests_usd": 46700.00000000001,
+        "dynamodb_pointer_writes_usd": 6631.4
       }
     },
     "sensitivity_document_size_kib": {
       "25": {
-        "s3_gib": 224351.8829345703,
-        "gap_s3_only_minus_b": 4894.801379163817,
-        "ratio_s3_only_over_b": 9.429565195269417,
-        "gap_centralised_minus_b": 4947.592474208183,
-        "s3_storage_usd_per_month": 5435.645190429687
+        "s3_gib": 222682.95288085938,
+        "gap_s3_only_minus_b": 4858.46303494747,
+        "ratio_s3_only_over_b": 9.420874264826487,
+        "gap_centralised_minus_b": 4911.254129991837,
+        "s3_storage_usd_per_month": 5395.590869140625
       },
       "100": {
-        "s3_gib": 897407.5317382812,
-        "gap_s3_only_minus_b": 20654.5889259146,
-        "ratio_s3_only_over_b": 30.830756658614686,
-        "gap_centralised_minus_b": 20715.520513758966,
-        "s3_storage_usd_per_month": 21203.57322998047
+        "s3_gib": 890731.8115234375,
+        "gap_s3_only_minus_b": 20504.76333804591,
+        "ratio_s3_only_over_b": 30.774162328854523,
+        "gap_centralised_minus_b": 20565.694925890275,
+        "s3_storage_usd_per_month": 21050.031665039063
       },
       "500": {
-        "s3_gib": 4487037.658691406,
-        "gap_s3_only_minus_b": 103172.66588423647,
-        "ratio_s3_only_over_b": 81.0879849686017,
-        "gap_centralised_minus_b": 103277.01343368084,
-        "s3_storage_usd_per_month": 103765.06614990234
+        "s3_gib": 4453659.0576171875,
+        "gap_s3_only_minus_b": 102408.67403660215,
+        "ratio_s3_only_over_b": 80.72490403063414,
+        "gap_centralised_minus_b": 102513.02158604653,
+        "s3_storage_usd_per_month": 102997.35832519531
       }
     },
     "sensitivity_pointer_attribute_bytes": {
-      "50": 367.5251170098781,
-      "100": 492.40848934650415,
-      "200": 742.1752340197562
+      "50": 364.7381342053413,
+      "100": 488.6925122737884,
+      "200": 736.6012684106826
     },
     "two_stored_copies": {
-      "gap_s3_only_minus_b": 41365.75366654857,
-      "ratio_s3_only_over_b": 35.913675669385555,
-      "gap_centralised_minus_b": 41426.685254392934,
-      "ratio_centralised_over_b": 35.96510337243594
+      "gap_s3_only_minus_b": 41066.10249081119,
+      "ratio_s3_only_over_b": 35.879553536362835,
+      "gap_centralised_minus_b": 41127.03407865555,
+      "ratio_centralised_over_b": 35.931305868611766
     }
   }
 }

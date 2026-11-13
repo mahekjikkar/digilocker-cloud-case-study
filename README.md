@@ -8,6 +8,11 @@ an issuer it does not control, and stays usable when one issuer is slow or dead.
 The experiment contrasts the same load run **with and without a per-issuer
 circuit breaker**.
 
+- **Live demonstration** (a simplified serverless variant of the design below):
+  <https://mahekjikkar.github.io/digilocker-cloud-case-study/web/>. It is a web console
+  on a serverless API in Mumbai (AWS Lambda, API Gateway, DynamoDB). Checked working on
+  2026-11-13; see [Live demonstration](#live-demonstration-serverless-variant) and
+  [docs/live-demo.md](docs/live-demo.md).
 - Load balancer used for the recorded runs (2026-10-29 UTC):
   `http://digilocker-alb-1092861771.ap-south-1.elb.amazonaws.com`
   *(torn down after the runs to save cost, so the link is dead. A rebuilt stack gets
@@ -23,7 +28,10 @@ circuit breaker**.
 | **A** | How DigiLocker works today, reconstructed from published specifications. Descriptive. | Week 2 report, sections 2 and 3 |
 | **B** | Our proposed multi-region high-availability design. Prescriptive, our own work, not a claim about DigiLocker's real deployment. | Week 2 report, sections 4 to 6 |
 
-What is built here is a scaled-down slice of B. See `docs/`.
+What is built here is a scaled-down slice of B (the EC2 build, which the experiments
+measured). The live demonstration is a separate, simpler **serverless variant** of the same
+idea; see [Live demonstration](#live-demonstration-serverless-variant). The Week 2 report
+is `docs/digilocker_report.pdf`.
 
 ## What is built
 
@@ -33,8 +41,11 @@ What is built here is a scaled-down slice of B. See `docs/`.
 | `mock-issuer/` | One codebase, run once per issuer (`ISSUER_ID`). `/control` injects latency, error rate or total failure. |
 | `infra/` | AWS CLI scripts: ALB, ASG of t3.micro across two zones, DynamoDB, mock issuers, IAM, budget alarm, teardown. |
 | `loadtest/` | k6 scenarios E1 to E4, a run wrapper, a CloudWatch collector, and a local smoke test. |
+| `lambda/` | The serverless variant: registry and two mock issuers as AWS Lambda functions behind one API Gateway address. Powers the live demonstration. |
+| `web/` | `index.html`, the live demonstration console (served by GitHub Pages). |
+| `cost/` | The cost model: generated AWS list-price rates, the script, its results and two charts. |
 | `results/` | Raw output, committed as produced. |
-| `docs/` | Reports, Week 1 summary, research log. |
+| `docs/` | The Week 2 report (PDF), the research log, the cost-model write-up and the live-demo notes. |
 
 ### How a request flows
 
@@ -50,6 +61,41 @@ client -> ALB -> registry (ASG, 2 zones) -> DynamoDB (pointer lookup, cached)
 not be used the body has `degraded: true`, the cached metadata and a note, and no
 document. **Count a document as served only when `degraded` is false**; the k6
 scripts do this (`served` metric).
+
+## Live demonstration (serverless variant)
+
+The live demonstration is a **simplified serverless variant of the EC2 design**, built
+by Mahek Jikkar (`lambda/`, `web/`). The same idea, in a form anyone can open in a
+browser: a registry that stores a pointer to each document, fetches it live from the
+issuing department, and keeps one circuit breaker per issuer, so you can take one
+department offline and watch the other keep working.
+
+| | |
+|---|---|
+| Console | <https://mahekjikkar.github.io/digilocker-cloud-case-study/web/> |
+| API | `https://407xctwyx6.execute-api.ap-south-1.amazonaws.com` (routes `/api/...`, `/cbse/...`, `/parivahan/...`) |
+| Runs on | AWS Lambda behind API Gateway, with pointers, breaker state and issuer settings in DynamoDB, in Mumbai (ap-south-1) |
+| Source | `lambda/registry`, `lambda/issuer`, `web/index.html` |
+
+**Status:** checked on 2026-11-13. GitHub Pages serves `web/index.html` (the served file
+is the committed one), the API answers every call the console makes, the cross-origin
+(CORS) headers a browser needs are present, and both issuers were healthy. These were
+checked with HTTP requests, not in a browser window. What was and was not checked, and
+how to re-check it, is in [docs/live-demo.md](docs/live-demo.md).
+
+**Try it** (the same steps as on the page): open the driving licence and note the time;
+set CBSE to Offline; open a CBSE marksheet three times (each fails after a real call);
+open it again (the breaker is now open, so no call is made); open the driving licence
+(PARIVAHAN is unaffected); set CBSE back to Healthy, wait ten seconds, and open the
+marksheet to watch it recover.
+
+**How it differs from the EC2 build.** It has no API key, a simpler breaker (opens after
+3 failures in a row, no retries), no `/metrics`, and **no load test or measurements**.
+Its breaker state is shared across calls (in DynamoDB), whereas each EC2 server keeps
+its own. The API reports the breaker as enabled and the page has no switch for it (only
+Healthy, Slow and Offline per issuer), so the *breaker-off against breaker-on*
+comparison is shown only by experiment E4 below, not by the live demo. The fake issuers'
+control addresses are open to anyone who has the URL.
 
 ## Experiments
 
