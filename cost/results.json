@@ -440,6 +440,10 @@
       "100": 488.6925122737884,
       "200": 736.6012684106826
     },
+    "break_even_document_size_kib": {
+      "s3_only_vs_b": 2.401059175875335,
+      "like_for_like": 2.1750059125896355
+    },
     "two_stored_copies": {
       "gap_s3_only_minus_b": 41066.10249081119,
       "ratio_s3_only_over_b": 35.879553536362835,

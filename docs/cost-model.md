@@ -141,7 +141,7 @@ results or the Price List cannot tell us.
 | Assumption | Value | Basis |
 |---|---|---|
 | Documents in the system | 934 crore = 9,340,000,000 | "More than 934 crore documents as of 31 July 2026", cited to the PIB factsheet <https://pib.gov.in/FactsheetDetails.aspx?Id=150840> (see the research log). This **replaces the Week 2 report's 941 crore**, which matches no official figure at any date. Official counts differ by date: 950+ crore in March 2026, 967+ in June 2026. The factsheet ("Empowering Governance through Digital Infrastructure", posted 12 Aug 2026) was read directly and says "As of 31 July 2026, the platform has registered over 72 crore users and issued more than 934+ Cr documents." |
-| **Average document size** | **100 KiB** | **Assumed.** No source gives it. A signed XML plus a printable PDF is plausibly tens to hundreds of KiB. Sensitivity at 25 and 500 KiB is in section 5. |
+| **Average document size** | **100 KiB** | **ASSUMPTION: not measured, not sourced.** Justified under "Why 100 KiB" below (tens to low hundreds of KiB for a one-page signed document). Sensitivity at 25 and 500 KiB, 9.4 to 80.7 times, is in section 5. |
 | Pointer record size | 100 B of attributes + 100 B DynamoDB overhead = 200 B billed | Assumed. The 4 pointers in the tested table average 57 B of attributes; real identifiers are longer. Sensitivity in section 5. |
 | Request mix | every request is one document fetch: one pointer lookup, one issuer call, one response of one document | The k6 scenarios request single documents only. |
 | Pointer lookups at national scale | 100% cache misses | Assumed: 934 crore distinct pointers and a 60 s cache give almost no repeat hits. The 60 s figure is the registry's setting. |
@@ -152,6 +152,48 @@ results or the Price List cannot tell us.
 | Data transfer rate | first tier ($0.1093/GB) for every volume | Conservative: bulk volumes cost less per GB. The free monthly allowance is not applied. |
 | Region and copies | one region, one copy of each dataset | The report's warm-standby region is not priced. |
 | Out of scope | issuer-side costs, the mock issuers, the standby region, backups, cross-zone transfer, encryption keys, support plans | Not part of the modelled service. |
+
+### Why 100 KiB (an assumption, with its justification)
+
+**This is an assumption. It is not measured, and no source states it.** The average size of an
+issued document sets the size of the centralised-storage counterfactual (section 5) and the bytes
+sent to citizens, so it is stated openly and tested, not hidden.
+
+The reasoning:
+
+- **What an issued document is.** DigiLocker issues digitally signed XML records with a printable
+  version attached (Week 2 report, section 2, from the Digital Locker Technology Specification).
+  The specification itself could not be re-read on 2026-11-13: its host returned gateway errors.
+- **How large such a document is.** The kinds of documents the case names (marksheets, driving
+  licences, vehicle registrations, PAN) are, in the team's judgement, one- or two-page
+  electronically generated certificates, not scans. A generated one-page PDF is typically tens of
+  KiB, and one with a logo, seal, photograph or QR code can reach the low hundreds of KiB. The
+  signed XML record is small next to the PDF. This gives "tens to low hundreds of KiB". It is the
+  team's estimate; no source for it was found.
+- **Why 100 KiB.** It sits in the middle of that range. It is also close to the geometric
+  midpoint (112 KiB) of the 25 and 500 KiB bounds used for the sensitivity test, so the test spans
+  a factor of about four either side.
+
+What the estimate does **not** cover:
+
+- Longer documents. Insurance policies are among the types the case names and can be much larger
+  than a one-page certificate, which would raise the average. The 500 KiB bound is there for this.
+- A record stored as signed XML only, without the printable form, could be a few KiB, close to the
+  break-even size below. The estimate assumes the printable form is stored, as the Week 2 report
+  describes. We did not measure a real signed XML; the mock payload used in the experiments is
+  0.4 KB and is not representative.
+- Upload limits quoted on third-party pages (1 MB on older pages, 10 MB on newer ones) apply to
+  files citizens upload themselves, conflict with each other, and are not used here.
+
+**How much it matters** (modelled, section 5). Central storage costs about 9.4 times our design at
+25 KiB, 30.8 times at 100 KiB and 80.7 times at 500 KiB (roughly 9 to 81 times). The centralised
+option would only cost the same as our design at an average document size of about **2.4 KiB**
+(2.2 KiB like-for-like; `break_even_document_size_kib` in `results.json`), a few lines of text.
+So the direction of the result does not depend on this assumption, but the dollar figure does.
+
+**How to replace it with a measurement.** Download a sample of real issued documents (a marksheet,
+a driving licence, a registration certificate, a PAN card) from DigiLocker, record the file sizes,
+set `DOC_SIZE_BYTES` in `cost/model.py` to their average, and re-run `python cost/model.py`.
 
 ## 4. Results: cost per 1,000 requests
 
@@ -259,9 +301,11 @@ both so that the totals are complete.
 | Two stored copies of everything (for example a standby region) | gap $41,066.10 (35.9 times) |
 | Every request opens a new connection to the load balancer | national scale: no change; as tested: peak burst rises from $0.000103 to $0.000188 per 1,000 |
 
-The size of the gap is driven almost entirely by the document-size assumption. The
-conclusion that the pointer design is much cheaper holds across the whole tested range
-(9 to 81 times), but the dollar figure should be quoted with the assumption beside it.
+The size of the gap is driven almost entirely by the document-size assumption, which is
+justified in section 3 but neither measured nor sourced. The conclusion that the pointer design
+is much cheaper holds across the whole tested range (9.4 to 80.7 times, roughly 9 to 81), and the
+centralised option would only match our design at an average document size of about 2.4 KiB
+(2.2 KiB like-for-like). The dollar figure should be quoted with the assumption beside it.
 
 ## 6. Caveats, and what to confirm
 
@@ -293,7 +337,8 @@ conclusion that the pointer design is much cheaper holds across the whole tested
 These are the places where a value is an assumption or an inference and not something
 I could confirm from AWS or from the results:
 
-1. Average document size (100 KiB) and pointer attribute size (100 B).
+1. Average document size (100 KiB), justified in section 3 but neither measured nor sourced,
+   and pointer attribute size (100 B).
 2. Two load balancer IPv4 addresses, and that registry instances keep public addresses.
 3. Two CloudWatch alarms, billed at the standard rate (the Price List does not say
    whether target-tracking alarms are billed).

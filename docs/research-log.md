@@ -37,7 +37,7 @@ Center, Circuit Breaker pattern.
 |---|---|---|
 | 72.43 crore registered users, as of 31 Jul 2026 | Week 1, Week 2 s.1 | Week 1 attributes current figures to the PIB release of 12 Aug 2026 |
 | 5,437 document types and services (661 Central, 4,776 State) as of 31 Jul 2026 | Week 1, Week 2 s.1-2 | **Read directly** in the PIB (MeitY) release "Government Expands Citizen-Centric Digital Public Service Delivery through UMANG and DigiLocker", posted 12 Aug 2026: <https://www.pib.gov.in/PressReleasePage.aspx?PRID=2298116>. It says "5,437 document types/services [Central Government: 661; State Government: 4,776] are available on DigiLocker platform". Also reported by IBEF: <https://www.ibef.org/news/government-expands-citizen-centric-digital-public-service-delivery-through-umang-and-digilocker>. |
-| 2,347 issuers | Week 1, Week 2 s.1-2 | **Kept; an older dated figure, not an error.** Week 1 takes the issuer count from the MeitY Annual Report 2025-26 (published Apr 2026), listed at <https://www.meity.gov.in/documents/reports/annual-report?pageTitle=Annual-Reports>. That listing is a script-driven page and the report itself was not reached, so the report's as-of date for 2,347 is **not yet confirmed** (open it in a browser). Issuer counts rise over time. The latest official count, **read directly**, is **2,822 onboarded issuers** in PIB releases posted 29 Jul 2026 (<https://www.pib.gov.in/PressReleasePage.aspx?PRID=2291148>) and 5 Aug 2026 (<https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294910>): "over 71.66 crore registered users, with more than 936.03 crore documents issued by 2,822 onboarded issuers". Intermediate counts (1,800+, 1,936, 2,131, 2,311) were seen only in search-result summaries. So 2,347 fits as an earlier figure. It is **not replaced** by 2,822. State it as "2,347 issuers (MeitY Annual Report 2025-26)", adding the report's as-of date once read. |
+| 2,822 onboarded issuers (replaces 2,347) | Week 1, Week 2 s.1-2 and s.4 ("the other 2,346" becomes "the other 2,821") | **Replaced 2026-11-13.** PIB release of 5 Aug 2026, read directly: <https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294910>: "The platform has over 71.66 crore registered users, with more than 936.03 crore documents issued by 2,822 onboarded issuers." **The release gives no as-of date for this figure**, and the identical sentence is already in the PIB release of 29 Jul 2026 (<https://www.pib.gov.in/PressReleasePage.aspx?PRID=2291148>), so it predates both releases. It is not "as of 31 July 2026": the 31 July figure in the 12 Aug release is 72.43 crore users, not 71.66. Cite it to the release date. The earlier 2,347 came from the MeitY Annual Report 2025-26 per Week 1 (as-of date never confirmed); it is superseded, not shown to be wrong. The Week 1 and Week 2 PDFs still say 2,347 and 2,346. |
 | ~~More than 941 crore documents~~ **More than 934 crore documents as of 31 July 2026** | Week 2 s.5 | **Corrected and verified.** 941 crore matches no official figure at any date, so it was wrong, not just old. The PIB factsheet https://pib.gov.in/FactsheetDetails.aspx?Id=150840 ("Empowering Governance through Digital Infrastructure", posted 12 Aug 2026) was **read directly** and says "As of 31 July 2026, the platform has registered over 72 crore users and issued more than 934+ Cr documents." The count depends on date and source (934+ crore end-July 2026; 950+ crore March 2026): see below. |
 | Hosting at NIC / MeghRaj data centres in Delhi, Hyderabad, Pune, Bhubaneswar | Week 2 s.2 | **Sourced in part.** NIC's four National Data Centres are named verbatim on <https://nichimachal.nic.in/infrastructure/> and <https://ndcbbsr.nic.in/aboutus>. That DigiLocker itself runs from them is **not** stated by any source I read. |
 | 1 GB cap on self-uploaded documents | Week 1, Week 2 s.2 | DLTS / NeGD material |
@@ -125,10 +125,11 @@ State) are in the PIB (MeitY) release posted 12 Aug 2026, read directly:
 <https://www.pib.gov.in/PressReleasePage.aspx?PRID=2298116>. IBEF and GKToday report the same numbers
 (<https://www.ibef.org/news/government-expands-citizen-centric-digital-public-service-delivery-through-umang-and-digilocker>,
 <https://www.gktoday.in/digilocker-crosses-72-crore-users-umang-reaches-11-crore/>). The latest issuer
-count, 2,822, is also at the source (see the 2,347 issuers row in part 2).
+count, 2,822 onboarded issuers, is also read at the source (see the 2,822 row in part 2).
 
 **Not read, so not cited:** the MeitY Annual Report 2025-26 (its listing page is script-driven and
-the report was not reached), `www.digilocker.gov.in/statistics` (403), `cbse.gov.in` pages (403),
+the report was not reached; it was Week 1's source for the superseded 2,347 issuers),
+`www.digilocker.gov.in/statistics` (403), `cbse.gov.in` pages (403),
 `cbseresults.nic.in` and `results.cbse.nic.in` (no DNS answer from this machine),
 `www.nic.in/service/data-centre/` (redirects to the homepage), Shiksha (403), Oneindia (410), and
 the Wayback Machine (not fetchable from this tool). The CBSE and DigiLocker-statistics pages were
@@ -142,6 +143,13 @@ not retried with a plain HTTP request.
   cost-per-transaction figure is published. The cost section of the final report
   must be labelled a modelled estimate for Architecture B, not DigiLocker's spend.
 - **Architecture B is our design**, not a claim about DigiLocker's deployment.
+- **The average issued-document size (100 KiB) is an assumption.** No source states it and it
+  was not measured. The only size figures found, 1 MB and 10 MB, are third-party statements of
+  the limit for files citizens upload themselves; they conflict and are not used. The reasoning
+  (one-page signed documents, tens to low hundreds of KiB), the 25 to 500 KiB sensitivity
+  (central storage 9.4 to 80.7 times our design) and the break-even size (about 2.4 KiB) are in
+  [cost-model.md](cost-model.md), "Why 100 KiB". The Digital Locker Technology Specification, which
+  describes the document format, could not be re-read on 2026-11-13 (its host returned 504).
 
 ## 4. Engineering findings from the build
 
@@ -278,10 +286,10 @@ Still open, and not part of the build:
   figures"). **941 crore documents is replaced by "more than 934 crore documents as of 31 July
   2026"**, verified in the PIB factsheet <https://pib.gov.in/FactsheetDetails.aspx?Id=150840>. The NIC locations are sourced. The CBSE
   result day is sourced except the claim that it was deliberate to spread demand.
-  **2,347 issuers is kept** as an older dated figure from the MeitY Annual Report 2025-26.
-- Still open: read the MeitY Annual Report 2025-26 in a browser for the as-of date of 2,347
-  issuers; then carry the corrected wording into the final report (the Week 2 PDF itself still
-  says 941 crore).
+  **2,347 issuers is replaced by 2,822 onboarded issuers** (PIB release of 5 Aug 2026,
+  <https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294910>; the release gives no as-of date for it).
+- Still open: carry the corrected wording into the final report. The Week 1 and Week 2 PDFs
+  still say 941 crore, 2,347 issuers and "the other 2,346" (to become 2,821).
 
 Possible follow-ups, not done: re-run E2 with a non-burstable instance type or
 unlimited credits to separate capacity from credit exhaustion; test a hard instance

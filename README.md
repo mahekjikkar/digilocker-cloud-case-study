@@ -45,7 +45,7 @@ is `docs/digilocker_report.pdf`.
 | `web/` | `index.html`, the live demonstration console (served by GitHub Pages). |
 | `cost/` | The cost model: generated AWS list-price rates, the script, its results and two charts. |
 | `results/` | Raw output, committed as produced. |
-| `docs/` | The Week 2 report (PDF), the research log, the cost-model write-up and the live-demo notes. |
+| `docs/` | The Week 2 report (PDF), the Week 3 results write-up (`week3-results.md`), the research log, the cost-model write-up and the live-demo notes. |
 
 ### How a request flows
 

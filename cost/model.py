@@ -64,7 +64,9 @@ HOURS_PER_MONTH = 730                  # 365 x 24 / 12
 # This replaces the Week 2 report's 941 crore, which matches no official figure. Official counts vary by date:
 # docs/research-log.md, "Sourcing the three figures".
 DOCUMENTS = 934 * 10 ** 7
-DOC_SIZE_BYTES = 100 * 1024            # ASSUMED average issued document (signed XML + PDF): 100 KiB
+# ASSUMED average issued document (signed XML + printable PDF): 100 KiB. Not measured, not sourced.
+# Justification, sensitivity and break-even (about 2.4 KiB): docs/cost-model.md, "Why 100 KiB".
+DOC_SIZE_BYTES = 100 * 1024
 POINTER_ATTR_BYTES = 100               # ASSUMED attribute bytes per pointer (measured seed average is below)
 ALB_PUBLIC_IPV4_ADDRESSES = 2          # ASSUMED: one per zone for an internet-facing ALB in 2 zones
 CLOUDWATCH_ALARMS = 2                  # ASSUMED: the high/low alarm pair of one target-tracking policy
@@ -297,6 +299,23 @@ def monthly_comparison(baseline, doc_size_bytes=DOC_SIZE_BYTES, attr_bytes=POINT
     )
 
 
+def break_even_doc_size_kib(baseline, gap_key):
+    """
+    Average document size (KiB) at which the centralised design costs the same as Architecture B,
+    found by bisection on the monthly comparison. `gap_key` is "gap_s3_only_minus_b" (B in full against
+    S3 storage, requests and transfer) or "gap_centralised_minus_b" (the like-for-like variant).
+    """
+    def gap(size_bytes):
+        return monthly_comparison(baseline, doc_size_bytes=size_bytes)[gap_key]
+
+    lo, hi = 64, 100 * 1024
+    assert gap(lo) < 0 < gap(hi), "break-even is outside the searched range"
+    for _ in range(80):
+        mid = (lo + hi) / 2
+        lo, hi = (mid, hi) if gap(mid) < 0 else (lo, mid)
+    return (lo + hi) / 2 / 1024
+
+
 # ---------------------------------------------------------------------------
 # 5. Charts
 # ---------------------------------------------------------------------------
@@ -426,6 +445,9 @@ def main():
     comparison["sensitivity_pointer_attribute_bytes"] = {
         str(b): monthly_comparison(baseline, attr_bytes=b)["architecture_b"]["components_usd_per_month"]["dynamodb_storage"]
         for b in SENSITIVITY_POINTER_ATTR_BYTES}
+    comparison["break_even_document_size_kib"] = {
+        "s3_only_vs_b": break_even_doc_size_kib(baseline, "gap_s3_only_minus_b"),
+        "like_for_like": break_even_doc_size_kib(baseline, "gap_centralised_minus_b")}
     comparison["two_stored_copies"] = {k: v for k, v in monthly_comparison(baseline, copies=2).items()
                                        if k in ("gap_s3_only_minus_b", "ratio_s3_only_over_b",
                                                 "gap_centralised_minus_b", "ratio_centralised_over_b")}
@@ -462,6 +484,9 @@ def main():
           f"({c['ratio_s3_only_over_b']:.1f}x)")
     print(f"   Centralised + access ${c['centralised_same_access_tier']['total_usd_per_month']:>12,.2f}   "
           f"gap ${c['gap_centralised_minus_b']:,.2f} ({c['ratio_centralised_over_b']:.1f}x)")
+    be = comparison["break_even_document_size_kib"]
+    print(f"   centralised matches B only at an average document size of {be['s3_only_vs_b']:.2f} KiB"
+          f" ({be['like_for_like']:.2f} KiB like-for-like)")
     print(f"   one-off ingestion: S3 PUTs ${c['one_off_ingestion']['s3_put_requests_usd']:,.0f}, "
           f"DynamoDB writes ${c['one_off_ingestion']['dynamodb_pointer_writes_usd']:,.0f}")
 
