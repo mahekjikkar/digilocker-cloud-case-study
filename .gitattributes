@@ -1,0 +1,7 @@
+# Shell scripts must stay LF on every clone. With core.autocrlf=true (the Windows default)
+# git would check them out as CRLF, and bash then fails with "$'\r': command not found".
+*.sh text eol=lf
+
+# The infra templates are shell scripts that run on the EC2 instances at boot, so a CRLF
+# shebang line would stop the instance from starting the service.
+*.sh.tpl text eol=lf
